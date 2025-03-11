@@ -55,3 +55,18 @@ text-transform: uppercase;
 letter-spacing: .1rem;
 color: #ffc600;
 }
+
+.key > kbd {
+margin-bottom: 0.5rem; /* Adds space between the letter and the sound text */
+}
+
+.key > .sound {
+margin-bottom: 0.5rem; /* Adds space between the sound name and the image */
+}
+
+.key img {
+max-width: 80%; /* Maintains size */
+max-height: 5rem; /* Prevents overflow */
+}
+
+
