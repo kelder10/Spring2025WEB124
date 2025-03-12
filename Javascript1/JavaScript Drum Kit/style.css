@@ -82,4 +82,5 @@ max-height: 5rem; /* Prevents overflow */
 /* New styles for volume control */
 #volume-control {
 width: 200px; /* Adjust width as needed */
+margin-top:20px; /* Adds space above the slider */
 }
