@@ -6,6 +6,7 @@ Description: Updated styles for the Animal Sound Board, including a farm backgro
 New/Challenging Aspects: Designed a child-friendly layout with images for each animal and modified styles for better user interaction.
 Significant Changes:
 - Added styles for the volume control slider.
+*/
 
 
 html {
@@ -13,7 +14,7 @@ font-size: 15px;
 background: url('./farm.png') bottom center;
 background-size: cover;
 }
-*/
+
 body, html {
 margin: 0;
 padding: 0;
