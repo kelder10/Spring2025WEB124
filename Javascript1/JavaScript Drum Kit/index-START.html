@@ -1,3 +1,15 @@
+<!--
+Name: Your Name
+Date: YYYY-MM-DD
+Source: Based on the original drum kit project from JavaScript30.com by Wes Bos
+Description: Transformed the JS Drum Kit into an Animal Sound Board for kids, allowing them to play animal sounds by pressing keys and clicking on keys.
+New/Challenging Aspects: Added a click-to-play feature for sounds and a volume control slider.
+Significant Changes:
+- Updated key data attributes to correspond to animal sounds.
+- Added images for each animal to make the soundboard visually engaging.
+- Implemented a volume control slider to adjust sound volume.
+- Enabled sound playback by clicking on the animal keys.
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,6 +76,9 @@
 <audio data-key="68" src="sounds/dog.mp3"></audio>
 <audio data-key="75" src="sounds/kitten.mp3"></audio>
 <audio data-key="84" src="sounds/turkey.mp3"></audio>
+
+<!-- New volume control slider -->
+<input type="range" id="volume-control" min="0" max="1" step="0.1" value="1" style="margin-top: 20px;">
 
 <script src="script.js"></script>
 </body>
