@@ -5,9 +5,8 @@ Source: Based on original styles from the JS Drum Kit project by Wes Bos
 Description: Updated styles for the Animal Sound Board, including a farm background and key designs.
 New/Challenging Aspects: Designed a child-friendly layout with images for each animal and modified styles for better user interaction.
 Significant Changes:
-- Added styles for the volume control slider.
+- Removed styles for the volume control slider.
 */
-
 
 html {
 font-size: 15px;
@@ -40,7 +39,7 @@ width: 10rem;
 text-align: center;
 color: white;
 background: rgba(0, 0, 0, 0.4);
-text-shadow: 0 0 .2rem black;
+text-shadow: 0 0 .5rem black;
 }
 
 .key img {
@@ -78,10 +77,4 @@ margin-bottom: 0.5rem; /* Adds space between the sound name and the image */
 .key img {
 max-width: 80%; /* Maintains size */
 max-height: 5rem; /* Prevents overflow */
-}
-
-/* New styles for volume control */
-#volume-control {
-width: 200px; /* Adjust width as needed */
-margin-top:20px; /* Adds space above the slider */
 }
