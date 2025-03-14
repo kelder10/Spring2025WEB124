@@ -1,7 +1,8 @@
-// Name: Your Name
-// Date: YYYY-MM-DD
+// Katie Elder
+// 3/14/2025
 // Source: Based on original script from the JS Drum Kit project by Wes Bos
-// Description: JavaScript functionality for the Animal Sound Board, enabling sounds to play on key presses and clicks.
+// Description: JavaScript functionality for the Animal Sound Board, 
+// enabling sounds to play on key presses and clicks.
 // New/Challenging Aspects: Added click-to-play functionality for sounds.
 // Significant Changes:
 // - Updated key codes to match new animal sounds.
