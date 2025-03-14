@@ -1,9 +1,9 @@
 <!--
-Name: Your Name
-Date: YYYY-MM-DD
+Katie Elder 3/14/2025
 Source: Based on the original drum kit project from JavaScript30.com by Wes Bos
-Description: Transformed the JS Drum Kit into an Animal Sound Board for kids, allowing them to play animal sounds by pressing keys and clicking on keys.
-New/Challenging Aspects: Added a click-to-play feature for sounds and removed volume control.
+Description: Transformed the JS Drum Kit into an Animal Sound Board for kids, 
+allowing them to play animal sounds by pressing keys and clicking on keys.
+New/Challenging Aspects: Added a click-to-play feature for sounds.
 Significant Changes:
 - Updated key data attributes to correspond to animal sounds.
 - Added images for each animal to make the soundboard visually engaging.
@@ -12,71 +12,79 @@ Significant Changes:
 -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Animal Sound Board</title>
-<link rel="stylesheet" href="style.css">
-<link rel="icon" href="https://fav.farm/✅" />
-</head>
-<body>
-<div class="keys">
-<div data-key="80" class="key"> <!-- P for Pig -->
-<kbd>P</kbd>
-<span class="sound">Pig</span>
-<img src="images/pig.jpg" alt="Pig" />
-</div>
-<div data-key="83" class="key"> <!-- S for Sheep -->
-<kbd>S</kbd>
-<span class="sound">Sheep</span>
-<img src="images/sheep.jpg" alt="Sheep" />
-</div>
-<div data-key="72" class="key"> <!-- H for Horse -->
-<kbd>H</kbd>
-<span class="sound">Horse</span>
-<img src="images/horse.jpg" alt="Horse" />
-</div>
-<div data-key="67" class="key"> <!-- C for Cow -->
-<kbd>C</kbd>
-<span class="sound">Cow</span>
-<img src="images/cow.jpg" alt="Cow" />
-</div>
-<div data-key="71" class="key"> <!-- G for Goat -->
-<kbd>G</kbd>
-<span class="sound">Goat</span>
-<img src="images/goat.jpg" alt="Goat" />
-</div>
-<div data-key="82" class="key"> <!-- R for Rooster -->
-<kbd>R</kbd>
-<span class="sound">Rooster</span>
-<img src="images/rooster.jpg" alt="Rooster" />
-</div>
-<div data-key="68" class="key"> <!-- D for Dog -->
-<kbd>D</kbd>
-<span class="sound">Dog</span>
-<img src="images/dog.jpg" alt="Dog" />
-</div>
-<div data-key="75" class="key"> <!-- K for Kitten -->
-<kbd>K</kbd>
-<span class="sound">Kitten</span>
-<img src="images/kitten.jpg" alt="Kitten" />
-</div>
-<div data-key="84" class="key"> <!-- T for Turkey -->
-<kbd>T</kbd>
-<span class="sound">Turkey</span>
-<img src="images/turkey.jpg" alt="Turkey" />
-</div>
-</div>
+  <head>
+    <meta charset="UTF-8">
+    <title>Animal Sound Board</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://fav.farm/✅" />
+  </head>
+  <body>
+    <div class="keys">
+      <div data-key="80" class="key"> <!-- P for Pig -->
+        <kbd>P</kbd>
+        <span class="sound">Pig</span>
+        <img src="images/pig.jpg" alt="Pig" />
+      </div>
 
-<audio data-key="80" src="sounds/pig.mp3"></audio>
-<audio data-key="83" src="sounds/sheep.mp3"></audio>
-<audio data-key="72" src="sounds/horse.mp3"></audio>
-<audio data-key="67" src="sounds/cow.mp3"></audio>
-<audio data-key="71" src="sounds/goat.mp3"></audio>
-<audio data-key="82" src="sounds/rooster.mp3"></audio>
-<audio data-key="68" src="sounds/dog.mp3"></audio>
-<audio data-key="75" src="sounds/kitten.mp3"></audio>
-<audio data-key="84" src="sounds/turkey.mp3"></audio>
+      <div data-key="83" class="key"> <!-- S for Sheep -->
+        <kbd>S</kbd>
+        <span class="sound">Sheep</span>
+        <img src="images/sheep.jpg" alt="Sheep" />
+      </div>
 
-<script src="script.js"></script>
-</body>
+      <div data-key="72" class="key"> <!-- H for Horse -->
+        <kbd>H</kbd>
+        <span class="sound">Horse</span>
+        <img src="images/horse.jpg" alt="Horse" />
+      </div>
+
+      <div data-key="67" class="key"> <!-- C for Cow -->
+        <kbd>C</kbd>
+        <span class="sound">Cow</span>
+        <img src="images/cow.jpg" alt="Cow" />
+      </div>
+
+      <div data-key="71" class="key"> <!-- G for Goat -->
+        <kbd>G</kbd>
+        <span class="sound">Goat</span>
+        <img src="images/goat.jpg" alt="Goat" />
+      </div>
+
+      <div data-key="82" class="key"> <!-- R for Rooster -->
+        <kbd>R</kbd>
+        <span class="sound">Rooster</span>
+        <img src="images/rooster.jpg" alt="Rooster" />
+      </div>
+
+      <div data-key="68" class="key"> <!-- D for Dog -->
+        <kbd>D</kbd>
+        <span class="sound">Dog</span>
+        <img src="images/dog.jpg" alt="Dog" />
+      </div>
+
+      <div data-key="75" class="key"> <!-- K for Kitten -->
+        <kbd>K</kbd>
+        <span class="sound">Kitten</span>
+        <img src="images/kitten.jpg" alt="Kitten" />
+      </div>
+
+      <div data-key="84" class="key"> <!-- T for Turkey -->
+        <kbd>T</kbd>
+        <span class="sound">Turkey</span>
+        <img src="images/turkey.jpg" alt="Turkey" />
+      </div>
+    </div>
+
+    <audio data-key="80" src="sounds/pig.mp3"></audio>
+    <audio data-key="83" src="sounds/sheep.mp3"></audio>
+    <audio data-key="72" src="sounds/horse.mp3"></audio>
+    <audio data-key="67" src="sounds/cow.mp3"></audio>
+    <audio data-key="71" src="sounds/goat.mp3"></audio>
+    <audio data-key="82" src="sounds/rooster.mp3"></audio>
+    <audio data-key="68" src="sounds/dog.mp3"></audio>
+    <audio data-key="75" src="sounds/kitten.mp3"></audio>
+    <audio data-key="84" src="sounds/turkey.mp3"></audio>
+
+    <script src="script.js"></script>
+  </body>
 </html>
