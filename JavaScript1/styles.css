@@ -1,0 +1,78 @@
+/*
+Katie Elder 3/13/2025
+Source: Based on original styles from the JS Drum Kit project by Wes Bos
+Description: Updated styles for the Animal Sound Board, including a farm background and key designs.
+New/Challenging Aspects: Designed a child-friendly layout with images for each animal and modified 
+styles for better user interaction.
+*/
+
+html {
+font-size: 15px;
+background: url('./farm.png') bottom center;
+background-size: cover;
+}
+
+body, html {
+margin: 0;
+padding: 0;
+font-family: sans-serif;
+}
+
+.keys {
+display: flex;
+flex: 1;
+min-height: 100vh;
+align-items: center;
+justify-content: center;
+}
+
+.key {
+border: .4rem solid black;
+border-radius: .5rem;
+margin: 1rem;
+font-size: 1.5rem;
+padding: 1rem .5rem;
+transition: all .07s ease;
+width: 10rem;
+text-align: center;
+color: white;
+background: rgba(0, 0, 0, 0.5);
+text-shadow: 0 0 .5rem black;
+}
+
+.key img {
+max-width: 80%; /* Adjust the width as needed */
+max-height: 5rem; /* Adjust the height as needed */
+margin-top: 0.5rem; /* Space between text and image */
+}
+
+.playing {
+transform: scale(1.1);
+border-color: #ffc600;
+box-shadow: 0 0 1rem #ffc600;
+}
+
+kbd {
+display: block;
+font-size: 4rem;
+}
+
+.sound {
+font-size: 1.2rem;
+text-transform: uppercase;
+letter-spacing: .1rem;
+color: #ffc600;
+}
+
+.key > kbd {
+margin-bottom: 0.5rem; /* Adds space between the letter and the sound text */
+}
+
+.key > .sound {
+margin-bottom: 0.5rem; /* Adds space between the sound name and the image */
+}
+
+.key img {
+max-height: 5rem; /* Prevents overflow */
+max-width: 95%; /* Maintains size */
+}
