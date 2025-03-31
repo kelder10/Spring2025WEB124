@@ -1,15 +1,20 @@
+html, body {
+height: 100%; /* Ensures both html and body cover the full viewport */
+margin: 0; /* Reset margin */
+}
+
+html {
+background: #018DED url('https://unsplash.it/1500/1000?image=881&blur=5') no-repeat center center fixed; /* Ensure it's fixed and centered */
+background-size: cover; /* Cover the entire area */
+font-family: 'Helvetica Neue', sans-serif; /* Ensure consistent font */
+}
+
 body {
-margin: 0;
-font-size: 2rem; /* Base font size for the whole document */
-padding: 2rem; /* Padding around the content */
-text-align: center; /* Center align text */
-background-color: #018DED; /* Fallback solid background color */
-background: url('http://unsplash.it/1500/1000?image=881&blur=50'); /* Background image URL */
-background-repeat: no-repeat; /* Prevent tiling of the background image */
-background-position: center center; /* Center the background image */
-background-attachment: fixed; /* Keep the background fixed during scroll */
-background-size: cover; /* Ensure the background covers the entire area */
-font-family: 'Helvetica Neue', sans-serif; /* Font family for the page */
+display: flex;
+align-items: center; /* Center contents vertically */
+justify-content: center; /* Center contents horizontally */
+font-size: 2rem; /* Keep this as you prefer */
+min-height: 100vh; /* Ensure it fills the viewport */
 }
 
 /* Clock container */
