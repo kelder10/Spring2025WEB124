@@ -47,7 +47,7 @@ width: 4px; /* Width of minute hand */
 
 #second-hand {
 background: #2196f3;
-height: 85px; /* Length of second hand */
+height: 80px; /* Length of second hand */
 width: 2px; /* Width of second hand */
 }
 
