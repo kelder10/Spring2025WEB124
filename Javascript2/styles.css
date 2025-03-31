@@ -3,7 +3,11 @@ margin: 0;
 font-size: 2rem; /* Base font size for the whole document */
 padding: 2rem; /* Padding around the content */
 text-align: center; /* Center align text */
-background: #018DED url('http://unsplash.it/1500/1000?image=881&blur=50') no-repeat center center fixed; /* Original background with image */
+background-color: #018DED; /* Fallback solid background color */
+background-image: url('http://unsplash.it/1500/1000?image=881&blur=50'); /* Background image URL */
+background-repeat: no-repeat; /* Prevent tiling of the background image */
+background-position: center center; /* Center the background image */
+background-attachment: fixed; /* Keep the background fixed during scroll */
 background-size: cover; /* Ensure the background covers the entire area */
 font-family: 'Helvetica Neue', sans-serif; /* Font family for the page */
 }
@@ -79,6 +83,10 @@ color: #fff; /* Light text color for contrast */
 @keyframes bounce {
 0%, 100% { transform: translateY(0); } /* Start and end at original position */
 50% { transform: translateY(-5px); } /* Bounce effect */
+}
+
+.hand {
+animation: bounce 0.3s ease-in-out; /* Bounce animation for hands */
 }
 
 .hand {
