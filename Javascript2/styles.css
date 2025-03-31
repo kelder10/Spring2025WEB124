@@ -40,13 +40,13 @@ width: 6px; /* Width of hour hand */
 }
 
 #min-hand {
-background: #black;
+background: #027dc0;
 height: 85px; /* Length of minute hand */
 width: 4px; /* Width of minute hand */
 }
 
 #second-hand {
-background: #black;
+background: #02c0ad;
 height: 80px; /* Length of second hand */
 width: 2px; /* Width of second hand */
 }
