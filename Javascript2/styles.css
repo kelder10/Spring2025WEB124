@@ -28,10 +28,9 @@ background: rgba(255, 255, 255, 0.5); /* Light background for clock */
 position: absolute;
 top: 50%;
 left: 50%;
-transform-origin: bottom;
-transform: translateX(-50%)
-  translateY(-100%);
-transition: transform 0.5s ease-in-out;
+transform-origin: bottom; /* Rotate around the bottom of the hand */
+transform: translateX(-50%) translateY(-100%); /* Center the hands */
+transition: transform 0.5s ease-in-out; /* Keep this for smooth rotation */
 }
 
 #hour-hand {
