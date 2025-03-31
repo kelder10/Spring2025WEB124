@@ -36,13 +36,13 @@ transition: transform 0.5s ease-in-out;
 #hour-hand {
 background: #170242;
 height: 85px; /* Length of hour hand */
-width: 6px; /* Width of hour hand */
+width: 4px; /* Width of hour hand */
 }
 
 #min-hand {
 background: #027dc0;
 height: 75px; /* Length of minute hand */
-width: 4px; /* Width of minute hand */
+width: 6px; /* Width of minute hand */
 }
 
 #second-hand {
