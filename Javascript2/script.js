@@ -17,15 +17,15 @@ let alarmTime = null; // Variable to store alarm time
 function setDate() {
   const now = new Date(); // Get current date and time
   const seconds = now.getSeconds(); // Get current seconds
-  const secondsDegrees = ((seconds / 60) * 360) + 90; // Calculate rotation for second hand
+  const secondsDegrees = ((seconds / 60) * 360); // Calculate rotation for second hand
   secondHand.style.transform = `rotate(${secondsDegrees}deg)`; // Rotate second hand
   
   const mins = now.getMinutes(); // Get current minutes
-  const minsDegrees = ((mins / 60) * 360) + ((seconds / 60) * 6) + 90; // Calculate rotation for minute hand
+  const minsDegrees = ((mins / 60) * 360) + ((seconds / 60) * 6); // Calculate rotation for minute hand
   minsHand.style.transform = `rotate(${minsDegrees}deg)`; // Rotate minute hand
   
   const hour = now.getHours(); // Get current hours
-  const hourDegrees = ((hour % 12) / 12) * 360 + ((mins / 60) * 30) + 90; // Calculate rotation for hour hand
+  const hourDegrees = ((hour % 12) / 12) * 360 + ((mins / 60) * 30); // Calculate rotation for hour hand
   hourHand.style.transform = `rotate(${hourDegrees}deg)`; // Rotate hour hand
 
   // Update digital time display
@@ -37,10 +37,10 @@ function setDate() {
   tickSound.play(); // Play tick sound
   
     // Check for alarm time and alert if it matches
-    if (alarmTime && alarmTime === now.toLocaleTimeString()) {
-      alert("Alarm! Time's up!"); // Alert message
-      alarmTime = null; // Reset alarm
-    }
+  if (alarmTime && alarmTime === now.toLocaleTimeString()) {
+    alert("Alarm! Time's up!"); // Alert message
+    alarmTime = null; // Reset alarm
+  }
 }
 
 // Function to update the current date display
@@ -50,7 +50,7 @@ function updateDate() {
   year: 'numeric', // Display year
   month: 'long', // Display month
   day: 'numeric' // Display day
-});
+  });
 }
 
 // Event listener for setting the alarm
