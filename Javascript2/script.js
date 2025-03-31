@@ -25,9 +25,9 @@ function setDate() {
   minsHand.style.transform = `rotate(${minsDegrees}deg)`; // Rotate minute hand
   
   const hour = now.getHours(); // Get current hours
-  const hourDegrees = ((hour / 12) * 360) + ((mins / 60) * 30) + 90; // Calculate rotation for hour hand
+  const hourDegrees = ((hour % 12) / 12) * 360 + ((mins / 60) * 30) + 90; // Calculate rotation for hour hand
   hourHand.style.transform = `rotate(${hourDegrees}deg)`; // Rotate hour hand
-  
+
   // Update digital time display
   digitalTime.textContent = now.toLocaleTimeString(); // Display current time
   updateDate(); // Update the date display
