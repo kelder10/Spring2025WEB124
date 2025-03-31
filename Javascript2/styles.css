@@ -40,12 +40,14 @@ width: 6px; /* Width of hour hand */
 }
 
 #min-hand {
+color: blue;
 background: #4caf50;
 height: 85px; /* Length of minute hand */
 width: 4px; /* Width of minute hand */
 }
 
 #second-hand {
+color: green;
 background: #2196f3;
 height: 80px; /* Length of second hand */
 width: 2px; /* Width of second hand */
