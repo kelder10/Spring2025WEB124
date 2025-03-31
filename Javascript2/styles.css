@@ -1,17 +1,9 @@
-
-html {
-font-size: 15px;
-background: url('./farm.png') bottom center;
-background-size: cover;
-}
-
-
 body {
 margin: 0;
 font-size: 2rem;
 padding: 2rem;
 text-align: center;
-background: url('./header-m.jpg') no-repeat center center fixed;
+background: url('new-background.jpg') no-repeat center center fixed;
 background-size: cover;
 font-family: 'Helvetica Neue', sans-serif;
 }
