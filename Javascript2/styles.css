@@ -25,6 +25,34 @@ background: rgba(255, 255, 255, 0.5); /* Light background for clock */
 }
 
 .hand {
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  transform-origin: 100%; transform: rotate (90deg) ; transition: all 0.05s;
+  
+  /*transition-timing-function: cubic-beziat (0.1, 2.7, 0.58, 1) : */ 
+  transition-timing-function: cubic-bezier (0, 0, 0.2, 1) ; /* apply a moi
+}
+  
+/* added new styles to differentiate hour, minutes and second hands*/   
+#hour-hand {
+background: #ffff00; /* dark yellow for hours */ height: 20px; /* widest */
+}
+
+#min-hand {
+  background: #ffffb3;
+  height: 10px; /* medium yellow for minutes*/
+}
+
+#second-hand {
+background: #ffffe6;
+height: 5px; /* light yellow for seconds*/ /* narrowest */
+}
+
+
+
+
+.hand {
 position: absolute;
 top: 50%;
 transform-origin: 100%;
