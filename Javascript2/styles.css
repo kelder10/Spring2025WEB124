@@ -3,7 +3,7 @@ margin: 0;
 font-size: 2rem;
 padding: 2rem;
 text-align: center;
-background: url('/header-m.jpg') no-repeat center center fixed;
+background: url('./header-m.jpg') no-repeat center center fixed;
 background-size: cover;
 font-family: 'Helvetica Neue', sans-serif;
 }
