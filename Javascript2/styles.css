@@ -41,7 +41,7 @@ width: 6px; /* Width of hour hand */
 
 #min-hand {
 background: #027dc0;
-height: 85px; /* Length of minute hand */
+height: 75px; /* Length of minute hand */
 width: 4px; /* Width of minute hand */
 }
 
