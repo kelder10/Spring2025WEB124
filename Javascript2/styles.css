@@ -26,29 +26,29 @@ background: rgba(255, 255, 255, 0.5); /* Light background for clock */
 
 .hand {
 position: absolute;
-top: 50%;
-left: 50%;
-transform-origin: bottom; /* Rotate around the bottom of the hand */
-transform: translateX(-50%) translateY(-100%); /* Center the hands */
-transition: transform 0.5s ease-in-out; /* Keep this for smooth rotation */
+bottom: 50%; /* Center the hands vertically */
+left: 50%; /* Center the hands horizontally */
+transform-origin: bottom center; /* Set the pivot point properly */
+transform: translateX(-50%); /* Offset half the width to center */
+transition: transform 0.5s ease-in-out;
 }
 
 #hour-hand {
 background: #ff5722;
-height: 25px;
-width: 6px; /* Add width for the hour hand */
+height: 50px; /* Length of hour hand */
+width: 6px; /* Width of hour hand */
 }
 
 #min-hand {
 background: #4caf50;
-height: 15px;
-width: 4px; /* Add width for the minute hand */
+height: 70px; /* Length of minute hand */
+width: 4px; /* Width of minute hand */
 }
 
 #second-hand {
 background: #2196f3;
-height: 8px;
-width: 2px; /* Add width for the second hand */
+height: 90px; /* Length of second hand */
+width: 2px; /* Width of second hand */
 }
 
 #digitalTime {
@@ -76,8 +76,4 @@ color: #fff;
 @keyframes bounce {
 0%, 100% { transform: translateY(0); }
 50% { transform: translateY(-5px); }
-}
-
-.hand {
-animation: bounce 0.3s ease-in-out;
 }
