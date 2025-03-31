@@ -24,7 +24,7 @@ border-radius: 50%; /* Make it round */
 background: rgba(255, 255, 255, 0.5); /* Light background for clock */
 }
 
-.hand {
+#hand {
 position: absolute;
 top: 50%; /* Center vertically */
 left: 50%; /* Center horizontally */
