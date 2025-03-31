@@ -81,7 +81,7 @@ font-size: 1.5rem; /* Adjust the size as needed */
 }
 
 #num1 {
-top: 10%;
+top: 5%;
 left: 50%;
 transform: translateX(-50%);
 }
