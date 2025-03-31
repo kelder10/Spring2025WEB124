@@ -104,6 +104,6 @@ color: #fff;
 50% { transform: translateY(-5px); }
 }
 
-#hand {
+.hand {
 animation: bounce 0.3s ease-in-out;
 }
