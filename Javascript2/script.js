@@ -38,29 +38,28 @@ tickSound.play(); // Play tick sound
 
 // Check for alarm time and alert if it matches
 if (alarmTime && alarmTime === now.toLocaleTimeString()) {
-alert("Alarm! Time's up!"); // Alert message
-alarmTime = null; // Reset alarm
-}
+  alert("Alarm! Time's up!"); // Alert message
+  alarmTime = null; // Reset alarm 
 }
 
 // Function to update the current date display
 function updateDate() {
 const now = new Date(); // Get current date
 currentDate.textContent = now.toLocaleDateString(undefined, {
-year: 'numeric', // Display year
-month: 'long', // Display month
-day: 'numeric' // Display day
-});
+  year: 'numeric', // Display year
+  month: 'long', // Display month
+  day: 'numeric' // Display day 
+  });
 }
 
 // Event listener for setting the alarm
 setAlarmButton.addEventListener('click', () => {
-alarmTime = document.getElementById('alarm-time').value + ":00"; // Set alarm time in HH:MM format
+  alarmTime = document.getElementById('alarm-time').value + ":00"; // Set alarm time in HH:MM format
 });
 
 // Event listener for toggling themes
 themeToggleButton.addEventListener('click', () => {
-document.body.classList.toggle('dark-theme'); // Toggle dark theme class
+  document.body.classList.toggle('dark-theme'); // Toggle dark theme class
 });
 
 // Start the clock with an interval
