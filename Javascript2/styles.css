@@ -26,28 +26,35 @@ background: rgba(255, 255, 255, 0.5); /* Light background for clock */
 
 .hand {
 position: absolute;
-top: 50%;
-transform-origin: 100%;
+top: 50%; /* Center vertically */
+left: 50%; /* Center horizontally */
+transform-origin: bottom; /* Pivot around the bottom */
 transition: transform 0.5s ease-in-out;
+border-radius: 10px; /* Optional: Add rounded corners for a better look */
 }
 
 #hour-hand {
 background: #ff5722;
-height: 25px;
-width: 6px; /* Add width for the hour hand */
+height: 50px; /* Increased length for better visibility */
+width: 6px; /* Width for the hour hand */
+transform: translateX(-50%) translateY(-100%); /* Center and move hand tip to the center */
 }
 
 #min-hand {
 background: #4caf50;
-height: 15px;
-width: 4px; /* Add width for the minute hand */
+height: 70px; /* Increased length for better visibility */
+width: 4px; /* Width for the minute hand */
+transform: translateX(-50%) translateY(-100%); /* Center and move hand tip to the center */
 }
 
 #second-hand {
 background: #2196f3;
-height: 8px;
-width: 2px; /* Add width for the second hand */
+height: 90px; /* Increased length for better visibility */
+width: 2px; /* Width for the second hand */
+transform: translateX(-50%) translateY(-100%); /* Center and move hand tip to the center */
 }
+
+
 
 #digitalTime {
 font-size: 3rem;
