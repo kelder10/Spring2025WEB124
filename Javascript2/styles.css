@@ -1,86 +1,81 @@
 body {
 margin: 0;
-font-size: 2rem; /* Base font size for the whole document */
-padding: 2rem; /* Padding around the content */
-text-align: center; /* Center align text */
-background: #018DED url('http://unsplash.it/1500/1000?image=881&blur=50') no-repeat center center fixed; /* Original background with image */
-background-size: cover; /* Ensure the background covers the entire area */
-font-family: 'Helvetica Neue', sans-serif; /* Font family for the page */
+font-size: 2rem;
+padding: 2rem;
+text-align: center;
+background: url('./header-m.jpg') no-repeat center center fixed;
+background-size: cover;
+font-family: 'Helvetica Neue', sans-serif;
 }
 
-/* Clock container */
 #clock {
-position: relative; /* Positioning context for absolute children */
-width: 200px; /* Width of the clock */
-height: 200px; /* Height of the clock */
-margin: 0 auto; /* Center clock horizontally */
+position: relative;
+width: 200px;
+height: 200px;
+margin: 0 auto;
 }
 
-/* Clock face styling */
 #clock-face {
-position: relative; /* Relative positioning for child elements */
-width: 100%; /* Full width of the parent */
-height: 100%; /* Full height of the parent */
+position: relative;
+width: 100%;
+height: 100%;
+border: 10px solid white; /* Add border for visibility */
+border-radius: 50%; /* Make it round */
+background: rgba(255, 255, 255, 0.5); /* Light background for clock */
 }
 
-/* Hand styles for the clock */
-#hand {
-position: absolute; /* Positioning hands absolutely within the clock */
-top: 50%; /* Align the top of hands to the center vertically */
-transform-origin: 100%; /* Pivot point for rotation */
-transition: transform 0.5s ease-in-out; /* Smooth transition for hand movement */
+.hand {
+position: absolute;
+top: 50%;
+transform-origin: 100%;
+transition: transform 0.5s ease-in-out;
 }
 
-/* Hour hand styling */
 #hour-hand {
-background: #ff5722; /* Vibrant orange for hour hand */
-height: 25px; /* Increased thickness */
+background: #ff5722;
+height: 25px;
+width: 6px; /* Add width for the hour hand */
 }
 
-/* Minute hand styling */
 #min-hand {
-background: #4caf50; /* Green for minute hand */
-height: 15px; /* Increased thickness */
+background: #4caf50;
+height: 15px;
+width: 4px; /* Add width for the minute hand */
 }
 
-/* Second hand styling */
 #second-hand {
-background: #2196f3; /* Blue for second hand */
-height: 8px; /* Increased thickness */
+background: #2196f3;
+height: 8px;
+width: 2px; /* Add width for the second hand */
 }
 
-/* Digital time display styling */
 #digitalTime {
-font-size: 3rem; /* Increased font size for digital time */
-color: #ffffff; /* White text color for visibility */
-text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Shadow for depth */
+font-size: 3rem;
+color: #ffffff;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
-/* Current date display styling */
 #currentDate {
-font-size: 1.5rem; /* Font size for date */
-color: #ffffff; /* White text color for visibility */
+font-size: 1.5rem;
+color: #ffffff;
 }
 
-/* Button styles */
 button {
-padding: 15px 25px; /* Padding for buttons */
-font-size: 1.5rem; /* Font size for buttons */
-margin: 10px; /* Margin for spacing */
+padding: 15px 25px;
+font-size: 1.5rem;
+margin: 10px;
 }
 
-/* Dark theme styling */
 .dark-theme {
-background: #333; /* Dark background for dark theme */
-color: #fff; /* Light text color for contrast */
+background: #333;
+color: #fff;
 }
 
-/* Animation for hand movement */
 @keyframes bounce {
-0%, 100% { transform: translateY(0); } /* Start and end at original position */
-50% { transform: translateY(-5px); } /* Bounce effect */
+0%, 100% { transform: translateY(0); }
+50% { transform: translateY(-5px); }
 }
 
-#hand {
-animation: bounce 0.3s ease-in-out; /* Bounce animation for hands */
+.hand {
+animation: bounce 0.3s ease-in-out;
 }
