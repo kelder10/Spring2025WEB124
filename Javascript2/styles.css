@@ -4,7 +4,7 @@ font-size: 2rem; /* Base font size for the whole document */
 padding: 2rem; /* Padding around the content */
 text-align: center; /* Center align text */
 background-color: #018DED; /* Fallback solid background color */
-background-image: url('http://unsplash.it/1500/1000?image=881&blur=50'); /* Background image URL */
+background: url('http://unsplash.it/1500/1000?image=881&blur=50'); /* Background image URL */
 background-repeat: no-repeat; /* Prevent tiling of the background image */
 background-position: center center; /* Center the background image */
 background-attachment: fixed; /* Keep the background fixed during scroll */
