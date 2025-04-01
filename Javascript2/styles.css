@@ -126,7 +126,7 @@ transform: translate(-50%, -50%); /* Center the numbers */
 } /* 6 */
 
 #num8 { bottom: 15%; 
-  left: 24%; 
+  left: 26%; 
   transform: translate(-50%, 50%); 
 } /* 7 */
 
@@ -138,18 +138,18 @@ transform: translate(-50%, -50%); /* Center the numbers */
 
 #num10 { 
   top: 50%;
-  left: 5%; 
+  left: 8%; 
   transform: translate(-50%, -50%); 
 } /* 9 */
 
 #num11 { 
   top: 32%; 
-  left: 16%; 
+  left: 15%; 
   transform: translate(-50%, -50%); 
 } /* 10 */
 
 #num12 { 
-  top: 14%; 
+  top: 15%; 
   left: 28%; 
   transform: translate(-50%, -50%);
 } /* 11 */
