@@ -84,7 +84,7 @@ transform: translate(-50%, -50%); /* Center the numbers */
 /* Positioning the numbers in a circular fashion */
 /* Positioning the numbers in a circular fashion */
 #num1 {
-  top: 10%; 
+  top: 5%; 
   left: 50%; 
   transform: translateX(-50%); 
 } /* 12 */
@@ -119,7 +119,8 @@ transform: translate(-50%, -50%); /* Center the numbers */
   transform: translate(50%, 50%); 
 } /* 5 */
 
-#num7 { bottom: 10%;
+#num7 { 
+  bottom: 25%;
   left: 50%; 
   transform: translateX(-50%); 
 } /* 6 */
