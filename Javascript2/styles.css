@@ -69,7 +69,7 @@ margin: 10px;
 }
 
 .dark-theme {
-background: #333;
+background: #12009d;
 color: #fff;
 }
 
@@ -144,13 +144,13 @@ transform: translate(-50%, -50%); /* Center the numbers */
 
 #num11 { 
   top: 30%; 
-  left: 10%; 
+  left: 5%; 
   transform: translate(-50%, -50%); 
 } /* 10 */
 
 #num12 { 
   top: 15%; 
-  left: 20%; 
+  left: 5%; 
   transform: translate(-50%, -50%);
 } /* 11 */
 
