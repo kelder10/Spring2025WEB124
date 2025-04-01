@@ -19,7 +19,7 @@ margin: 0 auto;
 position: relative;
 width: 100%;
 height: 100%;
-border: 10px solid gray; /* Add border for visibility */
+border: 10px solid cream white; /* Add border for visibility */
 border-radius: 50%; /* Make it round */
 background: rgba(255, 255, 255, 0.5); /* Light background for clock */
 }
