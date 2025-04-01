@@ -126,13 +126,13 @@ transform: translate(-50%, -50%); /* Center the numbers */
 } /* 6 */
 
 #num8 { bottom: 15%; 
-  left: 20%; 
+  left: 24%; 
   transform: translate(-50%, 50%); 
 } /* 7 */
 
 #num9 { 
   bottom: 30%;
-  left: 10%;
+  left: 12%;
   transform: translate(-50%, 50%); 
 } /* 8 */
 
