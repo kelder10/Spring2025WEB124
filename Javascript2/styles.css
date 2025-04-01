@@ -97,13 +97,13 @@ transform: translate(-50%, -50%); /* Center the numbers */
 
 #num3 { 
   top: 30%; 
-  right: 10%;
+  right: 15%;
   transform: translate(50%, -50%);
 } /* 2 */
 
 #num4 { 
   top: 50%; 
-  right: 5%; 
+  right: 8%; 
   transform: translate(50%, -50%); 
 } /* 3 */
 
