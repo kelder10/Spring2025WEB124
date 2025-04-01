@@ -143,8 +143,8 @@ transform: translate(-50%, -50%); /* Center the numbers */
 } /* 9 */
 
 #num11 { 
-  top: 20%; 
-  left: 25%; 
+  top: 25%; 
+  left: 20%; 
   transform: translate(-50%, -50%); 
 } /* 10 */
 
