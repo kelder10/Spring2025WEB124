@@ -66,9 +66,7 @@ day: 'numeric' // Display day
 setAlarmButton.addEventListener('click', () => {
 alarmTime = document.getElementById('alarm-time').value + ":00"; // Set alarm time in HH:MM format
 alert(`Alarm set for ${alarmTime}`); // Alert message
-alarmSound.play().catch(error => {
-console.error("Error playing sound:", error); // Log any errors
-}); // Play sound to allow browser interaction
+// Removed the immediate play sound line
 });
 
 // Event listener for stopping the alarm
