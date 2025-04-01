@@ -12,7 +12,9 @@ const setAlarmButton = document.getElementById('set-alarm'); // Set alarm button
 const tickSound = document.getElementById('tick-sound'); // Tick sound audio element
 const themeToggleButton = document.getElementById('theme-toggle'); // Theme toggle button
 const alarmSound = document.getElementById('alarm-sound'); // Alarm sound audio element
+const stopAlarmButton = document.getElementById('stop-alarm'); // Stop alarm button
 let alarmTime = null; // Variable to store alarm time
+let alarmPlaying = false; // Flag to check if the alarm is currently playing
 
 // Function to update clock hands and digital time
 function setDate() {
@@ -39,9 +41,11 @@ tickSound.play(); // Play tick sound
 
 // Check for alarm time and play sound if it matches
 if (alarmTime && alarmTime === now.toLocaleTimeString()) {
+if (!alarmPlaying) {
 alarmSound.currentTime = 0; // Reset alarm sound
 alarmSound.play(); // Play alarm sound
-alarmTime = null; // Reset alarm after playing
+alarmPlaying = true; // Set flag to indicate the alarm is playing
+}
 }
 }
 
@@ -61,6 +65,13 @@ alarmTime = document.getElementById('alarm-time').value + ":00"; // Set alarm ti
 alert(`Alarm set for ${alarmTime}`); // Alert message
 });
 
+// Event listener for stopping the alarm
+stopAlarmButton.addEventListener('click', () => {
+alarmSound.pause(); // Pause the alarm sound
+alarmSound.currentTime = 0; // Reset sound to the beginning
+alarmPlaying = false; // Reset the flag
+});
+
 // Event listener for toggling themes
 themeToggleButton.addEventListener('click', () => {
 document.body.classList.toggle('dark-theme'); // Toggle dark theme class
@@ -69,3 +80,4 @@ document.body.classList.toggle('dark-theme'); // Toggle dark theme class
 // Start the clock with an interval
 setInterval(setDate, 1000); // Update the clock every second
 setDate(); // Initial call to set the time
+
