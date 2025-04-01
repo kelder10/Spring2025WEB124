@@ -37,8 +37,8 @@ digitalTime.textContent = now.toLocaleTimeString(); // Display current time
 updateDate(); // Update the date display
 
 // Play tick sound
-tickSound.currentTime = 0; // Reset sound
-tickSound.play(); // Play tick sound
+//tickSound.currentTime = 0; // Reset sound
+//tickSound.play(); // Play tick sound
 
 // Check for alarm time and play sound if it matches
 if (alarmTime && alarmTime === now.toLocaleTimeString()) {
