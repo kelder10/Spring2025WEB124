@@ -125,8 +125,9 @@ transform: translate(-50%, -50%); /* Center the numbers */
   transform: translateX(-50%); 
 } /* 6 */
 
-#num8 { bottom: 15%; 
-  left: 26%; 
+#num8 { 
+  bottom: 15%; 
+  left: 27%; 
   transform: translate(-50%, 50%); 
 } /* 7 */
 
