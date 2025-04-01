@@ -82,12 +82,12 @@ transform: translate(-50%, -50%); /* Center the numbers */
 }
 
 #num1 {
-top: 12%; /* 12 o'clock */
+top: 17%; /* 12 o'clock */
 left: 50%;
 }
 
 #num2 {
-top: 25%;
+top: 31 %;
 left: 75%; /* 1 o'clock */
 }
 
@@ -97,12 +97,12 @@ left: 85%; /* 2 o'clock */
 }
 
 #num4 {
-top: 75%;
+top: 69%;
 left: 75%; /* 3 o'clock */
 }
 
 #num5 {
-top: 88%;
+top: 83%;
 left: 50%; /* 4 o'clock */
 }
 
@@ -117,28 +117,28 @@ left: 15%; /* 6 o'clock */
 }
 
 #num8 {
-top: 25%;
+top: 31%;
 left: 25%; /* 7 o'clock */
 }
 
 #num9 {
-top: 12%;
-left: 50%; /* 8 o'clock */
+top: 17%;
+left: 15%; /* 8 o'clock */
 }
 
 #num10 {
-top: 88%;
-left: 35%; /* 9 o'clock */
+top: 25%;
+left: 50%; /* 9 o'clock */
 }
 
 #num11 {
-top: 12%;
-left: 35%; /* 10 o'clock */
+top: 25%;
+left: 75%; /* 10 o'clock */
 }
 
 #num12 {
-top: 12%;
-left: 50%; /* 11 o'clock */
+top: 50%;
+left: 15%; /* 11 o'clock */
 }
 
 @keyframes bounce {
