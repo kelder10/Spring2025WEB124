@@ -63,7 +63,7 @@ color: #ffffff;
 }
 
 button {
-padding: 15px 25px;
+padding: 10px 10px;
 font-size: 1.5rem;
 border: none;
 cursor: pointer;
@@ -72,8 +72,8 @@ margin: 10px;
 }
 
 button img {
-  width: 20px;
-  height: 20px;
+  width: 80px;
+  height: 80px;
 }
 
 .dark-theme {
