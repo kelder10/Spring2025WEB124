@@ -35,7 +35,7 @@ transition: transform 0.5s ease-in-out;
 
 #hour-hand {
 background: #170242;
-height: 70px; /* Length of hour hand */
+height: 68px; /* Length of hour hand */
 width: 4px; /* Width of hour hand */
 }
 
