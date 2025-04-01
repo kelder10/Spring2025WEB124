@@ -52,13 +52,13 @@ width: 2px; /* Width of second hand */
 }
 
 #digitalTime {
-font-size: 5rem;
+font-size: 4rem;
 color: #02020b;
 text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 #currentDate {
-font-size: 3rem;
+font-size: 2rem;
 color: #02020b;
 }
 
