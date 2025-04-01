@@ -81,64 +81,65 @@ font-size: 1.5rem; /* Adjust the size as needed */
 transform: translate(-50%, -50%); /* Center the numbers */
 }
 
+/* Positioning the numbers in a circular fashion */
 #num1 {
-top: 17%; /* 12 o'clock */
+top: 18%; /* 12 o'clock */
 left: 50%;
 }
 
 #num2 {
-top: 31 %;
-left: 75%; /* 1 o'clock */
+top: 30%; /* 1 o'clock */
+left: 80%;
 }
 
 #num3 {
-top: 50%;
-left: 85%; /* 2 o'clock */
+top: 50%; /* 2 o'clock */
+left: 85%;
 }
 
 #num4 {
-top: 69%;
-left: 75%; /* 3 o'clock */
+top: 70%; /* 3 o'clock */
+left: 80%;
 }
 
 #num5 {
-top: 83%;
-left: 50%; /* 4 o'clock */
+top: 82%; /* 4 o'clock */
+left: 50%;
 }
 
 #num6 {
-top: 75%;
-left: 25%; /* 5 o'clock */
+top: 82%; /* 5 o'clock */
+left: 20%;
 }
 
 #num7 {
-top: 50%;
-left: 15%; /* 6 o'clock */
+top: 70%; /* 6 o'clock */
+left: 15%;
 }
 
 #num8 {
-top: 31%;
-left: 25%; /* 7 o'clock */
+top: 50%; /* 7 o'clock */
+left: 15%;
 }
 
 #num9 {
-top: 17%;
-left: 15%; /* 8 o'clock */
+top: 30%; /* 8 o'clock */
+left: 20%;
 }
 
 #num10 {
-top: 25%;
-left: 50%; /* 9 o'clock */
+top: 18%; /* 9 o'clock */
+left: 50%;
 }
 
 #num11 {
-top: 25%;
-left: 75%; /* 10 o'clock */
+top: 6%; /* 10 o'clock */
+left: 20%;
 }
 
 #num12 {
-top: 50%;
-left: 15%; /* 11 o'clock */
+top: 6%; /* 11 o'clock */
+left: 50%;
 }
 
 @keyframes bounce {
