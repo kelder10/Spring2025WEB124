@@ -13,6 +13,7 @@ const tickSound = document.getElementById('tick-sound'); // Tick sound audio ele
 const themeToggleButton = document.getElementById('theme-toggle'); // Theme toggle button
 const alarmSound = document.getElementById('alarm-sound'); // Alarm sound audio element
 const stopAlarmButton = document.getElementById('stop-alarm'); // Stop alarm button
+
 let alarmTime = null; // Variable to store alarm time
 let alarmPlaying = false; // Flag to check if the alarm is currently playing
 
@@ -43,7 +44,9 @@ tickSound.play(); // Play tick sound
 if (alarmTime && alarmTime === now.toLocaleTimeString()) {
 if (!alarmPlaying) {
 alarmSound.currentTime = 0; // Reset alarm sound
-alarmSound.play(); // Play alarm sound
+alarmSound.play().catch(error => {
+console.error("Error playing sound:", error); // Log any errors
+});
 alarmPlaying = true; // Set flag to indicate the alarm is playing
 }
 }
@@ -63,6 +66,9 @@ day: 'numeric' // Display day
 setAlarmButton.addEventListener('click', () => {
 alarmTime = document.getElementById('alarm-time').value + ":00"; // Set alarm time in HH:MM format
 alert(`Alarm set for ${alarmTime}`); // Alert message
+alarmSound.play().catch(error => {
+console.error("Error playing sound:", error); // Log any errors
+}); // Play sound to allow browser interaction
 });
 
 // Event listener for stopping the alarm
@@ -80,4 +86,3 @@ document.body.classList.toggle('dark-theme'); // Toggle dark theme class
 // Start the clock with an interval
 setInterval(setDate, 1000); // Update the clock every second
 setDate(); // Initial call to set the time
-
