@@ -61,6 +61,15 @@ alarmTime = document.getElementById('alarm-time').value + ":00"; // Set alarm ti
 alert(`Alarm set for ${alarmTime}`); // Alert message
 });
 
+// Get reference to the stop alarm button
+const stopAlarmButton = document.getElementById('stop-alarm');
+
+// Event listener for stopping the alarm
+stopAlarmButton.addEventListener('click', () => {
+alarmSound.pause(); // Pause the alarm sound
+alarmSound.currentTime = 0; // Reset sound to the beginning
+});
+
 // Event listener for toggling themes
 themeToggleButton.addEventListener('click', () => {
 document.body.classList.toggle('dark-theme'); // Toggle dark theme class
