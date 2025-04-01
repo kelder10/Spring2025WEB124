@@ -19,7 +19,7 @@ margin: 0 auto;
 position: relative;
 width: 100%;
 height: 100%;
-border: 10px solid #b2b2b9; /* Add border for visibility */
+border: 10px solid #170242; /*#b2b2b9; /* Add border for visibility */
 border-radius: 50%; /* Make it round */
 background: rgba(255, 255, 255, 0.5); /* Light background for clock */
 }
@@ -53,11 +53,13 @@ width: 2px; /* Width of second hand */
 
 #digitalTime {
 font-size: 3rem;
+color: #170242;
 text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 #currentDate {
 font-size: 2rem;
+color: #170242;
 }
 
 button {
