@@ -110,4 +110,3 @@ alert("Tick sound disabled."); // Optional: alert for feedback
 // Start the clock with an interval
 setInterval(setDate, 1000); // Update the clock every second
 setDate(); // Initial call to set the time
-
