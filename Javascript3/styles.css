@@ -52,6 +52,7 @@ h1 {
   height:70px;
   position: absolute;
   z-index: 2;
+  bottom: -30px;
 }
 
 .mole {
