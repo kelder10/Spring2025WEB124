@@ -30,7 +30,7 @@ bottom: 50%; /* Center the hands vertically */
 left: 50%; /* Center the hands horizontally */
 transform-origin: bottom center; /* Set the pivot point properly */
 transform: translateX(-50%); /* Offset half the width to center */
-transition: transform 0.5s ease-in-out;
+transition: transform 0.5s ease-in-out; /* Smooth transition */
 }
 
 #hour-hand {
@@ -80,21 +80,21 @@ outline: none; /* Remove default outline */
 }
 
 button {
-  padding: 10px 10px;
-  font-size: 1.5rem;
-  cursor: pointer;
-  font-size: 1.4rem;
-  margin: 10px;
-  border: 4px solid #4f5657; /* Dark border for visibility */
-  border-radius: 5px; /* Rounded corners */
-  background: rgba(255, 255, 255, 0.8); /* Light background */
-  color: #170242; /* Text color */
-  transition: border-color 0.3s ease; /* Smooth transition for border color */
+padding: 10px 10px;
+font-size: 1.5rem;
+cursor: pointer;
+font-size: 1.4rem;
+margin: 10px;
+border: 4px solid #4f5657; /* Dark border for visibility */
+border-radius: 5px; /* Rounded corners */
+background: rgba(255, 255, 255, 0.8); /* Light background */
+color: #170242; /* Text color */
+transition: border-color 0.3s ease; /* Smooth transition for border color */
 }
 
 button img {
-  width: 40px;
-  height: 40px;
+width: 40px;
+height: 40px;
 }
 
 .dark-theme {
@@ -103,8 +103,8 @@ color: #fff;
 }
 
 button:hover img {
-  transform: scale(1.1);
-  transition: transform 0.3s ease;
+transform: scale(1.1);
+transition: transform 0.3s ease;
 }
 
 .number {
@@ -116,77 +116,18 @@ transform: translate(-50%, -50%); /* Center the numbers */
 }
 
 /* Positioning the numbers in a circular fashion */
-#num1 {
-  top: 5%; 
-  left: 50%; 
-  transform: translateX(-50%); 
-} /* 12 */
-
-#num2 { 
-  top: 15%; 
-  right: 30%; 
-  transform: translate(50%, -50%); 
-} /* 1 */
-
-#num3 { 
-  top: 30%; 
-  right: 15%;
-  transform: translate(50%, -50%);
-} /* 2 */
-
-#num4 { 
-  top: 50%; 
-  right: 8%; 
-  transform: translate(50%, -50%); 
-} /* 3 */
-
-#num5 { 
-  bottom: 30%;
-  right: 15%; 
-  transform: translate(50%, 50%); 
-} /* 4 */
-
-#num6 { 
-  bottom: 15%;
-  right: 28%;
-  transform: translate(50%, 50%); 
-} /* 5 */
-
-#num7 { 
-  bottom: 1%;
-  left: 50%; 
-  transform: translateX(-50%); 
-} /* 6 */
-
-#num8 { 
-  bottom: 15%; 
-  left: 27%; 
-  transform: translate(-50%, 50%); 
-} /* 7 */
-
-#num9 { 
-  bottom: 30%;
-  left: 12%;
-  transform: translate(-50%, 50%); 
-} /* 8 */
-
-#num10 { 
-  top: 50%;
-  left: 8%; 
-  transform: translate(-50%, -50%); 
-} /* 9 */
-
-#num11 { 
-  top: 32%; 
-  left: 15%; 
-  transform: translate(-50%, -50%); 
-} /* 10 */
-
-#num12 { 
-  top: 15%; 
-  left: 28%; 
-  transform: translate(-50%, -50%);
-} /* 11 */
+#num1 { top: 5%; left: 50%; transform: translateX(-50%); } /* 12 */
+#num2 { top: 15%; right: 30%; transform: translate(50%, -50%); } /* 1 */
+#num3 { top: 30%; right: 15%; transform: translate(50%, -50%); } /* 2 */
+#num4 { top: 50%; right: 8%; transform: translate(50%, -50%); } /* 3 */
+#num5 { bottom: 30%; right: 15%; transform: translate(50%, 50%); } /* 4 */
+#num6 { bottom: 15%; right: 28%; transform: translate(50%, 50%); } /* 5 */
+#num7 { bottom: 1%; left: 50%; transform: translateX(-50%); } /* 6 */
+#num8 { bottom: 15%; left: 27%; transform: translate(-50%, 50%); } /* 7 */
+#num9 { bottom: 30%; left: 12%; transform: translate(-50%, 50%); } /* 8 */
+#num10 { top: 50%; left: 8%; transform: translate(-50%, -50%); } /* 9 */
+#num11 { top: 32%; left: 15%; transform: translate(-50%, -50%); } /* 10 */
+#num12 { top: 15%; left: 28%; transform: translate(-50%, -50%); } /* 11 */
 
 @keyframes bounce {
 0%, 100% { transform: translateY(0); }
