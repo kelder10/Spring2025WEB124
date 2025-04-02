@@ -48,11 +48,10 @@ h1 {
   background: url('./images/pilegoldbars.png') bottom center no-repeat;
   background-size: contain;
   content: '';
-  width: 100%;
-  height:70px;
+  width: 150%;
+  height:100px;
   position: absolute;
   z-index: 2;
-  bottom: -30px;
 }
 
 .mole {
