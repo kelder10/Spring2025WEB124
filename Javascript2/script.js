@@ -16,6 +16,7 @@ const stopAlarmButton = document.getElementById('stop-alarm'); // Stop alarm but
 
 let alarmTime = null; // Variable to store alarm time
 let alarmPlaying = false; // Flag to check if the alarm is currently playing
+let tickSoundEnabled = true; // Start with tick sound enabled
 
 // Function to update clock hands and digital time
 function setDate() {
@@ -36,9 +37,11 @@ hourHand.style.transform = `rotate(${hourDegrees}deg)`; // Rotate hour hand
 digitalTime.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' }); // Display current time
 updateDate(); // Update the date display
 
-// Play tick sound
+// Play tick sound if enabled
+if (tickSoundEnabled) {
 tickSound.currentTime = 0; // Reset sound
 tickSound.play(); // Play tick sound
+}
 
 // Check for alarm time and play sound if it matches
 const currentTimeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
@@ -91,6 +94,18 @@ themeToggleButton.addEventListener('click', () => {
 document.body.classList.toggle('dark-theme'); // Toggle dark theme class
 });
 
+// Event listener for clicking on the clock face
+const clockFace = document.getElementById('clock-face'); // Get the clock face element
+clockFace.addEventListener('click', () => {
+tickSoundEnabled = !tickSoundEnabled; // Toggle tick sound state
+if (tickSoundEnabled) {
+alert("Tick sound enabled."); // Optional: alert for feedback
+} else {
+alert("Tick sound disabled."); // Optional: alert for feedback
+}
+});
+
 // Start the clock with an interval
 setInterval(setDate, 1000); // Update the clock every second
 setDate(); // Initial call to set the time
+
