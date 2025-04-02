@@ -16,7 +16,7 @@ const stopAlarmButton = document.getElementById('stop-alarm'); // Stop alarm but
 
 let alarmTime = null; // Variable to store alarm time
 let alarmPlaying = false; // Flag to check if the alarm is currently playing
-let tickSoundEnabled = true; // Start with tick sound enabled
+let tickSoundEnabled = false; // Start with tick sound disabled
 
 // Function to update clock hands and digital time
 function setDate() {
@@ -104,10 +104,6 @@ alert("Tick sound enabled."); // Optional: alert for feedback
 alert("Tick sound disabled."); // Optional: alert for feedback
 }
 });
-
-// Start playing the tick sound immediately
-tickSound.loop = true; // Loop the tick sound
-tickSound.play(); // Play tick sound when the script loads
 
 // Start the clock with an interval
 setInterval(setDate, 1000); // Update the clock every second
