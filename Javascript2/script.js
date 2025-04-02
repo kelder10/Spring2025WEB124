@@ -101,6 +101,8 @@ tickSoundEnabled = !tickSoundEnabled; // Toggle tick sound state
 if (tickSoundEnabled) {
 alert("Tick sound enabled."); // Optional: alert for feedback
 } else {
+tickSound.pause(); // Stop the tick sound immediately
+tickSound.currentTime = 0; // Reset sound to the beginning
 alert("Tick sound disabled."); // Optional: alert for feedback
 }
 });
