@@ -36,6 +36,10 @@ hourHand.style.transform = `rotate(${hourDegrees}deg)`; // Rotate hour hand
 digitalTime.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' }); // Display current time
 updateDate(); // Update the date display
 
+// Play tick sound
+tickSound.currentTime = 0; // Reset sound
+tickSound.play(); // Play tick sound
+
 // Check for alarm time and play sound if it matches
 const currentTimeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
 if (alarmTime && alarmTime === currentTimeString) {
