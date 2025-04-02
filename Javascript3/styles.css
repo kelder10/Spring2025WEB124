@@ -48,8 +48,8 @@ h1 {
   background: url('./images/pilegoldbars.png') bottom center no-repeat;
   background-size: contain;
   content: '';
-  width: 150%;
-  height:100px;
+  width: 100%;
+  height:70px;
   position: absolute;
   z-index: 2;
 }
