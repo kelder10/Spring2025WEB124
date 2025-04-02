@@ -105,7 +105,10 @@ alert("Tick sound disabled."); // Optional: alert for feedback
 }
 });
 
+// Start playing the tick sound immediately
+tickSound.loop = true; // Loop the tick sound
+tickSound.play(); // Play tick sound when the script loads
+
 // Start the clock with an interval
 setInterval(setDate, 1000); // Update the clock every second
 setDate(); // Initial call to set the time
-
