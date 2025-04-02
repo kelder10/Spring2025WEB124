@@ -36,18 +36,19 @@ hourHand.style.transform = `rotate(${hourDegrees}deg)`; // Rotate hour hand
 digitalTime.textContent = now.toLocaleTimeString(); // Display current time
 updateDate(); // Update the date display
 
-// Play tick sound
-//tickSound.currentTime = 0; // Reset sound
-//tickSound.play(); // Play tick sound
-
-// Check for alarm time and play sound if it matches
-if (alarmTime && alarmTime === now.toLocaleTimeString()) {
+// Check for alarm time and play sound if it matches and seconds are at zero
+if (alarmTime && alarmTime === now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' }) && seconds === 0) {
 if (!alarmPlaying) {
 alarmSound.currentTime = 0; // Reset alarm sound
 alarmSound.play().catch(error => {
 console.error("Error playing sound:", error); // Log any errors
 });
 alarmPlaying = true; // Set flag to indicate the alarm is playing
+}
+} else {
+// Reset the alarm playing flag if the alarm time is not matched
+if (alarmPlaying) {
+alarmPlaying = false;
 }
 }
 }
@@ -64,14 +65,8 @@ day: 'numeric' // Display day
 
 // Event listener for setting the alarm
 setAlarmButton.addEventListener('click', () => {
-alarmTime = document.getElementById('alarm-time').value + ":00"; // Set alarm time in HH:MM format
+alarmTime = document.getElementById('alarm-time').value + ":00"; // Set alarm time in HH:MM:SS format
 alert(`Alarm set for ${alarmTime}`); // Alert message
-
-// Play alarm sound to allow browser interaction
-alarmSound.currentTime = 0; // Reset previous sound
-alarmSound.play().catch(error => {
-console.error("Error playing sound:", error); // Log any errors
-});
 });
 
 // Event listener for stopping the alarm
