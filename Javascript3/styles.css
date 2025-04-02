@@ -5,6 +5,10 @@ html {
   background-size: 100%;
 }
 
+*, *:before, *:after {
+  box-sizing: inherit; 
+}
+
 body {
   padding: 0;
   margin: 0;
