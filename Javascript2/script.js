@@ -33,11 +33,12 @@ const hourDegrees = ((hour % 12) / 12) * 360 + ((mins / 60) * 30); // Calculate 
 hourHand.style.transform = `rotate(${hourDegrees}deg)`; // Rotate hour hand
 
 // Update digital time display
-digitalTime.textContent = now.toLocaleTimeString(); // Display current time
+digitalTime.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' }); // Display current time
 updateDate(); // Update the date display
 
-// Check for alarm time and play sound if it matches and seconds are at zero
-if (alarmTime && alarmTime === now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' }) && seconds === 0) {
+// Check for alarm time and play sound if it matches
+const currentTimeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+if (alarmTime && alarmTime === currentTimeString) {
 if (!alarmPlaying) {
 alarmSound.currentTime = 0; // Reset alarm sound
 alarmSound.play().catch(error => {
@@ -65,8 +66,13 @@ day: 'numeric' // Display day
 
 // Event listener for setting the alarm
 setAlarmButton.addEventListener('click', () => {
-alarmTime = document.getElementById('alarm-time').value + ":00"; // Set alarm time in HH:MM:SS format
+const alarmInput = document.getElementById('alarm-time').value; // Get the input value
+if (alarmInput) {
+alarmTime = new Date(`1970-01-01T${alarmInput}:00`).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' }); // Set alarm time in HH:MM:SS format
 alert(`Alarm set for ${alarmTime}`); // Alert message
+} else {
+alert("Please set a valid alarm time.");
+}
 });
 
 // Event listener for stopping the alarm
