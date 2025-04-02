@@ -1,7 +1,7 @@
 html {
   box-sizing: border-box;
   font-size: 10px;
-  background: url('./images/bank.jpg')
+  background: url('./images/bank.png')
 }
 
 *, *:before, *:after {
