@@ -56,7 +56,7 @@ h1 {
 }
 
 .mole {
-  background: url('./images/mole.svg') bottom center no-repeat;
+  background: url('./images/alien.png') bottom center no-repeat;
   background-size: 60%;
   position: absolute;
   top: 100%;
