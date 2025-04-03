@@ -45,7 +45,7 @@ h1 {
 
 .hole:after {
   display: block;
-  background: url('./images/dirt.svg') bottom center no-repeat;
+  background: url('./images/moneybag.png') bottom center no-repeat;
   background-size: contain;
   content: '';
   width: 100%;
