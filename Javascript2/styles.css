@@ -1,18 +1,25 @@
+/* Katie Elder 04-06-25 */
+/* Adapted from https://javascript30.com/ */
+/* JS + CSS Clock */
+/* Changes made:
+- Added new CSS properties for styling clock elements.
+- Implemented styles for digital time and date display.
+- Enhanced button styling for better user interaction. */
 body {
 margin: 0;
 font-size: 2rem;
 padding: 2rem;
 text-align: center;
-background: url('./images/beach2.png') no-repeat center center fixed;
+background: url('./images/beach2.png') no-repeat center center fixed; /* Background image added */
 background-size: cover;
 font-family: 'Helvetica Neue', sans-serif;
 }
 
 #clock {
 position: relative;
-width: 200px;
-height: 200px;
-margin: 0 auto;
+width: 200px; /* Set width for clock */
+height: 200px; /* Set height for clock */
+margin: 0 auto; /* Center clock horizontally */
 }
 
 #clock-face {
@@ -52,16 +59,16 @@ width: 2px; /* Width of second hand */
 }
 
 #digitalTime {
-font-size: 3rem;
+font-size: 3rem; /* Font size for digital time display */
 font-weight: bold;
-color: #4f5657;
-text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+color: #4f5657; /* Text color */
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Shadow for better visibility */
 }
 
 #currentDate {
-font-size: 2rem;
+font-size: 2rem; /* Font size for current date display */
 font-weight: bold;
-color: #4f5657;
+color: #4f5657; /* Text color */
 }
 
 #alarm-time {
@@ -93,18 +100,18 @@ transition: border-color 0.3s ease; /* Smooth transition for border color */
 }
 
 button img {
-width: 40px;
-height: 40px;
+width: 40px; /* Set image width */
+height: 40px; /* Set image height */
 }
 
 .dark-theme {
-background: #010146;
-color: #fff;
+background: #010146; /* Dark theme background color */
+color: #fff; /* Text color for dark theme */
 }
 
 button:hover img {
-transform: scale(1.1);
-transition: transform 0.3s ease;
+transform: scale(1.1); /* Scale image on hover */
+transition: transform 0.3s ease; /* Smooth transition for scaling */
 }
 
 .number {
