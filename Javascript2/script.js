@@ -1,18 +1,25 @@
-// Get references to clock hand elements
-const secondHand = document.getElementById('second-hand'); // Second hand element
-const minsHand = document.getElementById('min-hand'); // Minute hand element
-const hourHand = document.getElementById('hour-hand'); // Hour hand element
+// Katie Elder 04-06-25
+// Adapted from https://javascript30.com/
+// JS + CSS Clock
+// Changes made:
+// - Used getElementById instead of querySelector for unique elements.
+// - Added digital time and current date display.
+// - Implemented alarm functionality with sound alerts and buttons.
+// - Enabled tick sound with toggle functionality.
+const secondHand = document.getElementById('second-hand'); // Changed from querySelector to getElementById
+const minsHand = document.getElementById('min-hand'); // Changed from querySelector to getElementById
+const hourHand = document.getElementById('hour-hand'); // Changed from querySelector to getElementById
 
 // Get references to digital time and date display elements
-const digitalTime = document.getElementById('digitalTime'); // Digital time display element
-const currentDate = document.getElementById('currentDate'); // Current date display element
+const digitalTime = document.getElementById('digitalTime'); // New digital time display element
+const currentDate = document.getElementById('currentDate'); // New current date display element
 
 // Get references to buttons and sound
-const setAlarmButton = document.getElementById('set-alarm'); // Set alarm button
-const tickSound = document.getElementById('tick-sound'); // Tick sound audio element
-const themeToggleButton = document.getElementById('theme-toggle'); // Theme toggle button
-const alarmSound = document.getElementById('alarm-sound'); // Alarm sound audio element
-const stopAlarmButton = document.getElementById('stop-alarm'); // Stop alarm button
+const setAlarmButton = document.getElementById('set-alarm'); // New set alarm button
+const tickSound = document.getElementById('tick-sound'); // New tick sound audio element
+const themeToggleButton = document.getElementById('theme-toggle'); // New theme toggle button
+const alarmSound = document.getElementById('alarm-sound'); // New alarm sound audio element
+const stopAlarmButton = document.getElementById('stop-alarm'); // New stop alarm button
 
 let alarmTime = null; // Variable to store alarm time
 let alarmPlaying = false; // Flag to check if the alarm is currently playing
