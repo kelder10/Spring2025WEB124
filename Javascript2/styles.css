@@ -5,121 +5,122 @@
 - Added new CSS properties for styling clock elements.
 - Implemented styles for digital time and date display.
 - Enhanced button styling for better user interaction. */
+
 body {
-margin: 0;
-font-size: 2rem;
-padding: 2rem;
-text-align: center;
-background: url('./images/beach2.png') no-repeat center center fixed; /* Background image added */
-background-size: cover;
-font-family: 'Helvetica Neue', sans-serif;
+  margin: 0;
+  font-size: 2rem;
+  padding: 2rem;
+  text-align: center;
+  background: url('./images/beach2.png') no-repeat center center fixed; /* Background image added */
+  background-size: cover;
+  font-family: 'Helvetica Neue', sans-serif;
 }
 
 #clock {
-position: relative;
-width: 200px; /* Set width for clock */
-height: 200px; /* Set height for clock */
-margin: 0 auto; /* Center clock horizontally */
+  position: relative;
+  width: 200px; /* Set width for clock */
+  height: 200px; /* Set height for clock */
+  margin: 0 auto; /* Center clock horizontally */
 }
 
 #clock-face {
-position: relative;
-width: 100%;
-height: 100%;
-border: 15px solid #4f5657; /* Add border for visibility */
-border-radius: 50%; /* Make it round */
-background: rgba(255, 255, 255, 0.5); /* Light background for clock */
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 15px solid #4f5657; /* Add border for visibility */
+  border-radius: 50%; /* Make it round */
+  background: rgba(255, 255, 255, 0.5); /* Light background for clock */
 }
 
 .hand {
-position: absolute;
-bottom: 50%; /* Center the hands vertically */
-left: 50%; /* Center the hands horizontally */
-transform-origin: bottom center; /* Set the pivot point properly */
-transform: translateX(-50%); /* Offset half the width to center */
-transition: transform 0.5s ease-in-out; /* Smooth transition */
+  position: absolute;
+  bottom: 50%; /* Center the hands vertically */
+  left: 50%; /* Center the hands horizontally */
+  transform-origin: bottom center; /* Set the pivot point properly */
+  transform: translateX(-50%); /* Offset half the width to center */
+  transition: transform 0.5s ease-in-out; /* Smooth transition */
 }
 
 #hour-hand {
-background: #170242;
-height: 68px; /* Length of hour hand */
-width: 4px; /* Width of hour hand */
+  background: #170242;
+  height: 68px; /* Length of hour hand */
+  width: 4px; /* Width of hour hand */
 }
 
 #min-hand {
-background: #027dc0;
-height: 88px; /* Length of minute hand */
-width: 6px; /* Width of minute hand */
+  background: #027dc0;
+  height: 88px; /* Length of minute hand */
+  width: 6px; /* Width of minute hand */
 }
 
 #second-hand {
-background: #02c0ad;
-height: 80px; /* Length of second hand */
-width: 2px; /* Width of second hand */
+  background: #02c0ad;
+  height: 80px; /* Length of second hand */
+  width: 2px; /* Width of second hand */
 }
 
 #digitalTime {
-font-size: 3rem; /* Font size for digital time display */
-font-weight: bold;
-color: #4f5657; /* Text color */
-text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Shadow for better visibility */
+  font-size: 3rem; /* Font size for digital time display */
+  font-weight: bold;
+  color: #4f5657; /* Text color */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Shadow for better visibility */
 }
 
 #currentDate {
-font-size: 2rem; /* Font size for current date display */
-font-weight: bold;
-color: #4f5657; /* Text color */
+  font-size: 2rem; /* Font size for current date display */
+  font-weight: bold;
+  color: #4f5657; /* Text color */
 }
 
 #alarm-time {
-padding: 10px; /* Add some padding inside the input */
-font-size: 1.5rem; /* Adjust the font size */
-border: 4px solid #4f5657; /* Dark border for visibility */
-border-radius: 5px; /* Rounded corners */
-background: rgba(255, 255, 255, 0.8); /* Light background */
-color: #170242; /* Text color */
-transition: border-color 0.3s ease; /* Smooth transition for border color */
+  padding: 10px; /* Add some padding inside the input */
+  font-size: 1.5rem; /* Adjust the font size */
+  border: 4px solid #4f5657; /* Dark border for visibility */
+  border-radius: 5px; /* Rounded corners */
+  background: rgba(255, 255, 255, 0.8); /* Light background */
+  color: #170242; /* Text color */
+  transition: border-color 0.3s ease; /* Smooth transition for border color */
 }
 
 #alarm-time:focus {
-border-color: #027dc0; /* Change border color on focus */
-outline: none; /* Remove default outline */
+  border-color: #027dc0; /* Change border color on focus */
+  outline: none; /* Remove default outline */
 }
 
 button {
-padding: 10px 10px;
-font-size: 1.5rem;
-cursor: pointer;
-font-size: 1.4rem;
-margin: 10px;
-border: 4px solid #4f5657; /* Dark border for visibility */
-border-radius: 5px; /* Rounded corners */
-background: rgba(255, 255, 255, 0.8); /* Light background */
-color: #170242; /* Text color */
-transition: border-color 0.3s ease; /* Smooth transition for border color */
+  padding: 10px 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  font-size: 1.4rem;
+  margin: 10px;
+  border: 4px solid #4f5657; /* Dark border for visibility */
+  border-radius: 5px; /* Rounded corners */
+  background: rgba(255, 255, 255, 0.8); /* Light background */
+  color: #170242; /* Text color */
+  transition: border-color 0.3s ease; /* Smooth transition for border color */
 }
 
 button img {
-width: 40px; /* Set image width */
-height: 40px; /* Set image height */
+  width: 40px; /* Set image width */
+  height: 40px; /* Set image height */
 }
 
 .dark-theme {
-background: #010146; /* Dark theme background color */
-color: #fff; /* Text color for dark theme */
+  background: #010146; /* Dark theme background color */
+  color: #fff; /* Text color for dark theme */
 }
 
 button:hover img {
-transform: scale(1.1); /* Scale image on hover */
-transition: transform 0.3s ease; /* Smooth transition for scaling */
+  transform: scale(1.1); /* Scale image on hover */
+  transition: transform 0.3s ease; /* Smooth transition for scaling */
 }
 
 .number {
-position: absolute;
-color: #000; /* Change color as needed */
-font-weight: bold;
-font-size: 1.5rem; /* Adjust the size as needed */
-transform: translate(-50%, -50%); /* Center the numbers */
+  position: absolute;
+  color: #000; /* Change color as needed */
+  font-weight: bold;
+  font-size: 1.5rem; /* Adjust the size as needed */
+  transform: translate(-50%, -50%); /* Center the numbers */
 }
 
 /* Positioning the numbers in a circular fashion */
