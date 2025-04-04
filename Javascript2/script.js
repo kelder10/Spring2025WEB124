@@ -6,6 +6,7 @@
 // - Added digital time and current date display.
 // - Implemented alarm functionality with sound alerts and buttons.
 // - Enabled tick sound with toggle functionality.
+
 const secondHand = document.getElementById('second-hand'); // Changed from querySelector to getElementById
 const minsHand = document.getElementById('min-hand'); // Changed from querySelector to getElementById
 const hourHand = document.getElementById('hour-hand'); // Changed from querySelector to getElementById
@@ -27,91 +28,91 @@ let tickSoundEnabled = false; // Start with tick sound disabled
 
 // Function to update clock hands and digital time
 function setDate() {
-const now = new Date(); // Get current date and time
-const seconds = now.getSeconds(); // Get current seconds
-const secondsDegrees = ((seconds / 60) * 360); // Calculate rotation for second hand
-secondHand.style.transform = `rotate(${secondsDegrees}deg)`; // Rotate second hand
+  const now = new Date(); // Get current date and time
+  const seconds = now.getSeconds(); // Get current seconds
+  const secondsDegrees = ((seconds / 60) * 360); // Calculate rotation for second hand
+  secondHand.style.transform = `rotate(${secondsDegrees}deg)`; // Rotate second hand
 
-const mins = now.getMinutes(); // Get current minutes
-const minsDegrees = ((mins / 60) * 360) + ((seconds / 60) * 6); // Calculate rotation for minute hand
-minsHand.style.transform = `rotate(${minsDegrees}deg)`; // Rotate minute hand
+  const mins = now.getMinutes(); // Get current minutes
+  const minsDegrees = ((mins / 60) * 360) + ((seconds / 60) * 6); // Calculate rotation for minute hand
+  minsHand.style.transform = `rotate(${minsDegrees}deg)`; // Rotate minute hand
 
-const hour = now.getHours(); // Get current hours
-const hourDegrees = ((hour % 12) / 12) * 360 + ((mins / 60) * 30); // Calculate rotation for hour hand
-hourHand.style.transform = `rotate(${hourDegrees}deg)`; // Rotate hour hand
+  const hour = now.getHours(); // Get current hours
+  const hourDegrees = ((hour % 12) / 12) * 360 + ((mins / 60) * 30); // Calculate rotation for hour hand
+  hourHand.style.transform = `rotate(${hourDegrees}deg)`; // Rotate hour hand
 
-// Update digital time display
-digitalTime.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' }); // Display current time
-updateDate(); // Update the date display
+  // Update digital time display
+  digitalTime.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' }); // Display current time
+  updateDate(); // Update the date display
 
-// Play tick sound if enabled
-if (tickSoundEnabled) {
-tickSound.currentTime = 0; // Reset sound
-tickSound.play(); // Play tick sound
-}
+  // Play tick sound if enabled
+  if (tickSoundEnabled) {
+    tickSound.currentTime = 0; // Reset sound
+    tickSound.play(); // Play tick sound
+  }
 
-// Check for alarm time and play sound if it matches
-const currentTimeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-if (alarmTime && alarmTime === currentTimeString) {
-if (!alarmPlaying) {
-alarmSound.currentTime = 0; // Reset alarm sound
-alarmSound.play().catch(error => {
-console.error("Error playing sound:", error); // Log any errors
-});
-alarmPlaying = true; // Set flag to indicate the alarm is playing
-}
-} else {
-// Reset the alarm playing flag if the alarm time is not matched
-if (alarmPlaying) {
-alarmPlaying = false;
-}
-}
+  // Check for alarm time and play sound if it matches
+  const currentTimeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+  if (alarmTime && alarmTime === currentTimeString) {
+    if (!alarmPlaying) {
+      alarmSound.currentTime = 0; // Reset alarm sound
+      alarmSound.play().catch(error => {
+        console.error("Error playing sound:", error); // Log any errors
+      });
+      alarmPlaying = true; // Set flag to indicate the alarm is playing
+    }
+  } else {
+    // Reset the alarm playing flag if the alarm time is not matched
+    if (alarmPlaying) {
+      alarmPlaying = false;
+    }
+  }
 }
 
 // Function to update the current date display
 function updateDate() {
-const now = new Date(); // Get current date
-currentDate.textContent = now.toLocaleDateString(undefined, {
-year: 'numeric', // Display year
-month: 'long', // Display month
-day: 'numeric' // Display day
-});
+  const now = new Date(); // Get current date
+  currentDate.textContent = now.toLocaleDateString(undefined, {
+    year: 'numeric', // Display year
+    month: 'long', // Display month
+    day: 'numeric' // Display day
+  });
 }
 
 // Event listener for setting the alarm
 setAlarmButton.addEventListener('click', () => {
-const alarmInput = document.getElementById('alarm-time').value; // Get the input value
-if (alarmInput) {
-alarmTime = new Date(`1970-01-01T${alarmInput}:00`).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' }); // Set alarm time in HH:MM:SS format
-alert(`Alarm set for ${alarmTime}`); // Alert message
-} else {
-alert("Please set a valid alarm time.");
-}
+  const alarmInput = document.getElementById('alarm-time').value; // Get the input value
+  if (alarmInput) {
+    alarmTime = new Date(`1970-01-01T${alarmInput}:00`).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' }); // Set alarm time in HH:MM:SS format
+    alert(`Alarm set for ${alarmTime}`); // Alert message
+  } else {
+    alert("Please set a valid alarm time.");
+  }
 });
 
 // Event listener for stopping the alarm
 stopAlarmButton.addEventListener('click', () => {
-alarmSound.pause(); // Pause the alarm sound
-alarmSound.currentTime = 0; // Reset sound to the beginning
-alarmPlaying = false; // Reset the flag
+  alarmSound.pause(); // Pause the alarm sound
+  alarmSound.currentTime = 0; // Reset sound to the beginning
+  alarmPlaying = false; // Reset the flag
 });
 
 // Event listener for toggling themes
 themeToggleButton.addEventListener('click', () => {
-document.body.classList.toggle('dark-theme'); // Toggle dark theme class
+  document.body.classList.toggle('dark-theme'); // Toggle dark theme class
 });
 
 // Event listener for clicking on the clock face
 const clockFace = document.getElementById('clock-face'); // Get the clock face element
 clockFace.addEventListener('click', () => {
-tickSoundEnabled = !tickSoundEnabled; // Toggle tick sound state
-if (tickSoundEnabled) {
-alert("Tick sound enabled."); // Optional: alert for feedback
-} else {
-tickSound.pause(); // Stop the tick sound immediately
-tickSound.currentTime = 0; // Reset sound to the beginning
-alert("Tick sound disabled."); // Optional: alert for feedback
-}
+  tickSoundEnabled = !tickSoundEnabled; // Toggle tick sound state
+  if (tickSoundEnabled) {
+    alert("Tick sound enabled."); 
+  } else {
+    tickSound.pause(); // Stop the tick sound immediately
+    tickSound.currentTime = 0; // Reset sound to the beginning
+    alert("Tick sound disabled."); 
+  }
 });
 
 // Start the clock with an interval
