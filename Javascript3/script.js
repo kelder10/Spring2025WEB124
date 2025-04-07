@@ -5,7 +5,7 @@ const moles = document.querySelectorAll('.mole');
 let lastHole;
 let timeUp = false;
 let score = 0;
-let timeLeft = 80; // Set initial time to 80 seconds
+let timeLeft = 45; // Set initial time to 45 seconds
 
 function randomTime(min, max) {
 return Math.round(Math.random() * (max - min) + min);
