@@ -37,7 +37,7 @@ width: 80%; /* Set width to control spacing */
 .score, .timer {
 background: rgba(255, 255, 255, 0.2);
 border: 4px solid #030303;
-padding: 0 3rem; /* Padding for score and timer */
+padding: 0 2rem; /* Padding for score and timer */
 border-radius: 1rem;
 }
 
