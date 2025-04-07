@@ -12,31 +12,42 @@ body {
 padding: 0;
 margin: 0;
 font-family: 'Amatic SC', cursive;
-cursor: url('./images/mallet.png'), auto; /* Set custom cursor */
 }
 
-.header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 1rem;
-background: #fff;
+.container {
+text-align: center;
 }
 
 h1 {
+font-size: 10rem;
+line-height: 1;
+margin-bottom: 0;
+}
+
+.score-timer {
+display: flex;
+justify-content: space-around;
+font-size: 4rem;
+margin: 20px 0;
+}
+
+.score {
+background: rgba(255, 255, 255, 0.2);
+padding: 0 3rem;
+border-radius: 1rem;
+}
+
+.timer {
+background: rgba(255, 255, 255, 0.2);
+padding: 0 3rem;
+border-radius: 1rem;
+}
+
+.start-button {
 font-size: 3rem;
-margin: 0;
-}
-
-.score, .timer, .lives {
-font-size: 2rem;
-}
-
-button {
-display: block;
-margin: 1rem auto;
 padding: 1rem 2rem;
-font-size: 2rem;
+margin-bottom: 20px;
+cursor: pointer;
 }
 
 .game {
@@ -75,27 +86,6 @@ height: 100%;
 transition: all 0.4s;
 }
 
-.bomb {
-background: url('./images/bomb.svg') bottom center no-repeat;
-background-size: 60%;
-position: absolute;
-top: 100%;
-width: 100%;
-height: 100%;
-transition: all 0.4s;
-}
-
 .hole.up .mole {
 top: 0;
-}
-
-.hole.up .bomb {
-top: 0;
-}
-
-.game-over {
-text-align: center;
-font-size: 2rem;
-color: red;
-margin-top: 20px;
 }
