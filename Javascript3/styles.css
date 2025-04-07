@@ -70,10 +70,11 @@ background: url('./images/dirt.svg') bottom center no-repeat;
 background-size: contain;
 content: '';
 width: 100%;
-height: 60px; /* Increased height of dirt piles */
+height: 60px; /* Height of dirt piles */
 position: absolute;
 z-index: 2;
-bottom: -10px; /* Adjusted to position dirt piles appropriately */
+bottom: -20px; /* Adjust this value to move the dirt piles down */
+margin: 0 5px; /* Add horizontal margin to space out the piles */
 }
 
 .mole {
