@@ -1,8 +1,7 @@
 html {
 box-sizing: border-box;
 font-size: 10px;
-background: #ffc600;
-background: url('./images/outside.jpg');
+background: url('./images/outside.jpg') no-repeat center center fixed; /* Background image added */
 
 }
 
