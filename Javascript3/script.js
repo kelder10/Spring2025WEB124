@@ -5,7 +5,7 @@ const moles = document.querySelectorAll('.mole');
 let lastHole;
 let timeUp = false;
 let score = 0;
-let timeLeft = 90;
+let timeLeft = 80; // Set initial time to 80 seconds
 
 function randomTime(min, max) {
 return Math.round(Math.random() * (max - min) + min);
@@ -22,7 +22,7 @@ return hole;
 }
 
 function peep() {
-const time = randomTime(1000, 2000);
+const time = randomTime(200, 1000);
 const hole = randomHole(holes);
 hole.classList.add('up');
 setTimeout(() => {
@@ -32,20 +32,21 @@ if (!timeUp) peep();
 }
 
 function startGame() {
-  scoreBoard.textContent = "Score: 0";
-  timeUp = false;
-  score = 0;
-  timeLeft = 90;
-  timerDisplay.textContent = timeLeft;
-  peep();
-  const countdown = setInterval(() => {
-    timeLeft--;
-    timerDisplay.textContent = timeLeft;
-    if (timeLeft <= 0) {
-      clearInterval(countdown);
-      timeUp = true;
-    }
-  }, 1000);
+scoreBoard.textContent = "Score: 0";
+timeUp = false;
+score = 0;
+timeLeft = 80; // Set the countdown to 80 seconds
+timerDisplay.textContent = timeLeft;
+peep();
+
+const countdown = setInterval(() => {
+timeLeft--;
+timerDisplay.textContent = timeLeft;
+if (timeLeft <= 0) {
+clearInterval(countdown);
+timeUp = true;
+}
+}, 1000);
 }
 
 function bonk(e) {
