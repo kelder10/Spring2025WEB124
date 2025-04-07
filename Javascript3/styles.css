@@ -73,7 +73,7 @@ transition: all 0.4s;
 }
 
 .bomb {
-background: url('./images/bomb.svg') bottom center no-repeat;
+background: url('./images/bomb.png') bottom center no-repeat;
 background-size: 60%;
 position: absolute;
 top: 100%;
