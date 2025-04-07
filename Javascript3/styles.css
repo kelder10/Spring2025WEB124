@@ -79,8 +79,8 @@ background: url('./images/groundhog.png') bottom center no-repeat;
 background-size: 60%;
 position: absolute;
 top: 100%;
-width: 150%;
-height: 150%;
+width: 110%;
+height: 110%;
 transition: all 0.4s;
 }
 
