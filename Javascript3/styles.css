@@ -27,6 +27,7 @@ margin: 0;
 
 .score-timer {
 display: flex;
+border: 4px solid #4f5657;
 justify-content: space-between; /* Distributes space between the score and timer */
 font-size: 3rem; /* Score and timer font size */
 margin: 10px auto; /* Reduced margin */
