@@ -29,7 +29,7 @@ margin: 0;
 display: flex;
 justify-content: space-between; /* Distributes space between the score and timer */
 font-size: 3rem; /* Score and timer font size */
-margin: 2px auto; /* Reduced margin */
+margin: 5px auto; /* Reduced margin */
 width: 80%; /* Width of the score-timer section */
 }
 
