@@ -28,18 +28,19 @@ let tickSoundEnabled = false; // Start with tick sound disabled
 
 // Function to update clock hands and digital time
 function setDate() {
-  const now = new Date(); // Get current date and time
-  const seconds = now.getSeconds(); // Get current seconds
-  const secondsDegrees = ((seconds / 60) * 360); // Calculate rotation for second hand
-  secondHand.style.transform = `rotate(${secondsDegrees}deg)`; // Rotate second hand
+  const now = new Date(); 
+  
+  const seconds = now.getSeconds(); 
+  const secondsDegrees = ((seconds / 60) * 360); 
+  secondHand.style.transform = `rotate(${secondsDegrees}deg)`; 
 
-  const mins = now.getMinutes(); // Get current minutes
-  const minsDegrees = ((mins / 60) * 360) + ((seconds / 60) * 6); // Calculate rotation for minute hand
-  minsHand.style.transform = `rotate(${minsDegrees}deg)`; // Rotate minute hand
+  const mins = now.getMinutes(); 
+  const minsDegrees = ((mins / 60) * 360) + ((seconds / 60) * 6); 
+  minsHand.style.transform = `rotate(${minsDegrees}deg)`; 
 
-  const hour = now.getHours(); // Get current hours
-  const hourDegrees = ((hour % 12) / 12) * 360 + ((mins / 60) * 30); // Calculate rotation for hour hand
-  hourHand.style.transform = `rotate(${hourDegrees}deg)`; // Rotate hour hand
+  const hour = now.getHours(); 
+  const hourDegrees = ((hour % 12) / 12) * 360 + ((mins / 60) * 30);
+  hourHand.style.transform = `rotate(${hourDegrees}deg)`; 
 
   // Update digital time display
   digitalTime.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' }); // Display current time
@@ -115,6 +116,5 @@ clockFace.addEventListener('click', () => {
   }
 });
 
-// Start the clock with an interval
-setInterval(setDate, 1000); // Update the clock every second
-setDate(); // Initial call to set the time
+setInterval(setDate, 1000); 
+setDate(); 
