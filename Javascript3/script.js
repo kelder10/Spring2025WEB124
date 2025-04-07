@@ -4,6 +4,7 @@ const timerDisplay = document.querySelector('.timer');
 const lifeCountDisplay = document.querySelector('.life-count');
 const moles = document.querySelectorAll('.mole');
 const bombs = document.querySelectorAll('.bomb');
+const gameOverDisplay = document.querySelector('.game-over');
 let lastHole;
 let timeUp = false;
 let score = 0;
@@ -36,17 +37,20 @@ if (!timeUp) peep();
 }
 
 function startGame() {
-scoreBoard.textContent = 0;
+scoreBoard.textContent = "Score: 0";
 lifeCountDisplay.textContent = lives;
 timerDisplay.textContent = "Time: 10";
 timeUp = false;
 score = 0;
 lives = 3;
+gameOverDisplay.style.display = "none";
+
 peep();
 timer = setInterval(updateTimer, 1000);
 setTimeout(() => {
 timeUp = true;
 clearInterval(timer);
+showGameOver("Time's Up! Your score: " + score);
 }, 10000);
 }
 
@@ -61,7 +65,7 @@ function bonk(e) {
 if (!e.isTrusted) return; // cheater!
 score += 100; // Add points for hitting a mole
 this.parentNode.classList.remove('up');
-scoreBoard.textContent = score;
+scoreBoard.textContent = "Score: " + score;
 }
 
 function hitBomb(e) {
@@ -71,10 +75,13 @@ lifeCountDisplay.textContent = lives;
 this.parentNode.classList.remove('up');
 playSound('./sounds/explosion.mp3'); // Play sound when bomb clicked
 if (lives <= 0) {
-alert('Game Over! Your score: ' + score);
-timeUp = true;
-clearInterval(timer);
+showGameOver("Game Over! Your score: " + score);
 }
+}
+
+function showGameOver(message) {
+gameOverDisplay.textContent = message;
+gameOverDisplay.style.display = "block";
 }
 
 moles.forEach(mole => mole.addEventListener('click', bonk));
