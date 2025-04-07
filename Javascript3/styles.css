@@ -43,8 +43,8 @@ margin: 40px;
 
 .start-button {
 font-size: 2rem; /* Start button font size */
-padding: 0.5rem 5rem; /* Padding for the start button */
-margin-bottom: 50px auto; /* Adjusted margin to move it closer to the top */
+padding: 0.5rem 2rem; /* Padding for the start button */
+margin-bottom: 500px auto; /* Adjusted margin to move it closer to the top */
 cursor: pointer;
 }
 
