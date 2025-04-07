@@ -18,27 +18,27 @@ body {
 
 #clock {
   position: relative;
-  width: 200px; /* Set width for clock */
-  height: 200px; /* Set height for clock */
-  margin: 0 auto; /* Center clock horizontally */
+  width: 200px; 
+  height: 200px; 
+  margin: 0 auto; 
 }
 
 #clock-face {
   position: relative;
   width: 100%;
   height: 100%;
-  border: 15px solid #4f5657; /* Add border for visibility */
-  border-radius: 50%; /* Make it round */
-  background: rgba(255, 255, 255, 0.5); /* Light background for clock */
+  border: 15px solid #4f5657; 
+  border-radius: 50%; 
+  background: rgba(255, 255, 255, 0.5); 
 }
 
 .hand {
   position: absolute;
-  bottom: 50%; /* Center the hands vertically */
-  left: 50%; /* Center the hands horizontally */
-  transform-origin: bottom center; /* Set the pivot point properly */
-  transform: translateX(-50%); /* Offset half the width to center */
-  transition: transform 0.5s ease-in-out; /* Smooth transition */
+  bottom: 50%; 
+  left: 50%;
+  transform-origin: bottom center; 
+  transform: translateX(-50%); 
+  transition: transform 0.5s ease-in-out; 
 }
 
 #hour-hand {
@@ -60,31 +60,31 @@ body {
 }
 
 #digitalTime {
-  font-size: 3rem; /* Font size for digital time display */
+  font-size: 3rem; 
   font-weight: bold;
-  color: #4f5657; /* Text color */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Shadow for better visibility */
+  color: #4f5657; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
 }
 
 #currentDate {
-  font-size: 2rem; /* Font size for current date display */
+  font-size: 2rem; 
   font-weight: bold;
-  color: #4f5657; /* Text color */
+  color: #4f5657;
 }
 
 #alarm-time {
-  padding: 10px; /* Add some padding inside the input */
-  font-size: 1.5rem; /* Adjust the font size */
-  border: 4px solid #4f5657; /* Dark border for visibility */
-  border-radius: 5px; /* Rounded corners */
-  background: rgba(255, 255, 255, 0.8); /* Light background */
-  color: #170242; /* Text color */
-  transition: border-color 0.3s ease; /* Smooth transition for border color */
+  padding: 10px; 
+  font-size: 1.5rem; 
+  border: 4px solid #4f5657;
+  border-radius: 5px; 
+  background: rgba(255, 255, 255, 0.8); 
+  color: #170242;
+  transition: border-color 0.3s ease;
 }
 
 #alarm-time:focus {
-  border-color: #027dc0; /* Change border color on focus */
-  outline: none; /* Remove default outline */
+  border-color: #027dc0; 
+  outline: none; 
 }
 
 button {
@@ -93,33 +93,33 @@ button {
   cursor: pointer;
   font-size: 1.4rem;
   margin: 10px;
-  border: 4px solid #4f5657; /* Dark border for visibility */
-  border-radius: 5px; /* Rounded corners */
-  background: rgba(255, 255, 255, 0.8); /* Light background */
-  color: #170242; /* Text color */
-  transition: border-color 0.3s ease; /* Smooth transition for border color */
+  border: 4px solid #4f5657; 
+  border-radius: 5px; 
+  background: rgba(255, 255, 255, 0.8); 
+  color: #170242; 
+  transition: border-color 0.3s ease; 
 }
 
 button img {
-  width: 40px; /* Set image width */
-  height: 40px; /* Set image height */
+  width: 40px; 
+  height: 40px; 
 }
 
 .dark-theme {
-  background: #010146; /* Dark theme background color */
-  color: #fff; /* Text color for dark theme */
+  background: #010146; 
+  color: #fff; 
 }
 
 button:hover img {
-  transform: scale(1.1); /* Scale image on hover */
-  transition: transform 0.3s ease; /* Smooth transition for scaling */
+  transform: scale(1.1);
+  transition: transform 0.3s ease; 
 }
 
 .number {
   position: absolute;
-  color: #000; /* Change color as needed */
+  color: #000; 
   font-weight: bold;
-  font-size: 1.5rem; /* Adjust the size as needed */
+  font-size: 1.5rem; 
   transform: translate(-50%, -50%); /* Center the numbers */
 }
 
