@@ -8,40 +8,22 @@
 <link rel="icon" href="./images/dice.png" />
 </head>
 <body>
-<div class="header">
+<div class="container">
 <h1>Whack-a-mole!</h1>
-<span class="score">Score: 0</span>
-<span class="timer">Time: 10</span>
-<span class="lives">Lives: <span class="life-count">3</span></span>
+<div class="score-timer">
+<div class="score">Score: 0</div>
+<div class="timer">Time: <span id="timeLeft">10</span>s</div>
 </div>
-<button onClick="startGame()">Start!</button>
+<button onClick="startGame()" class="start-button">Start!</button>
 <div class="game">
-<div class="hole hole1">
-<div class="mole"></div>
-<div class="bomb"></div>
-</div>
-<div class="hole hole2">
-<div class="mole"></div>
-<div class="bomb"></div>
-</div>
-<div class="hole hole3">
-<div class="mole"></div>
-<div class="bomb"></div>
-</div>
-<div class="hole hole4">
-<div class="mole"></div>
-<div class="bomb"></div>
-</div>
-<div class="hole hole5">
-<div class="mole"></div>
-<div class="bomb"></div>
-</div>
-<div class="hole hole6">
-<div class="mole"></div>
-<div class="bomb"></div>
+<div class="hole hole1"><div class="mole"></div></div>
+<div class="hole hole2"><div class="mole"></div></div>
+<div class="hole hole3"><div class="mole"></div></div>
+<div class="hole hole4"><div class="mole"></div></div>
+<div class="hole hole5"><div class="mole"></div></div>
+<div class="hole hole6"><div class="mole"></div></div>
 </div>
 </div>
-<div class="game-over" style="display: none;"></div>
 <script src="script.js"></script>
 </body>
 </html>
