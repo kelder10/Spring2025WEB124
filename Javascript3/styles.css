@@ -75,7 +75,7 @@ bottom: -10px; /* Adjusted to position dirt piles appropriately */
 }
 
 .mole {
-background: url('./images/mole.svg') bottom center no-repeat;
+background: url('./images/groundhog') bottom center no-repeat;
 background-size: 60%;
 position: absolute;
 top: 100%;
