@@ -35,7 +35,7 @@ function startGame() {
   scoreBoard.textContent = "Score: 0";
   timeUp = false;
   score = 0;
-  timeLeft = 100;
+  timeLeft = 90;
   timerDisplay.textContent = timeLeft;
   peep();
   const countdown = setInterval(() => {
