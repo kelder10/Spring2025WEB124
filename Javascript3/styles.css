@@ -2,7 +2,7 @@ html {
 box-sizing: border-box;
 font-size: 10px;
 background: #ffc600;
-background: url('./images/36224.jpg') no-repeat center center fixed; /* Background image added */
+background: url('./images/36224.jpg');
 
 }
 
