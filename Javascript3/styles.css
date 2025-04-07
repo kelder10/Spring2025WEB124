@@ -25,7 +25,7 @@ line-height: 1;
 margin: 0;
 }
 
-.score-start-timer {
+.score-timer-start {
 display: flex;
 justify-content: center; /* Center items horizontally */
 align-items: center; /* Center items vertically */
