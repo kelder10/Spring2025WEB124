@@ -32,20 +32,20 @@ if (!timeUp) peep();
 }
 
 function startGame() {
-scoreBoard.textContent = "Score: 0";
-timeUp = false;
-score = 0;
-timeLeft = 10;
-timerDisplay.textContent = timeLeft;
-peep();
-const countdown = setInterval(() => {
-timeLeft--;
-timerDisplay.textContent = timeLeft;
-if (timeLeft <= 0) {
-clearInterval(countdown);
-timeUp = true;
-}
-}, 1000);
+  scoreBoard.textContent = "Score: 0";
+  timeUp = false;
+  score = 0;
+  timeLeft = 100;
+  timerDisplay.textContent = timeLeft;
+  peep();
+  const countdown = setInterval(() => {
+    timeLeft--;
+    timerDisplay.textContent = timeLeft;
+    if (timeLeft <= 0) {
+      clearInterval(countdown);
+      timeUp = true;
+    }
+  }, 1000);
 }
 
 function bonk(e) {
