@@ -50,10 +50,9 @@ cursor: pointer;
 
 .game {
 width: 500px; /* Width of the game area */
-height: 300px; /* Height of the game area */
 display: flex;
 flex-wrap: wrap;
-margin: 0 auto;
+margin: 20px auto; /* Added margin to give space around the game area */
 }
 
 .hole {
