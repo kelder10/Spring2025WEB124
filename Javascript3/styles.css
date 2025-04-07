@@ -1,7 +1,7 @@
 html {
 box-sizing: border-box;
 font-size: 10px;
-background: url('./images/outside.jpg') no-repeat center center fixed;
+background: url('./images/background.jpg') no-repeat center center fixed;
 background-size: cover;
 }
 
@@ -20,7 +20,7 @@ text-align: center;
 }
 
 h1 {
-font-size: 8rem; /* Reduced font size */
+font-size: 8rem; /* Title font size */
 line-height: 1;
 margin: 0;
 }
@@ -28,34 +28,34 @@ margin: 0;
 .score-timer {
 display: flex;
 justify-content: space-between; /* Distributes space between the score and timer */
-font-size: 3rem; /* Reduced font size */
+font-size: 3rem; /* Score and timer font size */
 margin: 10px auto; /* Reduced margin */
-width: 80%; /* Prevents the elements from stretching across the entire width */
+width: 80%; /* Width of the score-timer section */
 }
 
 .score, .timer {
 background: rgba(255, 255, 255, 0.2);
-padding: 0 2rem; /* Reduced padding */
+padding: 0 2rem; /* Padding for score and timer */
 border-radius: 1rem;
 }
 
 .start-button {
-font-size: 2rem; /* Smaller button size */
-padding: 0.5rem 1rem; /* Smaller padding */
+font-size: 2rem; /* Start button font size */
+padding: 0.5rem 1rem; /* Padding for the start button */
 margin-bottom: 20px;
 cursor: pointer;
 }
 
 .game {
-width: 500px; /* Reduced width */
-height: 300px; /* Reduced height */
+width: 500px; /* Width of the game area */
+height: 300px; /* Height of the game area */
 display: flex;
 flex-wrap: wrap;
 margin: 0 auto;
 }
 
 .hole {
-flex: 1 0 33.33%;
+flex: 1 0 33.33%; /* Each hole takes up one-third of the game area */
 overflow: hidden;
 position: relative;
 }
@@ -66,10 +66,10 @@ background: url('./images/dirt.svg') bottom center no-repeat;
 background-size: contain;
 content: '';
 width: 100%;
-height: 50px; /* Reduced height of dirt piles */
+height: 60px; /* Increased height of dirt piles */
 position: absolute;
 z-index: 2;
-bottom: -10px; /* Adjusted to fit better */
+bottom: -10px; /* Adjusted to position dirt piles appropriately */
 }
 
 .mole {
