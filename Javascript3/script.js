@@ -7,8 +7,9 @@ let timeUp = false;
 let score = 0;
 let timeLeft = 45; // Set initial time to 45 seconds
 
-// Load sound
-const popSound = new Audio('./sounds/pop.mp3.mp3'); // Ensure you have a sound file at this path
+// Load sounds
+const popSound = new Audio('./sounds/pop.mp3'); // Sound when groundhog pops up
+const scoreSound = new Audio('./sounds/beep.mp3'); // Sound for scoring
 
 function randomTime(min, max) {
 return Math.round(Math.random() * (max - min) + min);
@@ -59,7 +60,7 @@ timerDisplay.textContent = timeLeft;
 if (timeLeft <= 0) {
 clearInterval(countdown);
 timeUp = true;
-alert("Time's up! You lose!"); // Game over alert for losing
+alert("Time's up! Game Over, You lose!!"); // Game over alert for losing
 }
 }, 1000);
 }
@@ -70,9 +71,12 @@ score++;
 this.parentNode.classList.remove('up');
 scoreBoard.textContent = `Score: ${score}`;
 
+// Play the score sound
+scoreSound.play();
+
 if (score >= 10) {
 timeUp = true; // End the game
-alert("Congratulations! You win!"); // Game over alert for winning
+alert("Game Over! Congratulations, You win!!"); // Game over alert for winning
 }
 }
 
