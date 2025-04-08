@@ -91,7 +91,7 @@ transition: all 0.4s;
 top: 0;
 }
 
-.hole.bomb .mole {
+.hole.bomb {
 background: url('./images/bomb.png') bottom center no-repeat; /* Path to bomb image */
 background-size: 60%;
 position: absolute;
