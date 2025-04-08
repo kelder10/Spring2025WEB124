@@ -7,6 +7,7 @@ let timeUp = false;
 let score = 0;
 let timeLeft = 45; // Set initial time to 45 seconds
 let countdown; // Declare countdown in a broader scope
+let gameActive = false; // New variable to check if game is active
 
 // Load sounds
 const popSound = new Audio('./sounds/pop.mp3'); // Sound when groundhog pops up
@@ -47,7 +48,7 @@ if (!timeUp) peep();
 }
 
 function startGame() {
-if (!timeUp) { // Check if the game is already in progress
+if (gameActive) { // Check if the game is already in progress
 alert("The game is already in progress!");
 return; // Exit the function
 }
@@ -58,6 +59,7 @@ score = 0;
 timeLeft = 45; // Set the countdown to 45 seconds
 timerDisplay.textContent = timeLeft;
 peep();
+gameActive = true; // Set game active to true
 
 countdown = setInterval(() => { // Initialize countdown here
 timeLeft--;
@@ -66,6 +68,7 @@ timerDisplay.textContent = timeLeft;
 if (timeLeft <= 0) {
 clearInterval(countdown);
 timeUp = true;
+gameActive = false; // Set game active to false
 alert("Time's up! You lose!"); // Game over alert for losing
 }
 }, 1000);
@@ -83,8 +86,10 @@ scoreSound.play();
 if (score >= 10) {
 timeUp = true; // End the game
 clearInterval(countdown); // Clear the countdown interval
+gameActive = false; // Set game active to false
 alert("Congratulations! You win!"); // Game over alert for winning
 }
 }
 
 groundhogs.forEach(groundhog => groundhog.addEventListener('click', bonk));
+
