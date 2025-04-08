@@ -11,7 +11,7 @@ let gameActive = false; // New variable to check if game is active
 
 // Load sounds
 const popSound = new Audio('./sounds/pop.mp3'); // Sound when groundhog pops up
-const scoreSound = new Audio('./sounds/score.mp3'); // Sound for scoring
+const scoreSound = new Audio('./sounds/beep.mp3'); // Sound for scoring
 
 function randomTime(min, max) {
 return Math.round(Math.random() * (max - min) + min);
@@ -69,7 +69,7 @@ if (timeLeft <= 0) {
 clearInterval(countdown);
 timeUp = true;
 gameActive = false; // Set game active to false
-alert("Time's up! You lose!"); // Game over alert for losing
+alert("Time's up! Game Over, You lose!!"); // Game over alert for losing
 }
 }, 1000);
 }
@@ -87,7 +87,7 @@ if (score >= 10) {
 timeUp = true; // End the game
 clearInterval(countdown); // Clear the countdown interval
 gameActive = false; // Set game active to false
-alert("Congratulations! You win!"); // Game over alert for winning
+alert("Game Over! Congratulations, You win!!"); // Game over alert for winning
 }
 }
 
