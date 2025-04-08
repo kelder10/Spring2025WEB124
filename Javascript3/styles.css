@@ -44,7 +44,7 @@ border-radius: 1rem;
 }
 
 .start-button {
-font-size: 4rem; /* Start button font size */
+font-size: 3rem; /* Start button font size */
 font: arial;
 padding: 0.5rem 1rem; /* Padding for the start button */
 cursor: pointer;
