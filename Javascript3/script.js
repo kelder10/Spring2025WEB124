@@ -2,10 +2,13 @@ const holes = document.querySelectorAll('.hole');
 const scoreBoard = document.querySelector('.score');
 const timerDisplay = document.getElementById('timeLeft');
 const moles = document.querySelectorAll('.mole');
+const healthDisplay = document.querySelector('.health'); // New element to display health
+
 let lastHole;
 let timeUp = false;
 let score = 0;
 let timeLeft = 45; // Set initial time to 45 seconds
+let health = 3; // User starts with 3 lives
 
 function randomTime(min, max) {
 return Math.round(Math.random() * (max - min) + min);
