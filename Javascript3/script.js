@@ -8,7 +8,7 @@ let score = 0;
 let timeLeft = 45; // Set initial time to 45 seconds
 
 // Load sound
-const popSound = new Audio('./sounds/pop.mp3.mp3'); // Ensure you have a sound file at this path
+const popSound = new Audio('./sounds/pop.mp3'); // Ensure you have a sound file at this path
 
 function randomTime(min, max) {
 return Math.round(Math.random() * (max - min) + min);
@@ -36,6 +36,7 @@ setTimeout(() => {
 hole.classList.remove('shake');
 hole.classList.add('up');
 popSound.play(); // Play sound when groundhog pops up
+
 setTimeout(() => {
 hole.classList.remove('up');
 if (!timeUp) peep();
@@ -47,16 +48,18 @@ function startGame() {
 scoreBoard.textContent = "Score: 0";
 timeUp = false;
 score = 0;
-timeLeft = 80; // Set the countdown to 80 seconds
+timeLeft = 45; // Set the countdown to 45 seconds
 timerDisplay.textContent = timeLeft;
 peep();
 
 const countdown = setInterval(() => {
 timeLeft--;
 timerDisplay.textContent = timeLeft;
+
 if (timeLeft <= 0) {
 clearInterval(countdown);
 timeUp = true;
+alert("Time's up! You lose!"); // Game over alert for losing
 }
 }, 1000);
 }
@@ -66,6 +69,11 @@ if (!e.isTrusted) return; // cheater!
 score++;
 this.parentNode.classList.remove('up');
 scoreBoard.textContent = `Score: ${score}`;
+
+if (score >= 10) {
+timeUp = true; // End the game
+alert("Congratulations! You win!"); // Game over alert for winning
+}
 }
 
 groundhogs.forEach(groundhog => groundhog.addEventListener('click', bonk));
