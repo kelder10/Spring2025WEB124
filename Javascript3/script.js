@@ -30,8 +30,10 @@ const hole = randomHole(holes);
 // Randomly decide whether to show a mole or a bomb
 const showBomb = Math.random() < 0.33; // 33% chance for a bomb
 if (showBomb) {
+console.log("Bomb appeared!"); // Debugging line
 hole.classList.add('bomb');
 } else {
+console.log("Mole appeared!"); // Debugging line
 hole.classList.add('up');
 }
 
