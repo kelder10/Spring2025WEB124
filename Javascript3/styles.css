@@ -90,3 +90,17 @@ transition: all 0.4s;
 .hole.up .mole {
 top: 0;
 }
+
+.catch-effect {
+position: absolute;
+width: 50px; /* Adjust size as needed */
+height: 50px; /* Adjust size as needed */
+pointer-events: none; /* Prevent any mouse events on the image */
+transition: opacity 0.5s ease; /* Add a fade-out effect */
+opacity: 1;
+}
+
+.catch-effect {
+opacity: 0; /* Start invisible */
+transition: opacity 0.5s ease; /* Fade out effect */
+}
