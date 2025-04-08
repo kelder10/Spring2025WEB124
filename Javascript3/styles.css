@@ -68,16 +68,6 @@ border-radius: 1rem;
 font-size: 3rem; /* Adjust font size for consistency */
 }
 
-.hole.bomb .mole {
-background: url('./images/bomb.png') bottom center no-repeat; /* Path to bomb image */
-background-size: 60%;
-position: absolute;
-top: 100%;
-width: 100%;
-height: 110%;
-transition: all 0.4s;
-}
-
 .hole {
 flex: 1 0 33.33%; /* Each hole takes up one-third of the game area */
 overflow: hidden;
@@ -105,6 +95,17 @@ width: 100%;
 height: 110%;
 transition: all 0.4s;
 }
+
+.hole.bomb .mole {
+background: url('./images/bomb.png') bottom center no-repeat; /* Path to bomb image */
+background-size: 60%;
+position: absolute;
+top: 100%;
+width: 100%;
+height: 110%;
+transition: all 0.4s;
+}
+
 
 .hole.up .mole {
 top: 0;
