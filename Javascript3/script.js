@@ -10,7 +10,7 @@ let countdown; // Declare countdown in a broader scope
 
 // Load sounds
 const popSound = new Audio('./sounds/pop.mp3'); // Sound when groundhog pops up
-const scoreSound = new Audio('./sounds/beep.mp3'); // Sound for scoring
+const scoreSound = new Audio('./sounds/score.mp3'); // Sound for scoring
 
 function randomTime(min, max) {
 return Math.round(Math.random() * (max - min) + min);
@@ -47,6 +47,11 @@ if (!timeUp) peep();
 }
 
 function startGame() {
+if (!timeUp) { // Check if the game is already in progress
+alert("The game is already in progress!");
+return; // Exit the function
+}
+
 scoreBoard.textContent = "Score: 0";
 timeUp = false;
 score = 0;
