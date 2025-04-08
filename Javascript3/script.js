@@ -10,7 +10,7 @@ let countdown; // Declare countdown in a broader scope
 
 // Load sounds
 const popSound = new Audio('./sounds/pop.mp3'); // Sound when groundhog pops up
-const scoreSound = new Audio('./sounds/score.mp3'); // Sound for scoring
+const scoreSound = new Audio('./sounds/beep.mp3'); // Sound for scoring
 
 function randomTime(min, max) {
 return Math.round(Math.random() * (max - min) + min);
