@@ -59,22 +59,10 @@ flex-wrap: wrap;
 margin: 0 auto;
 }
 
-@keyframes shake {
-0% { transform: translateX(0); }
-25% { transform: translateX(-5px); }
-50% { transform: translateX(5px); }
-75% { transform: translateX(-5px); }
-100% { transform: translateX(0); }
-}
-
 .hole {
 flex: 1 0 33.33%; /* Each hole takes up one-third of the game area */
 overflow: hidden;
 position: relative;
-}
-
-.hole.up {
-animation: shake 0.3s; /* Add shake animation when groundhog pops up */
 }
 
 .hole:after {
@@ -100,5 +88,5 @@ transition: all 0.4s;
 }
 
 .hole.up .groundhog {
-top: 0; /* Move groundhog up */
+top: 0;
 }
