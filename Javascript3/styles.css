@@ -100,5 +100,5 @@ transition: all 0.4s;
 }
 
 .hole.up .groundhog {
-top: 0;
+top: 0; /* Move groundhog up */
 }
