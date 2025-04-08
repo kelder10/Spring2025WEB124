@@ -27,12 +27,20 @@ return hole;
 function peep() {
 const time = randomTime(1000, 2000);
 const hole = randomHole(holes);
+
+// Add shake class to trigger the shaking effect
+hole.classList.add('shake');
+
+// Remove shake class after animation ends
+setTimeout(() => {
+hole.classList.remove('shake');
 hole.classList.add('up');
 popSound.play(); // Play sound when groundhog pops up
 setTimeout(() => {
 hole.classList.remove('up');
 if (!timeUp) peep();
 }, time);
+}, 0); // Delay adding 'up' class until shake animation starts
 }
 
 function startGame() {
