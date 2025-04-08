@@ -40,7 +40,7 @@ setTimeout(() => {
 hole.classList.remove('up');
 if (!timeUp) peep();
 }, time);
-}, 0); // Delay adding 'up' class until shake animation starts
+}, 500); // Delay adding 'up' class until shake animation starts
 }
 
 function startGame() {
