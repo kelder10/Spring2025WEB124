@@ -13,7 +13,7 @@ body {
 padding: 0;
 margin: 0;
 font-family: 'Amatic SC', cursive;
-cursor: url('./images/dice.png'), auto; /* Set custom cursor */
+cursor: url('./images/net.png'), auto; /* Set custom cursor */
 }
 
 .container {
