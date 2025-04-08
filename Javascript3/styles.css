@@ -22,6 +22,7 @@ text-align: center;
 
 h1 {
 font-size: 8rem; /* Title font size */
+font: bold;
 line-height: 1;
 margin: 0;
 }
