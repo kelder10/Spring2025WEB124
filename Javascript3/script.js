@@ -8,7 +8,7 @@ let score = 0;
 let timeLeft = 45; // Set initial time to 45 seconds
 
 // Load sound
-const popSound = new Audio('./sounds/pop.mp3'); // Ensure you have a sound file at this path
+const popSound = new Audio('./sounds/pop.mp3.mp3'); // Ensure you have a sound file at this path
 
 function randomTime(min, max) {
 return Math.round(Math.random() * (max - min) + min);
