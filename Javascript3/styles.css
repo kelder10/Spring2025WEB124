@@ -49,6 +49,7 @@ font: arial;
 padding: 0.5rem 1rem; /* Padding for the start button */
 cursor: pointer;
 margin: 0 20px; /* Optional: Add margin for space around the button */
+border: 4px solid #030303;
 border-radius: 10px; /* Curved corners */
 background-color: #4CAF50; /* Optional: Background color */
 color: white; /* Optional: Text color */
