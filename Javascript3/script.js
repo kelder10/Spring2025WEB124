@@ -75,7 +75,7 @@ alert("The game is already in progress!");
 return;
 }
 
-scoreBoard.textContent = "Score: 0";
+scoreBoard.textContent = `Score: 0/${levels[level].scoreToWin}`; // Update score display
 timeUp = false;
 score = 0;
 timeLeft = levels[level].time; // Set the countdown according to the selected level
@@ -105,7 +105,7 @@ function bonk(e) {
 if (!e.isTrusted) return; // cheater!
 score++;
 this.parentNode.classList.remove('up');
-scoreBoard.textContent = `Score: ${score}`;
+scoreBoard.textContent = `Score: ${score}/${levels[level].scoreToWin}`; // Update score display
 
 // Play the score sound every time a point is scored
 scoreSound.currentTime = 0; // Reset sound to the beginning
