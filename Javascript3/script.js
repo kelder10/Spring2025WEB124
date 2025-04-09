@@ -14,7 +14,7 @@ let level = 1; // Default level
 const levels = {
 1: { time: 45, scoreToWin: 5, speed: { min: 1000, max: 2000 } },
 2: { time: 30, scoreToWin: 10, speed: { min: 800, max: 1500 } },
-3: { time: 20, scoreToWin: 15, speed: { min: 600, max: 1000 } },
+3: { time: 20, scoreToWin: 15, speed: { min: 700, max: 1300 } },
 };
 
 // Load sounds
