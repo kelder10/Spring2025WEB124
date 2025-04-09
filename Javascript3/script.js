@@ -12,9 +12,9 @@ let level = 1; // Default level
 
 // Levels configuration
 const levels = {
-1: { time: 45, scoreToWin: 5, speed: { min: 1000, max: 2000 } },
-2: { time: 30, scoreToWin: 10, speed: { min: 800, max: 1500 } },
-3: { time: 20, scoreToWin: 15, speed: { min: 700, max: 1300 } },
+1: { time: 50, scoreToWin: 5, speed: { min: 1000, max: 2000 } },
+2: { time: 35, scoreToWin: 8, speed: { min: 800, max: 1500 } },
+3: { time: 25, scoreToWin: 10, speed: { min: 700, max: 1300 } },
 };
 
 // Load sounds
