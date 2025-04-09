@@ -63,6 +63,26 @@ background-color: #45a049; /* Darken background on hover */
 border-color: #ddd;
 }
 
+.level-selection {
+margin: 20px 0;
+}
+
+.level-selection button {
+font-size: 2rem; /* Adjust as needed */
+padding: 0.5rem 1rem;
+margin: 0 10px;
+border-radius: 10px;
+background-color: #2196F3;
+color: white;
+border: none;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+.level-selection button:hover {
+background-color: #1976D2;
+}
+
 .game {
 width: 500px; /* Width of the game area */
 height: 300px; /* Height of the game area */
