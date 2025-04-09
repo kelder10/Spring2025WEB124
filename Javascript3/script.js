@@ -36,6 +36,8 @@ return hole;
 }
 
 function peep() {
+if (timeUp) return; // Prevent further groundhogs from popping up if the game is over
+
 const numGroundhogs = level === 3 ? 2 : 1; // Show two groundhogs if on level 3
 const holesToPop = [];
 
