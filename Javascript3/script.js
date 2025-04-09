@@ -50,6 +50,7 @@ holesToPop.push(hole);
 holesToPop.forEach((hole, index) => {
 const time = randomTime(levels[level].speed.min, levels[level].speed.max);
 
+// Add the shake class to the hole
 hole.classList.add('shake');
 
 setTimeout(() => {
