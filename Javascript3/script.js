@@ -53,15 +53,16 @@ const time = randomTime(levels[level].speed.min, levels[level].speed.max);
 // Add the shake class to the hole
 hole.classList.add('shake');
 
+// Delay before showing the groundhog to allow the shake to be visible
 setTimeout(() => {
-hole.classList.remove('shake');
-hole.classList.add('up');
+hole.classList.remove('shake'); // Remove shake class
+hole.classList.add('up'); // Show the groundhog
 popSound.play();
 
 setTimeout(() => {
-hole.classList.remove('up');
+hole.classList.remove('up'); // Hide the groundhog after it has been shown
 }, time);
-}, index * 500); // Stagger the popping up
+}, 300); // Short delay for the shake animation to be visible
 });
 
 // Schedule the next peep
