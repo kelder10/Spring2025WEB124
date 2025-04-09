@@ -14,7 +14,7 @@ let level = 1; // Default level
 const levels = {
 1: { time: 45, scoreToWin: 5, speed: { min: 1000, max: 2000 } },
 2: { time: 30, scoreToWin: 10, speed: { min: 800, max: 1500 } },
-3: { time: 25, scoreToWin: 15, speed: { min: 600, max: 1000 } },
+3: { time: 20, scoreToWin: 15, speed: { min: 600, max: 1000 } },
 };
 
 // Load sounds
@@ -36,8 +36,19 @@ return hole;
 }
 
 function peep() {
-const time = randomTime(levels[level].speed.min, levels[level].speed.max);
+const numGroundhogs = level === 3 ? 2 : 1; // Show two groundhogs if on level 3
+const holesToPop = [];
+
+// Select random holes to pop up groundhogs
+while (holesToPop.length < numGroundhogs) {
 const hole = randomHole(holes);
+if (!holesToPop.includes(hole)) {
+holesToPop.push(hole);
+}
+}
+
+holesToPop.forEach((hole, index) => {
+const time = randomTime(levels[level].speed.min, levels[level].speed.max);
 
 hole.classList.add('shake');
 
@@ -48,9 +59,14 @@ popSound.play();
 
 setTimeout(() => {
 hole.classList.remove('up');
-if (!timeUp) peep();
 }, time);
-}, 500); // Delay adding 'up' class until shake animation starts
+}, index * 500); // Stagger the popping up
+});
+
+// Schedule the next peep
+if (!timeUp) {
+setTimeout(peep, randomTime(levels[level].speed.min, levels[level].speed.max));
+}
 }
 
 function startGame() {
@@ -91,7 +107,8 @@ score++;
 this.parentNode.classList.remove('up');
 scoreBoard.textContent = `Score: ${score}`;
 
-// Play the score sound
+// Play the score sound every time a point is scored
+scoreSound.currentTime = 0; // Reset sound to the beginning
 scoreSound.play();
 
 if (score >= levels[level].scoreToWin) {
