@@ -105,16 +105,22 @@ function bonk(e) {
 if (!e.isTrusted) return; // cheater!
 score++;
 this.parentNode.classList.remove('up');
-scoreBoard.textContent = `Score: ${score}/${levels[level].scoreToWin}`; // Update score display
+
+// Update score display before checking for win
+scoreBoard.textContent = `Score: ${score}/${levels[level].scoreToWin}`;
 
 // Play the score sound every time a point is scored
 scoreSound.currentTime = 0; // Reset sound to the beginning
 scoreSound.play();
 
+// Check if the score meets or exceeds the target score
 if (score >= levels[level].scoreToWin) {
 timeUp = true; // End the game
 clearInterval(countdown); // Clear the countdown interval
 gameActive = false; // Set game active to false
+
+// Display winning score before alert
+scoreBoard.textContent = `Score: ${score}/${levels[level].scoreToWin}`;
 alert("Game Over! Congratulations, You win!!"); // Game over alert for winning
 }
 }
