@@ -8,6 +8,14 @@ let score = 0;
 let timeLeft = 45; // Set initial time to 45 seconds
 let countdown; // Declare countdown in a broader scope
 let gameActive = false; // New variable to check if game is active
+let level = 1; // Default level
+
+// Levels configuration
+const levels = {
+1: { time: 45, scoreToWin: 5, speed: { min: 1000, max: 2000 } },
+2: { time: 30, scoreToWin: 10, speed: { min: 800, max: 1500 } },
+3: { time: 20, scoreToWin: 15, speed: { min: 600, max: 1000 } },
+};
 
 // Load sounds
 const popSound = new Audio('./sounds/pop.mp3'); // Sound when groundhog pops up
@@ -28,17 +36,15 @@ return hole;
 }
 
 function peep() {
-const time = randomTime(1000, 2000);
+const time = randomTime(levels[level].speed.min, levels[level].speed.max);
 const hole = randomHole(holes);
 
-// Add shake class to trigger the shaking effect
 hole.classList.add('shake');
 
-// Remove shake class after animation ends
 setTimeout(() => {
 hole.classList.remove('shake');
 hole.classList.add('up');
-popSound.play(); // Play sound when groundhog pops up
+popSound.play();
 
 setTimeout(() => {
 hole.classList.remove('up');
@@ -48,30 +54,35 @@ if (!timeUp) peep();
 }
 
 function startGame() {
-if (gameActive) { // Check if the game is already in progress
+if (gameActive) {
 alert("The game is already in progress!");
-return; // Exit the function
+return;
 }
 
 scoreBoard.textContent = "Score: 0";
 timeUp = false;
 score = 0;
-timeLeft = 45; // Set the countdown to 45 seconds
+timeLeft = levels[level].time; // Set the countdown according to the selected level
 timerDisplay.textContent = timeLeft;
 peep();
-gameActive = true; // Set game active to true
+gameActive = true;
 
-countdown = setInterval(() => { // Initialize countdown here
+countdown = setInterval(() => {
 timeLeft--;
 timerDisplay.textContent = timeLeft;
 
 if (timeLeft <= 0) {
 clearInterval(countdown);
 timeUp = true;
-gameActive = false; // Set game active to false
-alert("Time's up! Game Over, You lose!!"); // Game over alert for losing
+gameActive = false;
+alert("Time's up! Game Over, You lose!!");
 }
 }, 1000);
+}
+
+function setLevel(selectedLevel) {
+level = selectedLevel;
+alert(`Level ${level} selected!`);
 }
 
 function bonk(e) {
@@ -83,7 +94,7 @@ scoreBoard.textContent = `Score: ${score}`;
 // Play the score sound
 scoreSound.play();
 
-if (score >= 10) {
+if (score >= levels[level].scoreToWin) {
 timeUp = true; // End the game
 clearInterval(countdown); // Clear the countdown interval
 gameActive = false; // Set game active to false
@@ -92,4 +103,3 @@ alert("Game Over! Congratulations, You win!!"); // Game over alert for winning
 }
 
 groundhogs.forEach(groundhog => groundhog.addEventListener('click', bonk));
-
