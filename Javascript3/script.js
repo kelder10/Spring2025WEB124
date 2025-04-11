@@ -1,24 +1,38 @@
+// Katie Elder 04-11-25
+// Adapted from the original Whack-a-Mole project
+// Changes made:
+//   - Renamed 'mole' to 'groundhog' for semantic clarity
+//   - Added level selection feature with different time limits and scores to win
+//   - Introduced sounds for popping groundhogs and scoring
+//   - Improved game logic to handle multiple groundhogs at level 3
+//   - Added a countdown timer and a check to prevent multiple game starts
+// Technical terms:
+//   - Event Listeners: Used to handle user interactions
+//   - Audio API: Used for sound effects
+//   - Random Number Generation: Used for random hole selection
+//   - Game State Management: Used for tracking game progress and status
+
 const holes = document.querySelectorAll('.hole');
 const scoreBoard = document.querySelector('.score');
 const timerDisplay = document.getElementById('timeLeft');
-const groundhogs = document.querySelectorAll('.groundhog');
+const groundhogs = document.querySelectorAll('.groundhog'); // Changed from 'moles' to 'groundhogs'
 let lastHole;
 let timeUp = false;
 let score = 0;
 let timeLeft = 45; // Set initial time to 45 seconds
-let countdown; // Declare countdown in a broader scope
+let countdown;
 let gameActive = false; // New variable to check if game is active
 let level = 1; // Default level
 
 // Levels configuration
 const levels = {
-  1: { time: 50, scoreToWin: 5, speed: { min: 1000, max: 2000 } },
-  2: { time: 35, scoreToWin: 8, speed: { min: 800, max: 1500 } },
-  3: { time: 25, scoreToWin: 10, speed: { min: 700, max: 1300 } },
+  1: { time: 50, scoreToWin: 5, speed: { min: 1000, max: 2000 } }, // Level 1 settings
+  2: { time: 35, scoreToWin: 8, speed: { min: 800, max: 1500 } }, // Level 2 settings
+  3: { time: 25, scoreToWin: 10, speed: { min: 700, max: 1300 } }, // Level 3 settings
 };
 
 // Load sounds
-const popSound = new Audio('./sounds/pop.mp3'); // Sound when groundhog pops up
+const popSound = new Audio('./sounds/pop.mp3'); // Sound for when groundhog pops up
 const scoreSound = new Audio('./sounds/beep.mp3'); // Sound for scoring
 
 function randomTime(min, max) {
@@ -49,24 +63,24 @@ function peep() {
     }
   }
 
-  holesToPop.forEach((hole, index) => {
+  holesToPop.forEach((hole) => {
     const time = randomTime(levels[level].speed.min, levels[level].speed.max);
-  
+
     // Add the shake class to the hole
     hole.classList.add('shake');
-    
+
     // Delay before showing the groundhog to allow the shake to be visible
     setTimeout(() => {
       hole.classList.remove('shake'); // Remove shake class
       hole.classList.add('up'); // Show the groundhog
-      popSound.play();
-      
+      popSound.play(); // Play sound for popping groundhog
+
       setTimeout(() => {
         hole.classList.remove('up'); // Hide the groundhog after it has been shown
       }, time);
     }, 300); // Short delay for the shake animation to be visible
   });
-    
+
   // Schedule the next peep
   if (!timeUp) {
     setTimeout(peep, randomTime(levels[level].speed.min, levels[level].speed.max));
@@ -75,7 +89,7 @@ function peep() {
 
 function startGame() {
   if (gameActive) {
-    alert("The game is already in progress!");
+    alert("The game is already in progress!"); // Prevent multiple game starts
     return;
   }
 
@@ -100,8 +114,8 @@ function startGame() {
   }, 1000);
 }
 
-function setLevel(selectedLevel) {
-  level = selectedLevel;
+function setLevel(selectedLevel) { // New function to set game level
+  level = selectedLevel; // Update level to the selected level
   alert(`Level ${level} selected!`);
 }
 
@@ -129,4 +143,4 @@ function bonk(e) {
   }
 }
 
-groundhogs.forEach(groundhog => groundhog.addEventListener('click', bonk));
+groundhogs.forEach(groundhog => groundhog.addEventListener('click', bonk)); // Event listener for groundhogs
