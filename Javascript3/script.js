@@ -43,6 +43,7 @@ function randomHole(holes) {
   const idx = Math.floor(Math.random() * holes.length);
   const hole = holes[idx];
   if (hole === lastHole) {
+    console.log('Ah nah thats the same one bud');
     return randomHole(holes);
   }
   lastHole = hole;
@@ -78,7 +79,7 @@ function peep() {
       setTimeout(() => {
         hole.classList.remove('up'); // Hide the groundhog after it has been shown
       }, time);
-    }, 300); // Short delay for the shake animation to be visible
+    }, 300); // Delay for the shake animation to be visible
   });
 
   // Schedule the next peep
@@ -128,7 +129,7 @@ function bonk(e) {
   scoreBoard.textContent = `Score: ${score}/${levels[level].scoreToWin}`;
 
   // Play the score sound every time a point is scored
-  scoreSound.currentTime = 0; // Reset sound to the beginning
+  scoreSound.currentTime = 0; 
   scoreSound.play();
 
   // Check if the score meets or exceeds the target score
@@ -137,10 +138,10 @@ function bonk(e) {
     clearInterval(countdown); // Clear the countdown interval
     gameActive = false; // Set game active to false
 
-    // Display winning score before alert
+    // Display winning score
     scoreBoard.textContent = `Score: ${score}/${levels[level].scoreToWin}`;
     alert("Game Over! Congratulations, You win!!"); // Game over alert for winning
   }
 }
 
-groundhogs.forEach(groundhog => groundhog.addEventListener('click', bonk)); // Event listener for groundhogs
+groundhogs.forEach(groundhog => groundhog.addEventListener('click', bonk)); 
