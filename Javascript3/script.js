@@ -1,5 +1,5 @@
 // Katie Elder 04-11-25
-// Adapted from the original Whack-a-Mole project
+// Adapted from https://javascript30.com/Whack-a-Mole 
 // Changes made:
 //   - Renamed 'mole' to 'groundhog' for semantic clarity
 //   - Added level selection feature with different time limits and scores to win
