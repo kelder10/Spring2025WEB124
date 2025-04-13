@@ -1,16 +1,30 @@
-// Katie Elder 04-11-25
-// Adapted from https://javascript30.com/Whack-a-Mole 
 // Changes made:
 //   - Renamed 'mole' to 'groundhog' for semantic clarity
 //   - Added level selection feature with different time limits and scores to win
 //   - Introduced sounds for popping groundhogs and scoring
-//   - Improved game logic to handle multiple groundhogs at level 3
 //   - Added a countdown timer and a check to prevent multiple game starts
 // Technical terms:
 //   - Event Listeners: Used to handle user interactions
 //   - Audio API: Used for sound effects
 //   - Random Number Generation: Used for random hole selection
 //   - Game State Management: Used for tracking game progress and status
+
+
+// Katie Elder 04-11-25
+// Adapted from https://javascript30.com/Whack-a-Mole 
+// Changes made:
+// - Renamed 'mole' to 'groundhog' for semantic clarity
+// - Added level selection feature with different time limits and scores to win 
+// - Introduced sounds for popping groundhogs and scoring 
+// - Improved game logic to handle multiple groundhogs at level 3
+// - Added a countdown timer and check to prevent multiple game starts
+
+
+
+
+
+
+
 
 const holes = document.querySelectorAll('.hole');
 const scoreBoard = document.querySelector('.score');
