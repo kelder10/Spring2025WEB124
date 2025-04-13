@@ -45,18 +45,10 @@ function randomHole(holes) {
 
 function peep() {
     if (timeUp) return; // Prevent further groundhogs from popping up if the game is over
-
-    let numGroundhogs; // Declare variable for number of groundhogs
-
-    // Use if-else to determine the number of groundhogs to show
-    if (level === 3) {
-        numGroundhogs = 2; // Show two groundhogs if on level 3
-    } else {
-        numGroundhogs = 1; // Show one groundhog for other levels
-    }
-
+    
+    const numGroundhogs = level === 3 ? 2 : 1; // Show two groundhogs if on level 3
     const holesToPop = [];
-
+    
     // Select random holes to pop up groundhogs
     while (holesToPop.length < numGroundhogs) {
         const hole = randomHole(holes);
@@ -64,28 +56,28 @@ function peep() {
             holesToPop.push(hole);
         }
     }
-
+    
     holesToPop.forEach((hole) => {
         const time = randomTime(levels[level].speed.min, levels[level].speed.max);
-
+        
         // Add the shake class to the hole
         hole.classList.add('shake');
-
+        
         // Delay before showing the groundhog to allow the shake to be visible
         setTimeout(() => {
-            hole.classList.remove('shake'); 
+            hole.classList.remove('shake'); // Remove shake class
             hole.classList.add('up'); // Show the groundhog
             popSound.play(); // Play sound for popping groundhog
-
+            
             setTimeout(() => {
                 hole.classList.remove('up'); // Hide the groundhog after it has been shown
             }, time);
         }, 300); // Short delay for the shake animation to be visible
     });
-
+    
     // Schedule the next peep
     if (!timeUp) {
-        setTimeout(peep, randomTime(levels[level].speed.min, levels[level].speed.max));
+    setTimeout(peep, randomTime(levels[level].speed.min, levels[level].speed.max));
     }
 }
 
