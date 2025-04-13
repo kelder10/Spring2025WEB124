@@ -1,14 +1,11 @@
 /*
-Katie Elder 04-11-25
+Katie Elder 04-13-25
 Adapted from https://javascript30.com/Whack-a-Mole 
 Changes made:
-- Updated styles to accommodate new elements and layout
+- Updated styles for new elements and layout
 - Added hover effects for buttons
 - Implemented shake animation for holes when groundhogs pop up
-Technical terms:
 - Flexbox: Used for layout of score and timer
-- CSS Animations: Used for the shake effect
-- Responsive Design: Adjustments made for different screen sizes
 */
 html {
   box-sizing: border-box;
@@ -25,7 +22,6 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Amatic SC', cursive;
-  cursor: url('./images/dice.png'), auto; /* Set custom cursor */
 }
 
 .container {
