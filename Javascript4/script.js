@@ -1,19 +1,14 @@
-const detailButtons = document.querySelectorAll('.details-btn');
+const panels = document.querySelectorAll('.panel');
 
-detailButtons.forEach(button => {
-  button.addEventListener('click', function() {
-    const details = this.nextElementSibling;
-    details.style.display = details.style.display === 'block' ? 'none' : 'block';
-  });
-});
+function toggleOpen() {
+  this.classList.toggle('open');
+}
 
-// Search functionality
-document.getElementById('search').addEventListener('input', function() {
-  const filter = this.value.toLowerCase();
-  const recipes = document.querySelectorAll('.recipe');
-  
-  recipes.forEach(recipe => {
-    const title = recipe.querySelector('h2').textContent.toLowerCase();
-    recipe.style.display = title.includes(filter) ? 'block' : 'none';
-  });
-});
+function toggleActive(e) {
+  if (e.propertyName.includes('flex')) {
+    this.classList.toggle('open-active');
+  }
+}
+
+panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
