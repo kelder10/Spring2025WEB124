@@ -39,7 +39,7 @@ display: flex;
 flex-direction: column;
 }
 
-.panel1 { background-image: url('https://source.unsplash.com/featured/?spring'); }
+.panel1 { background-image: url('./images/spring'); }
 .panel2 { background-image: url('https://source.unsplash.com/featured/?summer'); }
 .panel3 { background-image: url('https://source.unsplash.com/featured/?autumn'); }
 .panel4 { background-image: url('https://source.unsplash.com/featured/?winter'); }
