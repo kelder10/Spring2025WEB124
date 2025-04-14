@@ -1,58 +1,87 @@
+html {
+box-sizing: border-box;
+background: #f2f2f2;
+font-family: 'Helvetica Neue';
+font-size: 20px;
+font-weight: 200;
+}
+
 body {
-font-family: 'Helvetica Neue', sans-serif;
-background: #f8f9fa;
-color: #343a40;
 margin: 0;
-padding: 20px;
 }
 
-header {
-text-align: center;
-margin-bottom: 20px;
+*, *:before, *:after {
+box-sizing: inherit;
 }
 
-nav {
-margin-bottom: 20px;
-}
-
-input#search {
-padding: 10px;
-width: 250px;
-}
-
-.recipes {
+.panels {
+min-height: 100vh;
+overflow: hidden;
 display: flex;
-flex-wrap: wrap;
-justify-content: space-around;
 }
 
-.recipe {
-background: #ffffff;
-border: 1px solid #ced4da;
-border-radius: 5px;
-margin: 15px;
-padding: 20px;
-flex: 1 1 30%;
-position: relative;
-}
-
-.recipe img {
-width: 100%;
-border-radius: 5px;
-}
-
-.details {
-display: none; /* Initially hidden */
-}
-
-.details-btn {
-background: #007bff;
+.panel {
+background: #6B0F9C;
+box-shadow: inset 0 0 0 5px rgba(255,255,255,0.1);
 color: white;
-border: none;
-padding: 10px;
-cursor: pointer;
+text-align: center;
+align-items: center;
+transition:
+font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+background 0.2s;
+font-size: 20px;
+background-size: cover;
+background-position: center;
+flex: 1;
+justify-content: center;
+display: flex;
+flex-direction: column;
 }
 
-.details-btn:hover {
-background: #0056b3;
+.panel1 { background-image: url('https://source.unsplash.com/featured/?spring'); }
+.panel2 { background-image: url('https://source.unsplash.com/featured/?summer'); }
+.panel3 { background-image: url('https://source.unsplash.com/featured/?autumn'); }
+.panel4 { background-image: url('https://source.unsplash.com/featured/?winter'); }
+.panel5 { background-image: url('https://source.unsplash.com/featured/?cookies'); }
+
+/* Flex Items */
+.panel > * {
+margin: 0;
+width: 100%;
+transition: transform 0.5s;
+flex: 1 0 auto;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.panel > *:first-child { transform: translateY(-100%); }
+.panel.open-active > *:first-child { transform: translateY(0); }
+.panel > *:last-child { transform: translateY(100%); }
+.panel.open-active > *:last-child { transform: translateY(0); }
+
+.panel p {
+text-transform: uppercase;
+font-family: 'Amatic SC', cursive;
+text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+font-size: 2em;
+}
+
+/* Style for ingredients and steps */
+.details {
+display: none;
+flex-direction: column;
+align-items: center;
+font-size: 1.2em;
+}
+
+.panel.open .details {
+display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+.panel p {
+font-size: 1em;
+}
 }
