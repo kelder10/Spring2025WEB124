@@ -1,6 +1,6 @@
 html {
 box-sizing: border-box;
-background: #ce1818;
+background: #f2f2f2;
 font-family: 'Helvetica Neue';
 font-size: 20px;
 font-weight: 200;
@@ -12,6 +12,22 @@ margin: 0;
 
 *, *:before, *:after {
 box-sizing: inherit;
+}
+
+.container {
+position: relative;
+min-height: 100vh;
+}
+
+.main-saying {
+position: absolute;
+top: 20px;
+left: 50%;
+transform: translateX(-50%);
+color: white;
+font-size: 2.5em;
+text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+transition: opacity 0.5s ease;
 }
 
 .panels {
@@ -39,11 +55,10 @@ display: flex;
 flex-direction: column;
 }
 
-.panel1 { background-image: url('./images/spring.jpg'); }
+.panel1 { background-image: url('https://source.unsplash.com/featured/?spring'); }
 .panel2 { background-image: url('https://source.unsplash.com/featured/?summer'); }
 .panel3 { background-image: url('https://source.unsplash.com/featured/?autumn'); }
 .panel4 { background-image: url('https://source.unsplash.com/featured/?winter'); }
-.panel5 { background-image: url('https://source.unsplash.com/featured/?cookies'); }
 
 /* Flex Items */
 .panel > * {
