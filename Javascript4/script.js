@@ -1,7 +1,14 @@
 const panels = document.querySelectorAll('.panel');
+const mainSaying = document.querySelector('.main-saying');
 
 function toggleOpen() {
 this.classList.toggle('open');
+
+if (this.classList.contains('open')) {
+mainSaying.style.opacity = '0'; // Hide the saying
+} else {
+mainSaying.style.opacity = '1'; // Show the saying again
+}
 }
 
 function toggleActive(e) {
