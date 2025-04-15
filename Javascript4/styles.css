@@ -33,7 +33,6 @@ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow effect */
 padding: 20px; /* Padding around the inner content */
 flex-direction: row; /* Row layout for columns */
 max-height: 600px; /* Set a max height to avoid stretching */
-overflow: auto; /* Allow scrolling if content overflows */
 }
 
 .left-column {
