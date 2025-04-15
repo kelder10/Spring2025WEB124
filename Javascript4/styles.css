@@ -2,8 +2,8 @@
 /* Description: Styles for Daily Planner application */
 
 body {
-margin: 10px;
-padding-top: 10px;
+margin: 0;
+padding: 0;
 font-family: Arial, sans-serif;
 height: 100vh; /* Full viewport height */
 background-color: #ce5019; /* Outer background color */
@@ -23,6 +23,7 @@ border-radius: 20px; /* More pronounced rounded corners */
 box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Shadow effect for depth */
 padding: 40px; /* Inner padding for content */
 margin: 20px; /* Margin to prevent touching edges */
+margin-top: 40px;
 }
 
 .container {
