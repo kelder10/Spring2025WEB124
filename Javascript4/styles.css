@@ -83,7 +83,7 @@ border-radius: 5px; /* Rounded corners for inputs */
 .add-appointment-task button {
 padding: 10px 15px; /* Padding for buttons */
 margin-left: 5px; /* Space between input and button */
-background: #120905; /* Button color */
+background: #b64515; /* Button color */
 color: white; /* Text color */
 border: none; /* No border */
 border-radius: 5px; /* Rounded corners for buttons */
@@ -130,7 +130,7 @@ border-radius: 5px; /* Rounded corners */
 
 .remove-completed {
 margin-top: 10px; /* Space above button */
-background: #120905; /* Button color */
+background: #b64515; /* Button color */
 color: white; /* Text color */
 border: none; /* No border */
 padding: 10px; /* Inner padding */
