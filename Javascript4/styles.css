@@ -30,7 +30,7 @@ top: 0;
 left: 0;
 right: 0;
 bottom: 0;
-background-image: url('your-background-image-url.jpg'); /* Replace with your image URL */
+background-image: url('flowers.jpg'); /* Replace with your image URL */
 background-size: cover; /* Cover the entire container */
 background-position: center; /* Center the image */
 opacity: 0.1; /* Adjust the opacity to see the content */
