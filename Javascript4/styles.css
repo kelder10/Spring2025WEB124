@@ -14,7 +14,7 @@ align-items: center; /* Center vertically */
 
 .background-image-container {
 position: relative; /* Positioning for the background image */
-background-image: url('./images/flowers.jpg'); /* Replace with your image URL */
+background-image: url('your-background-image-url.jpg'); /* Replace with your image URL */
 background-size: cover; /* Cover the entire container */
 background-position: center; /* Center the image */
 width: 90%; /* Width of the background image container */
@@ -128,3 +128,4 @@ border-radius: 5px; /* Rounded corners */
 .remove-completed:hover {
 background: #FF2E2E; /* Darker color on hover */
 }
+
