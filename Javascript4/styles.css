@@ -7,7 +7,7 @@ padding: 0;
 }
 
 .outer-background {
-background: #ffc600; /* Outer background color */
+background-image: url('./images/flowers.jpg'); /* Replace with your image URL */
 padding: 50px; /* Space around the inner container */
 display: flex;
 justify-content: center; /* Center the inner container */
