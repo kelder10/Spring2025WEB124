@@ -6,21 +6,20 @@ margin: 0;
 padding: 0;
 font-family: Arial, sans-serif;
 height: 100vh; /* Full viewport height */
+background-color: #ffc600; /* Outer background color */
 display: flex; /* Use flexbox to center content */
 justify-content: center; /* Center horizontally */
 align-items: center; /* Center vertically */
-background-color: #c15d2f; /* Outer background color */
 }
 
 .background-image-container {
 position: relative; /* Positioning for the background image */
-background-image: url('./images/flowers.jpg'); /* Replace with your image URL */
+background-image: url('your-background-image-url.jpg'); /* Replace with your image URL */
 background-size: cover; /* Cover the entire container */
 background-position: center; /* Center the image */
-width: 100%; /* Full width */
+width: 100%; /* Full width of the parent */
 max-width: 800px; /* Max width for the container */
-border-radius: 10px; /* Rounded corners for the container */
-padding: 40px; /* Inner padding */
+border-radius: 10px; /* Rounded corners */
 }
 
 .container {
@@ -29,7 +28,7 @@ background: white; /* Inner container background */
 border-radius: 10px; /* Rounded corners */
 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow effect */
 padding: 20px; /* Padding around the inner content */
-width: 100%; /* Full width of the background image container */
+flex-direction: row; /* Row layout for columns */
 }
 
 .left-column {
