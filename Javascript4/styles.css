@@ -7,12 +7,22 @@ background: #ffc600;
 }
 
 .container {
-max-width: 600px;
+display: flex;
+max-width: 800px;
 margin: 50px auto;
 background: white;
 border-radius: 5px;
 box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
 padding: 20px;
+}
+
+.left-column, .right-column {
+flex: 1;
+padding: 10px;
+}
+
+.left-column {
+border-right: 1px solid #F1F1F1;
 }
 
 .add-task {
