@@ -14,7 +14,7 @@ align-items: center; /* Center vertically */
 
 .background-image-container {
 position: relative; /* Positioning for the background image */
-background-image: url('your-background-image-url.jpg'); /* Replace with your image URL */
+background-image: url('./images/flowers.jpg'); /* Replace with your image URL */
 background-size: cover; /* Cover the entire container */
 background-position: center; /* Center the image */
 width: 100%; /* Full width of the parent */
