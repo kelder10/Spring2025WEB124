@@ -24,7 +24,7 @@ border-radius: 10px; /* Rounded corners */
 
 .container {
 display: flex; /* Use flexbox for layout */
-background: white; /* Inner container background */
+background: #efd8cf; /* Inner container background */
 border-radius: 10px; /* Rounded corners */
 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow effect */
 padding: 20px; /* Padding around the inner content */
