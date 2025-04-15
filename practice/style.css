@@ -1,61 +1,42 @@
-html {
-  box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
 body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
-  margin: 0; /* Important! */
+  background: #4C4C4C url('https://unsplash.it/1500/900?image=1021');
+  background-size: cover;
   font-family: sans-serif;
-  background:
-    linear-gradient(45deg, hsla(340, 100%, 55%, 1) 0%, hsla(340, 100%, 55%, 0) 70%),
-    linear-gradient(135deg, hsla(225, 95%, 50%, 1) 10%, hsla(225, 95%, 50%, 0) 80%),
-    linear-gradient(225deg, hsla(140, 90%, 50%, 1) 10%, hsla(140, 90%, 50%, 0) 80%),
-    linear-gradient(315deg, hsla(35, 95%, 55%, 1) 100%, hsla(35, 95%, 55%, 0) 70%);
 }
 
 .wrapper {
-  margin: 0 auto;
-  max-width: 500px;
-  font-size: 20px;
-  line-height: 2;
-  position: relative;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-  background: rgba(0,0,0,0.05);
-  border-radius: 20px;
-}
-
-.highlight {
-  transition: all 0.2s;
-  border-bottom: 2px solid white;
-  position: absolute;
-  top: 0;
-  background: white;
-  left: 0;
-  z-index: -1;
-  border-radius: 20px;
-  display: block;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
-
-.menu {
-  padding: 0;
+  width: 850px;
   display: flex;
-  list-style: none;
-  justify-content: center;
-  margin:100px 0;
 }
 
-.menu a {
-  display: inline-block;
-  padding: 5px;
-  margin: 0 20px;
-  color: black;
+video {
+  box-shadow: 0 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.speed {
+  background: #efefef;
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  margin: 10px;
+  border-radius: 50px;
+  box-shadow: 0 0 1px 3px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.speed-bar {
+  width: 100%;
+  background: linear-gradient(-170deg, #2376ae 0%, #c16ecf 100%);
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  color: white;
+  height: 16.3%;
 }
