@@ -37,7 +37,7 @@ max-height: 600px; /* Set a max height to avoid stretching */
 overflow: auto; /* Allow scrolling if content overflows */
 }
 
-h1 {
+h2 {
   font-size: 3.5rem; 
   font: arial;
   padding: 0.5rem 1rem; 
