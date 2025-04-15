@@ -22,7 +22,7 @@ max-width: 800px; /* Max width for the container */
 border-radius: 20px; /* More pronounced rounded corners */
 box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Shadow effect for depth */
 padding: 40px; /* Inner padding for content */
-padding-top: 100px;
+padding-top: 120px;
 margin: 20px; /* Margin to show orange background around the container */
 }
 
