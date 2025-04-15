@@ -17,12 +17,13 @@ height: 100vh; /* Full viewport height */
 
 .background-image-container {
 position: relative; /* Positioning for the background image */
-background-image: url('your-background-image-url.jpg'); /* Replace with your image URL */
+background-image: url('./images/flowers.jpg'); /* Replace with your image URL */
 background-size: cover; /* Cover the entire container */
 background-position: center; /* Center the image */
 width: 100%; /* Full width */
 max-width: 800px; /* Max width for the container */
 border-radius: 10px; /* Rounded corners for the container */
+padding: 40px; /* Increase padding to make the container thicker */
 }
 
 .container {
