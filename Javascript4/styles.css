@@ -7,7 +7,7 @@ padding: 0;
 }
 
 .outer-background {
-background: #121216; /* Outer background color */
+background: #ffc600; /* Outer background color */
 padding: 50px; /* Space around the inner container */
 display: flex;
 justify-content: center; /* Center the inner container */
@@ -16,15 +16,33 @@ justify-content: center; /* Center the inner container */
 .container {
 display: flex;
 max-width: 800px;
-background: #bf18ce; /* Inner container background */
+background: white; /* Inner container background */
 border-radius: 5px;
 box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 padding: 20px;
+position: relative; /* Positioning for the background image */
+}
+
+.container::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-image: url('your-background-image-url.jpg'); /* Replace with your image URL */
+background-size: cover; /* Cover the entire container */
+background-position: center; /* Center the image */
+opacity: 0.1; /* Adjust the opacity to see the content */
+border-radius: 5px; /* Match the border radius of the container */
+z-index: 0; /* Send the background to the back */
 }
 
 .left-column, .right-column {
 flex: 1;
 padding: 10px;
+position: relative; /* Ensure content is above the background */
+z-index: 1; /* Bring content above the background */
 }
 
 .add-task, .add-priority-task, .add-tomorrow-task, .add-appointment-task {
@@ -102,3 +120,4 @@ width: 100%;
 .remove-completed:hover {
 background: #FF2E2E;
 }
+
