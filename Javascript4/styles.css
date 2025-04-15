@@ -8,7 +8,7 @@ font-family: Arial, sans-serif;
 }
 
 .outer-background {
-background: #d5470a; /* Outer background color */
+background: #ffc600; /* Outer background color */
 padding: 50px; /* Space around the inner container */
 display: flex;
 justify-content: center; /* Center the inner container */
@@ -17,7 +17,7 @@ height: 100vh; /* Full viewport height */
 
 .background-image-container {
 position: relative; /* Positioning for the background image */
-background-image: url('./images/flowers.jpg'); /* Replace with your image URL */
+background-image: url('your-background-image-url.jpg'); /* Replace with your image URL */
 background-size: cover; /* Cover the entire container */
 background-position: center; /* Center the image */
 width: 100%; /* Full width */
@@ -27,15 +27,22 @@ padding: 40px; /* Increase padding to make the container thicker */
 }
 
 .container {
-background: #fae5dc; /* Inner container background */
+display: flex; /* Use flexbox for layout */
+background: white; /* Inner container background */
 border-radius: 10px;
 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 padding: 20px;
+width: 100%; /* Full width of the background image container */
 }
 
-.left-column, .right-column {
-flex: 1;
-padding: 10px;
+.left-column {
+flex: 2; /* Take up more space */
+padding-right: 20px; /* Space between columns */
+}
+
+.right-column {
+flex: 1; /* Take up less space */
+padding-left: 20px; /* Space between columns */
 }
 
 .add-task, .add-priority-task, .add-tomorrow-task, .add-appointment-task {
