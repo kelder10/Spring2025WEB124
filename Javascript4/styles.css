@@ -1,31 +1,18 @@
 /* Author: Your Name, Date: YYYY-MM-DD */
 /* Description: Styles for Daily Planner application */
 
-body {
-margin: 0;
-padding: 0;
-}
-
-.outer-background {
-background: #ffc600; /* Outer background color */
-padding: 50px; /* Space around the inner container */
-display: flex;
-justify-content: center; /* Center the inner container */
-}
-
-.background-image-container {
-position: relative; /* Positioning for the background image */
-background-image: url('./images.flowers.jpg'); /* Replace with your image URL */
-background-size: cover; /* Cover the entire container */
-background-position: center; /* Center the image */
-border-radius: 5px; /* Match the border radius of the container */
-padding: 20px; /* Space inside the background container */
+html {
+font-family: 'Roboto', sans-serif;
+background: #ffc600;
 }
 
 .container {
-background: white; /* Inner container background */
+display: flex;
+max-width: 800px;
+margin: 50px auto;
+background: white;
 border-radius: 5px;
-box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
 padding: 20px;
 }
 
@@ -34,9 +21,13 @@ flex: 1;
 padding: 10px;
 }
 
+.left-column {
+border-right: 1px solid #F1F1F1;
+}
+
 .add-task, .add-priority-task, .add-tomorrow-task, .add-appointment-task {
 display: flex;
-margin-bottom: 10px;
+margin-bottom: 20px;
 }
 
 .add-task input,
@@ -44,22 +35,20 @@ margin-bottom: 10px;
 .add-tomorrow-task input,
 .add-appointment-task input {
 flex: 1;
-padding: 5px;
-font-size: 14px;
-height: 30px;
+padding: 10px;
+font-size: 16px;
 }
 
 .add-task button,
 .add-priority-task button,
 .add-tomorrow-task button,
 .add-appointment-task button {
-padding: 5px 10px;
+padding: 10px 15px;
 margin-left: 5px;
 background: #6B0F9C;
 color: white;
 border: none;
 cursor: pointer;
-height: 30px;
 }
 
 h3 {
