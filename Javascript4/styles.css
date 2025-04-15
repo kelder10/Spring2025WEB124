@@ -15,7 +15,7 @@ justify-content: center; /* Center the inner container */
 
 .background-image-container {
 position: relative; /* Positioning for the background image */
-background-image: url('flowers.jpg'); /* Replace with your image URL */
+background-image: url('./images/flowers.jpg'); /* Replace with your image URL */
 background-size: cover; /* Cover the entire container */
 background-position: center; /* Center the image */
 border-radius: 5px; /* Match the border radius of the container */
