@@ -40,11 +40,12 @@ overflow: auto; /* Allow scrolling if content overflows */
 h2 {
   font-size: 3.5rem; 
   font: arial;
+  font-style: italic;
   padding: 0.5rem 1rem; 
   cursor: pointer;
   margin: 0 20px; 
   border-radius: 10px; /* Curved corners */
-  background-color: #120905; 
+  background-color: #b64515; 
   color: white; 
   border: 2px solid #fff; 
   transition: background-color 0.3s, border-color 0.3s; 
