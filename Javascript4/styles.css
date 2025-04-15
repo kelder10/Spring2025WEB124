@@ -1,5 +1,5 @@
 /* Author: Your Name, Date: YYYY-MM-DD */
-/* Description: Styles for Interactive To-Do List application */
+/* Description: Styles for Daily Planner application */
 
 html {
 font-family: 'Roboto', sans-serif;
@@ -7,33 +7,12 @@ background: #ffc600;
 }
 
 .container {
-max-width: 400px;
+max-width: 600px;
 margin: 50px auto;
 background: white;
 border-radius: 5px;
 box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
 padding: 20px;
-}
-
-.item {
-display: flex;
-align-items: center;
-border-bottom: 1px solid #F1F1F1;
-padding: 10px 0;
-}
-
-.item:last-child {
-border-bottom: 0;
-}
-
-input[type="checkbox"] {
-margin: 0 10px 0 0;
-}
-
-p {
-margin: 0;
-flex: 1;
-font-size: 18px;
 }
 
 .add-task {
@@ -54,6 +33,40 @@ background: #6B0F9C;
 color: white;
 border: none;
 cursor: pointer;
+}
+
+h3 {
+margin-top: 20px;
+}
+
+.items, .priority-container, .tomorrow-container, .appointments-container {
+border: 1px solid #F1F1F1;
+border-radius: 5px;
+margin-bottom: 10px;
+padding: 10px;
+}
+
+.item, .priority-item, .tomorrow-item, .appointment-item {
+display: flex;
+align-items: center;
+border-bottom: 1px solid #F1F1F1;
+padding: 5px 0;
+}
+
+.item:last-child, .priority-item:last-child, .tomorrow-item:last-child, .appointment-item:last-child {
+border-bottom: 0;
+}
+
+input[type="checkbox"] {
+margin: 0 10px 0 0;
+}
+
+textarea {
+width: 100%;
+height: 100px;
+margin-top: 10px;
+padding: 10px;
+font-size: 16px;
 }
 
 .remove-completed {
