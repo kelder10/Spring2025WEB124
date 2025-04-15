@@ -22,7 +22,7 @@ max-width: 900px; /* Max width for the container */
 border-radius: 20px; /* More pronounced rounded corners */
 box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Shadow effect for depth */
 padding: 40px; /* Inner padding for content */
-margin: 20px; /* Margin to prevent touching edges */
+margin: 20px auto; /* Margin to prevent touching edges */
 margin-top: 40px;
 }
 
