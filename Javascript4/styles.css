@@ -2,8 +2,8 @@
 /* Description: Styles for Daily Planner application */
 
 body {
-margin: 0;
-padding: 0;
+margin: 10px;
+padding: 10px;
 font-family: Arial, sans-serif;
 height: 100vh; /* Full viewport height */
 background-color: #ce5019; /* Outer background color */
