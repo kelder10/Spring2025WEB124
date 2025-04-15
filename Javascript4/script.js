@@ -1,10 +1,14 @@
 // Author: Your Name, Date: YYYY-MM-DD
-// Description: JavaScript for handling the Interactive To-Do List application
+// Description: JavaScript for handling the Daily Planner application
 
 const addTaskBtn = document.getElementById('addTaskBtn');
 const taskInput = document.getElementById('taskInput');
 const itemsContainer = document.getElementById('itemsContainer');
 const removeCompletedBtn = document.getElementById('removeCompletedBtn');
+const priorityContainer = document.getElementById('priorityContainer');
+const tomorrowContainer = document.getElementById('tomorrowContainer');
+const appointmentsContainer = document.getElementById('appointmentsContainer');
+const notesInput = document.getElementById('notesInput');
 
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
