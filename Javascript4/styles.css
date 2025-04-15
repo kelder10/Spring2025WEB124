@@ -28,7 +28,7 @@ margin: 20px; /* Margin to show orange background around the container */
 
 .container {
 display: flex; /* Use flexbox for layout */
-background: white; /* Inner container background */
+background: #f7ede9; /* Inner container background */
 border-radius: 15px; /* Slightly rounded corners */
 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow effect */
 padding: 20px; /* Padding around the inner content */
@@ -70,7 +70,7 @@ border-radius: 5px; /* Rounded corners for inputs */
 .add-appointment-task button {
 padding: 10px 15px; /* Padding for buttons */
 margin-left: 5px; /* Space between input and button */
-background: #6B0F9C; /* Button color */
+background: #120905; /* Button color */
 color: white; /* Text color */
 border: none; /* No border */
 border-radius: 5px; /* Rounded corners for buttons */
@@ -117,7 +117,7 @@ border-radius: 5px; /* Rounded corners */
 
 .remove-completed {
 margin-top: 10px; /* Space above button */
-background: #FF4E4E; /* Button color */
+background: #120905; /* Button color */
 color: white; /* Text color */
 border: none; /* No border */
 padding: 10px; /* Inner padding */
