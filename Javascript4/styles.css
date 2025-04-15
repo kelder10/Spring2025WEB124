@@ -3,14 +3,7 @@
 
 html {
 font-family: 'Roboto', sans-serif;
-background: #5772af;
-}
-
-.outer-background {
-background: #c6a8da; /* Outer background color */
-padding: 50px; /* Space around the inner container */
-display: flex;
-justify-content: center; /* Center the inner container */
+background: #c6a8da;
 }
 
 .background-image-container {
