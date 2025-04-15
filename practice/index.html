@@ -2,66 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Understanding JavaScript's Capture</title>
+  <title>Video Speed Scrubber</title>
+  <link rel="stylesheet" href="style.css">
   <link rel="icon" href="https://fav.farm/✅" />
 </head>
-<body class="bod">
+<body>
 
-  <div class="one">
-    <div class="two">
-      <div class="three">
-      </div>
+  <div class="wrapper">
+    <video class="flex" width="765" height="430" src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" loop controls></video>
+    <div class="speed">
+      <div class="speed-bar">1×</div>
     </div>
   </div>
 
-<style>
-  html {
-    box-sizing: border-box;
-  }
-
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
-
-  div {
-    width: 100%;
-    padding: 100px;
-  }
-
-  .one {
-    background: thistle;
-  }
-
-  .two {
-    background: mistyrose;
-  }
-
-  .three {
-    background: coral;
-  }
-</style>
-
-<button></button>
 <script>
-  const divs = document.querySelectorAll('div');
-  const button = document.querySelector('button');
+  const speed = document.querySelector('.speed');
+  const bar = speed.querySelector('.speed-bar');
+  const video = document.querySelector('.flex');
 
-  function logText(e) {
-    console.log(this.classList.value);
-    // e.stopPropagation(); // stop bubbling!
-    // console.log(this);
-  }
+  function handleMove(e) {
+      const y = e.pageY - this.offsetTop;
+      const percent = y / this.offsetHeight;
+      const min = 0.4;
+      const max = 4;
+      const height = Math.round(percent * 100) + '%';
+      const playbackRate = percent * (max - min) + min;
+      bar.style.height = height;
+      bar.textContent = playbackRate.toFixed(2) + '×';
+      video.playbackRate = playbackRate;
+    }
 
-  divs.forEach(div => div.addEventListener('click', logText, {
-    capture: false,
-    once: true
-  }));
-
-  button.addEventListener('click', () => {
-    console.log('Click!!!');
-  }, {
-    once: true
-  });
+  speed.addEventListener('mousemove', handleMove);
 
 </script>
 </body>
