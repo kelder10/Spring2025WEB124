@@ -8,7 +8,7 @@ font-family: Arial, sans-serif;
 }
 
 .outer-background {
-background: ##d5470a; /* Outer background color */
+background: #d5470a; /* Outer background color */
 padding: 50px; /* Space around the inner container */
 display: flex;
 justify-content: center; /* Center the inner container */
