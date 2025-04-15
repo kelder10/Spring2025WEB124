@@ -27,7 +27,7 @@ padding: 40px; /* Increase padding to make the container thicker */
 }
 
 .container {
-background: white; /* Inner container background */
+background: #fae5dc; /* Inner container background */
 border-radius: 10px;
 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 padding: 20px;
