@@ -10,7 +10,17 @@ const tomorrowContainer = document.getElementById('tomorrowContainer');
 const appointmentsContainer = document.getElementById('appointmentsContainer');
 const notesInput = document.getElementById('notesInput');
 
+const addPriorityTaskBtn = document.getElementById('addPriorityTaskBtn');
+const priorityTaskInput = document.getElementById('priorityTaskInput');
+const addTomorrowTaskBtn = document.getElementById('addTomorrowTaskBtn');
+const tomorrowTaskInput = document.getElementById('tomorrowTaskInput');
+const addAppointmentTaskBtn = document.getElementById('addAppointmentTaskBtn');
+const appointmentTaskInput = document.getElementById('appointmentTaskInput');
+
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+let priorityTasks = JSON.parse(localStorage.getItem('priorityTasks')) || [];
+let tomorrowTasks = JSON.parse(localStorage.getItem('tomorrowTasks')) || [];
+let appointmentTasks = JSON.parse(localStorage.getItem('appointmentTasks')) || [];
 
 function renderTasks() {
 itemsContainer.innerHTML = '';
@@ -47,6 +57,66 @@ localStorage.setItem('tasks', JSON.stringify(tasks));
 renderTasks();
 }
 
+function renderPriorityTasks() {
+priorityContainer.innerHTML = '';
+priorityTasks.forEach((task) => {
+const item = document.createElement('div');
+item.classList.add('priority-item');
+item.innerHTML = `<p>${task.text}</p>`;
+priorityContainer.appendChild(item);
+});
+}
+
+function addPriorityTask() {
+const taskText = priorityTaskInput.value.trim();
+if (taskText) {
+priorityTasks.push({ text: taskText });
+localStorage.setItem('priorityTasks', JSON.stringify(priorityTasks));
+priorityTaskInput.value = '';
+renderPriorityTasks();
+}
+}
+
+function renderTomorrowTasks() {
+tomorrowContainer.innerHTML = '';
+tomorrowTasks.forEach((task) => {
+const item = document.createElement('div');
+item.classList.add('tomorrow-item');
+item.innerHTML = `<p>${task.text}</p>`;
+tomorrowContainer.appendChild(item);
+});
+}
+
+function addTomorrowTask() {
+const taskText = tomorrowTaskInput.value.trim();
+if (taskText) {
+tomorrowTasks.push({ text: taskText });
+localStorage.setItem('tomorrowTasks', JSON.stringify(tomorrowTasks));
+tomorrowTaskInput.value = '';
+renderTomorrowTasks();
+}
+}
+
+function renderAppointmentTasks() {
+appointmentsContainer.innerHTML = '';
+appointmentTasks.forEach((task) => {
+const item = document.createElement('div');
+item.classList.add('appointment-item');
+item.innerHTML = `<p>${task.text}</p>`;
+appointmentsContainer.appendChild(item);
+});
+}
+
+function addAppointmentTask() {
+const taskText = appointmentTaskInput.value.trim();
+if (taskText) {
+appointmentTasks.push({ text: taskText });
+localStorage.setItem('appointmentTasks', JSON.stringify(appointmentTasks));
+appointmentTaskInput.value = '';
+renderAppointmentTasks();
+}
+}
+
 addTaskBtn.addEventListener('click', addTask);
 itemsContainer.addEventListener('click', (e) => {
 if (e.target.matches('input[type="checkbox"]')) {
@@ -54,6 +124,12 @@ handleCheck(e);
 }
 });
 removeCompletedBtn.addEventListener('click', removeCompletedTasks);
+addPriorityTaskBtn.addEventListener('click', addPriorityTask);
+addTomorrowTaskBtn.addEventListener('click', addTomorrowTask);
+addAppointmentTaskBtn.addEventListener('click', addAppointmentTask);
 
 // Initial render
 renderTasks();
+renderPriorityTasks();
+renderTomorrowTasks();
+renderAppointmentTasks();
