@@ -6,7 +6,7 @@ margin: 0;
 padding: 0;
 font-family: Arial, sans-serif;
 height: 100vh; /* Full viewport height */
-background-color: #ffc600; /* Outer background color */
+background-color: #ce5019; /* Outer background color */
 display: flex; /* Use flexbox to center content */
 justify-content: center; /* Center horizontally */
 align-items: center; /* Center vertically */
@@ -22,15 +22,18 @@ max-width: 800px; /* Max width for the container */
 border-radius: 20px; /* More pronounced rounded corners */
 box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Shadow effect for depth */
 padding: 40px; /* Inner padding for content */
+margin: 20px; /* Margin to prevent touching edges */
 }
 
 .container {
 display: flex; /* Use flexbox for layout */
-background: white; /* Inner container background */
+background: #efd8cf; /* Inner container background */
 border-radius: 15px; /* Slightly rounded corners */
 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow effect */
 padding: 20px; /* Padding around the inner content */
 flex-direction: row; /* Row layout for columns */
+max-height: 600px; /* Set a max height to avoid stretching */
+overflow: auto; /* Allow scrolling if content overflows */
 }
 
 .left-column {
