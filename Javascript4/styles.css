@@ -7,7 +7,7 @@ background: #ffc600;
 }
 
 .outer-background {
-background: #ffc600; /* Outer background color */
+background: #c6a8da; /* Outer background color */
 padding: 50px; /* Space around the inner container */
 display: flex;
 justify-content: center; /* Center the inner container */
