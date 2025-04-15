@@ -1,3 +1,6 @@
+// Author: Your Name, Date: YYYY-MM-DD
+// Description: JavaScript for handling panel interactions
+
 const panels = document.querySelectorAll('.panel');
 const mainSaying = document.querySelector('.main-saying');
 
