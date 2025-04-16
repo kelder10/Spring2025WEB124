@@ -23,6 +23,9 @@ let appointmentTasks = JSON.parse(localStorage.getItem('appointmentTasks')) || [
 
 let lastChecked; // Variable to keep track of the last checked checkbox
 
+// Call renderTasks to display existing tasks
+renderTasks();
+
 function renderTasks() {
 itemsContainer.innerHTML = '';
 tasks.forEach((task, index) => {
@@ -145,7 +148,6 @@ addTomorrowTaskBtn.addEventListener('click', addTomorrowTask);
 addAppointmentTaskBtn.addEventListener('click', addAppointmentTask);
 
 // Initial render
-renderTasks();
 renderPriorityTasks();
 renderTomorrowTasks();
 renderAppointmentTasks();
