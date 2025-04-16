@@ -12,29 +12,18 @@ justify-content: center; /* Center horizontally */
 align-items: center; /* Center vertically */
 }
 
-.background-image-container {
-position: relative; /* Positioning for the background image */
-background-image: url('./images/flowers.jpg'); /* Replace with your image URL */
-background-size: cover; /* Cover the entire container */
-background-position: center; /* Center the image */
-width: 90%; /* Width of the background image container */
-max-width: 800px; /* Max width for the container */
-border-radius: 20px; /* More pronounced rounded corners */
-box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Shadow effect for depth */
-padding: 40px; /* Inner padding for content */
-padding-top: 120px;
-margin: 20px; /* Margin to show orange background around the container */
+.wrapper {
+padding: 20px; /* Padding around the entire container */
 }
 
 .container {
-display: flex; /* Use flexbox for layout */
-background: #f7ede9; /* Inner container background */
-border-radius: 15px; /* Slightly rounded corners */
-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow effect */
-padding: 20px; /* Padding around the inner content */
-flex-direction: row; /* Row layout for columns */
-max-height: 600px; /* Set a max height to avoid stretching */
-overflow: auto; /* Allow scrolling if content overflows */
+display: flex;
+justify-content: space-between;
+background: white; /* Background for the content area */
+border-radius: 10px;
+box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+border: 20px solid transparent; /* Space for the image border */
+border-image: url('./image/flowers.jpg') 30 stretch; /* Path to your image */
 }
 
 h2 {
