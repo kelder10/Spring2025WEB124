@@ -147,12 +147,15 @@ renderAppointmentTasks();
 }
 }
 
-addTaskBtn.addEventListener('click', addTask);
+// Add event listener for checkbox clicks
 itemsContainer.addEventListener('click', (e) => {
 if (e.target.matches('input[type="checkbox"]')) {
 handleCheck.call(e.target, e); // Call handleCheck with the current target
 }
 });
+
+// Add event listeners for buttons
+addTaskBtn.addEventListener('click', addTask);
 removeCompletedBtn.addEventListener('click', removeCompletedTasks);
 addPriorityTaskBtn.addEventListener('click', addPriorityTask);
 addTomorrowTaskBtn.addEventListener('click', addTomorrowTask);
