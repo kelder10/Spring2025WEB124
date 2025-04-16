@@ -49,3 +49,13 @@
 <script src="script.js"></script>
 </body>
 </html>
+```
+
+### Key Points to Check
+1. **Correct Event Listener**: Ensure that the event listener for the checkbox click is correctly set up in the JavaScript file:
+```javascript
+itemsContainer.addEventListener('click', (e) => {
+if (e.target.matches('input[type="checkbox"]')) {
+handleCheck.call(e.target, e); // Call handleCheck with the current target
+}
+});
