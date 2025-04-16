@@ -72,6 +72,7 @@ tasks[index].completed = true; // Mark the task as completed in the tasks array
 }
 });
 }
+
 lastChecked = this; // Update lastChecked
 const index = e.target.id.split('-')[1];
 tasks[index].completed = e.target.checked;
