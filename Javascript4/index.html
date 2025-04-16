@@ -15,7 +15,7 @@
 <input type="text" id="taskInput" placeholder="Add a new task">
 <button id="addTaskBtn">Add</button>
 </div>
-<div class="items" id="itemsContainer"></div> <!-- This is where tasks will be rendered -->
+<div class="items" id="itemsContainer"></div>
 <div class="notes-container">
 <h3>Notes</h3>
 <textarea id="notesInput" placeholder="Write your notes here..."></textarea>
@@ -27,9 +27,11 @@
 <input type="date" id="dateInput">
 
 <h3>Top Priorities</h3>
-<div class="top-priorities-container">
-<textarea id="topPrioritiesInput" placeholder="Add your top priorities here..."></textarea>
+<div class="add-priority-task">
+<input type="text" id="priorityTaskInput" placeholder="Add a new priority task">
+<button id="addPriorityTaskBtn">Add Priority Task</button>
 </div>
+<div class="priority-container" id="priorityContainer"></div>
 
 <h3>For Tomorrow</h3>
 <div class="add-tomorrow-task">
@@ -46,8 +48,6 @@
 </div>
 </div>
 
-<!-- Include the JavaScript file at the end of the body -->
 <script src="script.js"></script>
 </body>
 </html>
-
