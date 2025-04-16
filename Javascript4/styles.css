@@ -7,13 +7,13 @@ background: #b64515; /* Background for the entire page */
 }
 
 .wrapper {
-padding: 45px; /* Padding around the entire container */
+padding: 30px; /* Padding around the entire container */
 }
 
 .container {
 display: flex;
 justify-content: space-between;
-background: white; /* Background for the content area */
+background: #f4ece9; /* Background for the content area */
 border-radius: 10px;
 box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
 border: 20px solid transparent; /* Space for the image border */
