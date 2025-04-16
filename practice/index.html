@@ -7,41 +7,51 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<body>
 <div class="wrapper">
 <div class="container">
-<div class="todo-section">
+<div class="left-column">
 <h2>To-Do List</h2>
-<div class="inbox">
-<div class="item">
-<input type="checkbox">
-<p>This is an inbox layout.</p>
+<div class="add-task">
+<input type="text" id="taskInput" placeholder="Add a new task">
+<button id="addTaskBtn">Add</button>
 </div>
-<!-- Additional to-do items can be added here -->
-</div>
-<textarea placeholder="Your notes for the day..."></textarea>
+<div class="items" id="itemsContainer"></div>
+<button class="remove-completed" id="removeCompletedBtn">Remove Completed</button>
 </div>
 
-<div class="date-section">
-<h2>Today's Date</h2>
+<div class="right-column">
+<h3>Today's Date</h3>
 <input type="date" id="dateInput">
 
 <h3>Top Priorities</h3>
-<div class="priority-box">
-<input type="text" placeholder="Add a priority...">
+<div class="add-priority-task">
+<input type="text" id="priorityTaskInput" placeholder="Add a new priority task">
+<button id="addPriorityTaskBtn">Add</button>
 </div>
+<div class="priority-container" id="priorityContainer"></div>
 
 <h3>For Tomorrow</h3>
-<div class="tomorrow-box">
-<input type="text" placeholder="Add a task for tomorrow...">
+<div class="add-tomorrow-task">
+<input type="text" id="tomorrowTaskInput" placeholder="Add a new tomorrow task">
+<button id="addTomorrowTaskBtn">Add</button>
 </div>
+<div class="tomorrow-container" id="tomorrowContainer"></div>
 
 <h3>Appointments/Calls</h3>
-<div class="appointment-box">
-<input type="text" placeholder="Add an appointment...">
+<div class="add-appointment-task">
+<input type="text" id="appointmentTaskInput" placeholder="Add a new appointment task">
+<button id="addAppointmentTaskBtn">Add</button>
+</div>
+<div class="appointments-container" id="appointmentsContainer"></div>
+
+<h3>Notes</h3>
+<textarea id="notesInput" placeholder="Write your notes here..."></textarea>
 </div>
 </div>
 </div>
 </div>
+
 <script src="script.js"></script>
 </body>
 </html>
