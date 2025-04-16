@@ -106,10 +106,13 @@ input[type="checkbox"] {
 margin: 0 10px 0 0; /* Space before checkbox */
 }
 
+.notes-container {
+margin-top: 10px; /* Space above notes */
+}
+
 textarea {
 width: 100%; /* Full width */
 height: 100px; /* Fixed height */
-margin-top: 10px; /* Space above textarea */
 padding: 10px; /* Inner padding */
 font-size: 16px; /* Font size */
 border: 1px solid #ccc; /* Light border */
