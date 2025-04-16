@@ -1,46 +1,5 @@
 // Author: Your Name, Date: YYYY-MM-DD
 // Description: JavaScript for handling the Daily Planner application
-function handleCheck(e) {
-// Check if the shift key is held down and the checkbox is being checked
-let inBetween = false;
-const checkboxes = itemsContainer.querySelectorAll('input[type="checkbox"]');
-
-// Determine the current index
-const currentIndex = Array.from(checkboxes).indexOf(this);
-
-if (e.shiftKey && this.checked) {
-// Loop over all checkboxes
-checkboxes.forEach((checkbox, index) => {
-if (checkbox === this || checkbox === lastChecked) {
-inBetween = !inBetween; // Toggle inBetween flag
-}
-if (inBetween) {
-checkbox.checked = true; // Check the checkbox in between
-const index = checkbox.id.split('-')[1];
-tasks[index].completed = true; // Mark the task as completed in the tasks array
-}
-});
-}
-
-lastChecked = this; // Update lastChecked
-const index = e.target.id.split('-')[1];
-tasks[index].completed = e.target.checked;
-localStorage.setItem('tasks', JSON.stringify(tasks));
-renderTasks(); // Re-render tasks to update the display
-}
-```
-
-### Key Changes:
-1. **Direction Handling:** The updated implementation checks all checkboxes between `this` (the currently checked checkbox) and `lastChecked` (the last checked checkbox) regardless of their order in the DOM. This way, if you select a checkbox above or below, it will correctly check all intermediate checkboxes.
-
-2. **Index Determination:** We first determine the current index of the checkbox being clicked and then toggle the `inBetween` flag as we loop through the checkboxes.
-
-### Complete JavaScript File:
-Here’s the complete JavaScript file incorporating the updated `handleCheck` function:
-
-```javascript
-// Author: Your Name, Date: YYYY-MM-DD
-// Description: JavaScript for handling the Daily Planner application
 
 const addTaskBtn = document.getElementById('addTaskBtn');
 const taskInput = document.getElementById('taskInput');
