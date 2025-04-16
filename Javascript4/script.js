@@ -1,5 +1,8 @@
 // Author: Your Name, Date: YYYY-MM-DD
 // Description: JavaScript for handling the Daily Planner application
+// Author: Your Name, Date: YYYY-MM-DD
+// Description: JavaScript for handling the Daily Planner application
+
 const addTaskBtn = document.getElementById('addTaskBtn');
 const taskInput = document.getElementById('taskInput');
 const itemsContainer = document.getElementById('itemsContainer');
@@ -53,8 +56,10 @@ renderTasks();
 }
 
 function handleCheck(e) {
+// Check if they had the shift key down AND check that they are checking it
 let inBetween = false;
 if (e.shiftKey && this.checked) {
+// Loop over every single checkbox
 const checkboxes = itemsContainer.querySelectorAll('input[type="checkbox"]');
 checkboxes.forEach(checkbox => {
 if (checkbox === this || checkbox === lastChecked) {
