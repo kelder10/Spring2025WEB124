@@ -1,8 +1,5 @@
 // Author: Your Name, Date: YYYY-MM-DD
 // Description: JavaScript for handling the Daily Planner application
-// Author: Your Name, Date: YYYY-MM-DD
-// Description: JavaScript for handling the Daily Planner application
-
 const addTaskBtn = document.getElementById('addTaskBtn');
 const taskInput = document.getElementById('taskInput');
 const itemsContainer = document.getElementById('itemsContainer');
@@ -70,12 +67,13 @@ checkboxes[i].checked = true; // Check the checkbox in between
 const index = checkboxes[i].id.split('-')[1];
 tasks[index].completed = true; // Mark the task as completed in the tasks array
 }
+} else {
+const index = e.target.id.split('-')[1];
+tasks[index].completed = e.target.checked; // Update individual task completion
 }
 
-lastChecked = this; // Update lastChecked
-const index = e.target.id.split('-')[1];
-tasks[index].completed = e.target.checked;
-localStorage.setItem('tasks', JSON.stringify(tasks));
+lastChecked = this; // Update lastChecked to the current checkbox
+localStorage.setItem('tasks', JSON.stringify(tasks)); // Save the updated tasks
 renderTasks(); // Re-render tasks to update the display
 }
 
@@ -164,3 +162,4 @@ addAppointmentTaskBtn.addEventListener('click', addAppointmentTask);
 renderPriorityTasks();
 renderTomorrowTasks();
 renderAppointmentTasks();
+
