@@ -14,10 +14,13 @@ padding: 30px; /* Padding around the entire container */
 display: flex;
 justify-content: space-between;
 background: #f4ece9; /* Background for the content area */
-border-radius: 10px;
 box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
 border: 20px solid transparent; /* Space for the image border */
 border-image: url('./images/flowers.jpg') 30 stretch; /* Path to your image */
+border-radius: 15px; /* Slightly rounded corners */
+padding: 20px; /* Padding around the inner content */
+flex-direction: row; /* Row layout for columns */
+max-height: 600px; /* Set a max height to avoid stretching */
 }
 
 h2 {
