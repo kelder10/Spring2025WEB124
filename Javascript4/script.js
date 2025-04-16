@@ -7,7 +7,7 @@ const itemsContainer = document.getElementById('itemsContainer');
 const removeCompletedBtn = document.getElementById('removeCompletedBtn');
 const priorityContainer = document.getElementById('priorityContainer');
 const tomorrowContainer = document.getElementById('tomorrowContainer');
-const appointmentsContainer = document.getElementById('appointmentsContainer');
+const appointmentsContainer = document.querySelector('.appointments-container'); // Updated to use class selector
 const notesInput = document.getElementById('notesInput');
 
 const addPriorityTaskBtn = document.getElementById('addPriorityTaskBtn');
