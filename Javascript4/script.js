@@ -1,6 +1,9 @@
 // Author: Your Name, Date: YYYY-MM-DD
 // Description: JavaScript for handling the Daily Planner application
 
+// Author: Your Name, Date: YYYY-MM-DD
+// Description: JavaScript for handling the Daily Planner application
+
 const addTaskBtn = document.getElementById('addTaskBtn');
 const taskInput = document.getElementById('taskInput');
 const itemsContainer = document.getElementById('itemsContainer');
@@ -57,6 +60,11 @@ function handleCheck(e) {
 const checkboxes = itemsContainer.querySelectorAll('input[type="checkbox"]');
 const currentIndex = Array.from(checkboxes).indexOf(this);
 
+// Check if the currentIndex is valid
+if (currentIndex < 0 || currentIndex >= tasks.length) {
+return; // Exit the function if the index is out of bounds
+}
+
 if (e.shiftKey && lastChecked) {
 const lastCheckedIndex = Array.from(checkboxes).indexOf(lastChecked);
 const start = Math.min(currentIndex, lastCheckedIndex);
@@ -64,13 +72,19 @@ const end = Math.max(currentIndex, lastCheckedIndex);
 
 // Check all checkboxes in between
 for (let i = start; i <= end; i++) {
+if (checkboxes[i]) {
 checkboxes[i].checked = true; // Check the checkbox in between
 const index = checkboxes[i].id.split('-')[1];
+if (index >= 0 && index < tasks.length) {
 tasks[index].completed = true; // Mark the task as completed in the tasks array
+}
+}
 }
 } else {
 const index = e.target.id.split('-')[1];
+if (index >= 0 && index < tasks.length) {
 tasks[index].completed = e.target.checked; // Update individual task completion
+}
 }
 
 lastChecked = this; // Update lastChecked to the current checkbox
