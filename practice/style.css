@@ -14,7 +14,7 @@ background: white; /* Background for the content area */
 border-radius: 10px;
 box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
 border: 20px solid transparent; /* Space for the image border */
-border-image: url('border-image.jpg') 30 stretch; /* Path to your image */
+border-image: url('./images/flowers.jpg') 30 stretch; /* Path to your image */
 }
 
 .todo-section {
