@@ -1,39 +1,98 @@
 /* Author: Your Name, Date: YYYY-MM-DD */
 /* Description: Styles for Daily Planner application */
+Sure! Here’s a consolidated view of the three files—HTML, CSS, and JavaScript—incorporating all the necessary changes and ensuring that the functionality for adding priority tasks and the checkbox selection works correctly.
 
-/* Author: Your Name, Date: YYYY-MM-DD */
-/* Description: Styles for Daily Planner application */
+### 1. HTML (index.html)
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Daily Planner</title>
+<link href="styles.css" rel="stylesheet">
+<link rel="icon" href="./images/dice.png" />
+</head>
+<body>
+<div class="wrapper">
+<div class="container">
+<div class="left-column">
+<h2>To-Do List</h2>
+<div class="add-task">
+<input type="text" id="taskInput" placeholder="Add a new task">
+<button id="addTaskBtn">Add</button>
+</div>
+<div class="items" id="itemsContainer"></div>
+<div class="notes-container">
+<h3>Notes</h3>
+<textarea id="notesInput" placeholder="Write your notes here..."></textarea>
+</div>
+<button class="remove-completed" id="removeCompletedBtn">Remove Completed</button>
+</div>
+<div class="right-column">
+<h3>Today's Date</h3>
+<input type="date" id="dateInput">
+
+<h3>Top Priorities</h3>
+<div class="add-priority-task">
+<input type="text" id="priorityTaskInput" placeholder="Add a new priority task">
+<button id="addPriorityTaskBtn">Add Priority Task</button>
+</div>
+<div class="priority-container" id="priorityContainer"></div>
+
+<h3>For Tomorrow</h3>
+<div class="add-tomorrow-task">
+<input type="text" id="tomorrowTaskInput" placeholder="Add a new tomorrow task">
+<button id="addTomorrowTaskBtn">Add</button>
+</div>
+<div class="tomorrow-container" id="tomorrowContainer"></div>
+
+<h3>Appointments/Calls</h3>
+<div class="appointments-container">
+<textarea id="appointmentsInput" placeholder="Add your appointments/calls here..."></textarea>
+</div>
+</div>
+</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+```
+
+### 2. CSS (styles.css)
+
+```css
 html {
 font-family: sans-serif;
-background: #b64515; /* Background for the entire page */
+background: #b64515;
 }
 
 .wrapper {
-padding: 30px; /* Padding around the entire container */
+padding: 30px;
 }
 
 .container {
 display: flex;
 justify-content: space-between;
-background: #f4ece9; /* Background for the content area */
+background: #f4ece9;
 box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
-border: 40px solid transparent; /* Space for the image border */
-border-image: url('./images/flowers.jpg') 30 stretch; /* Path to your image */
-border-radius: 15px; /* Slightly rounded corners */
-padding: 20px; /* Padding around the inner content */
-flex-direction: row; /* Row layout for columns */
-max-height: 600px; /* Set a max height to avoid stretching */
+border: 40px solid transparent;
+border-image: url('./images/flowers.jpg') 30 stretch;
+border-radius: 15px;
+padding: 20px;
+flex-direction: row;
+max-height: 600px;
 }
 
 h2 {
 font-size: 2.2rem;
-font-family: Arial, sans-serif; /* Ensure fallback font */
+font-family: Arial, sans-serif;
 font-style: italic;
 padding: 0.5rem 1rem;
 cursor: pointer;
 margin: 0 20px;
-border-radius: 10px; /* Curved corners */
+border-radius: 10px;
 background-color: #b64515;
 color: white;
 border: 2px solid #fff;
@@ -41,113 +100,113 @@ transition: background-color 0.3s, border-color 0.3s;
 }
 
 .left-column {
-flex: 2; /* Take up more space */
-padding-right: 20px; /* Space between columns */
+flex: 2;
+padding-right: 20px;
 }
 
 .right-column {
-flex: 1; /* Take up less space */
-padding-left: 20px; /* Space between columns */
+flex: 1;
+padding-left: 20px;
 }
 
 .add-task, .add-priority-task, .add-tomorrow-task, .add-appointment-task {
-display: flex; /* Flex layout for input and button */
-margin-bottom: 10px; /* Space below each task input */
+display: flex;
+margin-bottom: 10px;
 }
 
 .add-task input,
 .add-priority-task input,
 .add-tomorrow-task input,
 .add-appointment-task input {
-flex: 1; /* Take available space */
-padding: 10px; /* Increased padding for better usability */
-font-size: 14px; /* Font size */
-height: 40px; /* Increased height for inputs */
-border: 1px solid #ccc; /* Light border around inputs */
-border-radius: 5px; /* Rounded corners for inputs */
-box-sizing: border-box; /* Ensure padding doesn't cause overflow */
+flex: 1;
+padding: 10px;
+font-size: 14px;
+height: 40px;
+border: 1px solid #ccc;
+border-radius: 5px;
+box-sizing: border-box;
 }
 
 .add-task button,
 .add-priority-task button,
 .add-tomorrow-task button,
 .add-appointment-task button {
-padding: 10px 15px; /* Padding for buttons */
-margin-left: 5px; /* Space between input and button */
-background: #b64515; /* Button color */
-color: white; /* Text color */
-border: none; /* No border */
-border-radius: 5px; /* Rounded corners */
-cursor: pointer; /* Pointer on hover */
+padding: 10px 15px;
+margin-left: 5px;
+background: #b64515;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
 }
 
 h3 {
-margin-top: 20px; /* Space above headers */
-color: #555; /* A softer, darker color for headers */
-font-family: 'Georgia', serif; /* Use a serif font for a more elegant look */
-font-size: 1rem; /* Adjust font size for better visibility */
-font-weight: bold; /* Make the font bold */
-text-transform: uppercase; /* Transform text to uppercase for emphasis */
-border-bottom: 2px solid #b64515; /* Add a bottom border for separation */
-padding-bottom: 5px; /* Space between text and border */
+margin-top: 20px;
+color: #555;
+font-family: 'Georgia', serif;
+font-size: 1rem;
+font-weight: bold;
+text-transform: uppercase;
+border-bottom: 2px solid #b64515;
+padding-bottom: 5px;
 }
 
 .items, .priority-container, .tomorrow-container, .appointments-container {
-border: 1px solid #F1F1F1; /* Border around task lists */
-border-radius: 5px; /* Rounded corners */
-margin-bottom: 10px; /* Space below each list */
-padding: 10px; /* Inner padding */
-background: #f9f9f9; /* Light background for task lists */
-max-height: 200px; /* Limit height */
-overflow-y: auto; /* Scroll if content exceeds height */
+border: 1px solid #F1F1F1;
+border-radius: 5px;
+margin-bottom: 10px;
+padding: 10px;
+background: #f9f9f9;
+max-height: 200px;
+overflow-y: auto;
 }
 
 .item, .priority-item, .tomorrow-item, .appointment-item {
-display: flex; /* Flex layout for task items */
-align-items: center; /* Center items vertically */
-border-bottom: 1px solid #F1F1F1; /* Bottom border for separation */
-padding: 5px 0; /* Space above and below items */
-word-wrap: break-word; /* Allow text to wrap */
+display: flex;
+align-items: center;
+border-bottom: 1px solid #F1F1F1;
+padding: 5px 0;
+word-wrap: break-word;
 }
 
 .item:last-child, .priority-item:last-child, .tomorrow-item:last-child, .appointment-item:last-child {
-border-bottom: 0; /* Remove bottom border for last item */
+border-bottom: 0;
 }
 
 .item.completed p {
-text-decoration: line-through; /* Strikethrough effect */
-color: #999; /* Optional: change color for completed tasks */
+text-decoration: line-through;
+color: #999;
 }
 
 input[type="checkbox"] {
-margin: 0 10px 0 0; /* Space before checkbox */
+margin: 0 10px 0 0;
 }
 
 .notes-container {
-margin-top: 10px; /* Space above notes */
+margin-top: 10px;
 }
 
 textarea {
-width: 100%; /* Full width */
-height: 100px; /* Fixed height */
-padding: 10px; /* Inner padding */
-font-size: 16px; /* Font size */
-border: 1px solid #ccc; /* Light border */
-border-radius: 5px; /* Rounded corners */
-box-sizing: border-box; /* Ensure padding doesn't cause overflow */
+width: 100%;
+height: 100px;
+padding: 10px;
+font-size: 16px;
+border: 1px solid #ccc;
+border-radius: 5px;
+box-sizing: border-box;
 }
 
 .remove-completed {
-margin-top: 10px; /* Space above button */
-background: #b64515; /* Button color */
-color: white; /* Text color */
-border: none; /* No border */
-padding: 10px; /* Inner padding */
-cursor: pointer; /* Pointer on hover */
-width: 100%; /* Full width */
-border-radius: 5px; /* Rounded corners */
+margin-top: 10px;
+background: #b64515;
+color: white;
+border: none;
+padding: 10px;
+cursor: pointer;
+width: 100%;
+border-radius: 5px;
 }
 
 .remove-completed:hover {
-background: #FF2E2E; /* Darker color on hover */
+background: #FF2E2E;
 }
