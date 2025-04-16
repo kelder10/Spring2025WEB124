@@ -1,15 +1,9 @@
 /* Author: Your Name, Date: YYYY-MM-DD */
 /* Description: Styles for Daily Planner application */
 
-body {
-margin: 0;
-padding: 0;
-font-family: Arial, sans-serif;
-height: 100vh; /* Full viewport height */
-background-color: #b64515; /* Outer background color */
-display: flex; /* Use flexbox to center content */
-justify-content: center; /* Center horizontally */
-align-items: center; /* Center vertically */
+html {
+font-family: sans-serif;
+background: #b64515; /* Background for the entire page */
 }
 
 .wrapper {
@@ -27,17 +21,17 @@ border-image: url('./image/flowers.jpg') 30 stretch; /* Path to your image */
 }
 
 h2 {
-  font-size: 2.5rem; 
-  font: arial;
-  font-style: italic;
-  padding: 0.5rem 1rem; 
-  cursor: pointer;
-  margin: 0 20px; 
-  border-radius: 10px; /* Curved corners */
-  background-color: #b64515; 
-  color: white; 
-  border: 2px solid #fff; 
-  transition: background-color 0.3s, border-color 0.3s; 
+font-size: 2.2rem;
+font-family: Arial, sans-serif; /* Ensure fallback font */
+font-style: italic;
+padding: 0.5rem 1rem;
+cursor: pointer;
+margin: 0 20px;
+border-radius: 10px; /* Curved corners */
+background-color: #b64515;
+color: white;
+border: 2px solid #fff;
+transition: background-color 0.3s, border-color 0.3s;
 }
 
 .left-column {
@@ -65,6 +59,7 @@ font-size: 14px; /* Font size */
 height: 40px; /* Increased height for inputs */
 border: 1px solid #ccc; /* Light border around inputs */
 border-radius: 5px; /* Rounded corners for inputs */
+box-sizing: border-box; /* Ensure padding doesn't cause overflow */
 }
 
 .add-task button,
@@ -91,6 +86,8 @@ border-radius: 5px; /* Rounded corners */
 margin-bottom: 10px; /* Space below each list */
 padding: 10px; /* Inner padding */
 background: #f9f9f9; /* Light background for task lists */
+max-height: 200px; /* Limit height */
+overflow-y: auto; /* Scroll if content exceeds height */
 }
 
 .item, .priority-item, .tomorrow-item, .appointment-item {
@@ -98,6 +95,7 @@ display: flex; /* Flex layout for task items */
 align-items: center; /* Center items vertically */
 border-bottom: 1px solid #F1F1F1; /* Bottom border for separation */
 padding: 5px 0; /* Space above and below items */
+word-wrap: break-word; /* Allow text to wrap */
 }
 
 .item:last-child, .priority-item:last-child, .tomorrow-item:last-child, .appointment-item:last-child {
@@ -116,6 +114,7 @@ padding: 10px; /* Inner padding */
 font-size: 16px; /* Font size */
 border: 1px solid #ccc; /* Light border */
 border-radius: 5px; /* Rounded corners */
+box-sizing: border-box; /* Ensure padding doesn't cause overflow */
 }
 
 .remove-completed {
@@ -133,3 +132,7 @@ border-radius: 5px; /* Rounded corners */
 background: #FF2E2E; /* Darker color on hover */
 }
 
+/* Positioning Notes */
+.notes-container {
+margin-top: 20px; /* Space above notes */
+}
