@@ -80,8 +80,13 @@ cursor: pointer; /* Pointer on hover */
 
 h3 {
 margin-top: 20px; /* Space above headers */
-color: #333; /* Darker color for headers */
-font-style: Cursive;
+color: #555; /* A softer, darker color for headers */
+font-family: 'Georgia', serif; /* Use a serif font for a more elegant look */
+font-size: 1.75rem; /* Adjust font size for better visibility */
+font-weight: bold; /* Make the font bold */
+text-transform: uppercase; /* Transform text to uppercase for emphasis */
+border-bottom: 2px solid #b64515; /* Add a bottom border for separation */
+padding-bottom: 5px; /* Space between text and border */
 }
 
 .items, .priority-container, .tomorrow-container, .appointments-container {
