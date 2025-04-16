@@ -54,25 +54,20 @@ renderTasks();
 }
 
 function handleCheck(e) {
-// Check if the shift key is held down and the checkbox is being checked
-let inBetween = false;
 const checkboxes = itemsContainer.querySelectorAll('input[type="checkbox"]');
-
-// Determine the current index
 const currentIndex = Array.from(checkboxes).indexOf(this);
 
-if (e.shiftKey && this.checked) {
-// Loop over all checkboxes
-checkboxes.forEach((checkbox) => {
-if (checkbox === this || checkbox === lastChecked) {
-inBetween = !inBetween; // Toggle inBetween flag
-}
-if (inBetween) {
-checkbox.checked = true; // Check the checkbox in between
-const index = checkbox.id.split('-')[1];
+if (e.shiftKey && lastChecked) {
+const lastCheckedIndex = Array.from(checkboxes).indexOf(lastChecked);
+const start = Math.min(currentIndex, lastCheckedIndex);
+const end = Math.max(currentIndex, lastCheckedIndex);
+
+// Check all checkboxes in between
+for (let i = start; i <= end; i++) {
+checkboxes[i].checked = true; // Check the checkbox in between
+const index = checkboxes[i].id.split('-')[1];
 tasks[index].completed = true; // Mark the task as completed in the tasks array
 }
-});
 }
 
 lastChecked = this; // Update lastChecked
@@ -167,3 +162,4 @@ addAppointmentTaskBtn.addEventListener('click', addAppointmentTask);
 renderPriorityTasks();
 renderTomorrowTasks();
 renderAppointmentTasks();
+
