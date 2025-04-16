@@ -3,9 +3,6 @@
 // Author: Your Name, Date: YYYY-MM-DD
 // Description: JavaScript for handling the Daily Planner application
 
-// Author: Your Name, Date: YYYY-MM-DD
-// Description: JavaScript for handling the Daily Planner application
-
 const addTaskBtn = document.getElementById('addTaskBtn');
 const taskInput = document.getElementById('taskInput');
 const itemsContainer = document.getElementById('itemsContainer');
@@ -64,12 +61,14 @@ let inBetween = false;
 if (e.shiftKey && this.checked) {
 // Loop over every single checkbox
 const checkboxes = itemsContainer.querySelectorAll('input[type="checkbox"]');
-checkboxes.forEach(checkbox => {
+checkboxes.forEach((checkbox) => {
 if (checkbox === this || checkbox === lastChecked) {
 inBetween = !inBetween; // Toggle inBetween flag
 }
 if (inBetween) {
 checkbox.checked = true; // Check the checkbox in between
+const index = checkbox.id.split('-')[1];
+tasks[index].completed = true; // Mark the task as completed in the tasks array
 }
 });
 }
