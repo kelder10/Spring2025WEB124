@@ -1,6 +1,5 @@
 // Author: Your Name, Date: YYYY-MM-DD
 // Description: JavaScript for handling the Daily Planner application
-
 const addTaskBtn = document.getElementById('addTaskBtn');
 const taskInput = document.getElementById('taskInput');
 const itemsContainer = document.getElementById('itemsContainer');
@@ -21,6 +20,8 @@ let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 let priorityTasks = JSON.parse(localStorage.getItem('priorityTasks')) || [];
 let tomorrowTasks = JSON.parse(localStorage.getItem('tomorrowTasks')) || [];
 let appointmentTasks = JSON.parse(localStorage.getItem('appointmentTasks')) || [];
+
+let lastChecked; // Variable to keep track of the last checked checkbox
 
 function renderTasks() {
 itemsContainer.innerHTML = '';
@@ -46,6 +47,21 @@ renderTasks();
 }
 
 function handleCheck(e) {
+// Check if they had the shift key down AND check that they are checking it
+let inBetween = false;
+if (e.shiftKey && this.checked) {
+// Loop over every single checkbox
+const checkboxes = itemsContainer.querySelectorAll('input[type="checkbox"]');
+checkboxes.forEach(checkbox => {
+if (checkbox === this || checkbox === lastChecked) {
+inBetween = !inBetween; // Toggle inBetween flag
+}
+if (inBetween) {
+checkbox.checked = true; // Check the checkbox in between
+}
+});
+}
+lastChecked = this; // Update lastChecked
 const index = e.target.id.split('-')[1];
 tasks[index].completed = e.target.checked;
 localStorage.setItem('tasks', JSON.stringify(tasks));
@@ -120,7 +136,7 @@ renderAppointmentTasks();
 addTaskBtn.addEventListener('click', addTask);
 itemsContainer.addEventListener('click', (e) => {
 if (e.target.matches('input[type="checkbox"]')) {
-handleCheck(e);
+handleCheck.call(e.target, e); // Call handleCheck with the current target
 }
 });
 removeCompletedBtn.addEventListener('click', removeCompletedTasks);
