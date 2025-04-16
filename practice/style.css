@@ -17,56 +17,109 @@ border: 20px solid transparent; /* Space for the image border */
 border-image: url('./image/flowers.jpg') 30 stretch; /* Path to your image */
 }
 
-.todo-section {
-max-width: 400px;
-padding: 20px; /* Internal padding for the To-Do section */
+h2 {
+  font-size: 2.5rem; 
+  font: arial;
+  font-style: italic;
+  padding: 0.5rem 1rem; 
+  cursor: pointer;
+  margin: 0 20px; 
+  border-radius: 10px; /* Curved corners */
+  background-color: #b64515; 
+  color: white; 
+  border: 2px solid #fff; 
+  transition: background-color 0.3s, border-color 0.3s; 
 }
 
-.date-section {
-max-width: 300px;
-padding: 20px; /* Internal padding for the Date section */
+.left-column {
+flex: 2; /* Take up more space */
+padding-right: 20px; /* Space between columns */
 }
 
-.inbox {
-margin-bottom: 20px;
+.right-column {
+flex: 1; /* Take up less space */
+padding-left: 20px; /* Space between columns */
 }
 
-.item {
-display: flex;
-align-items: center;
-border-bottom: 1px solid #F1F1F1;
+.add-task, .add-priority-task, .add-tomorrow-task, .add-appointment-task {
+display: flex; /* Flex layout for input and button */
+margin-bottom: 10px; /* Space below each task input */
 }
 
-.item:last-child {
-border-bottom: 0;
+.add-task input,
+.add-priority-task input,
+.add-tomorrow-task input,
+.add-appointment-task input {
+flex: 1; /* Take available space */
+padding: 10px; /* Increased padding for better usability */
+font-size: 14px; /* Font size */
+height: 40px; /* Increased height for inputs */
+border: 1px solid #ccc; /* Light border around inputs */
+border-radius: 5px; /* Rounded corners for inputs */
+}
+
+.add-task button,
+.add-priority-task button,
+.add-tomorrow-task button,
+.add-appointment-task button {
+padding: 10px 15px; /* Padding for buttons */
+margin-left: 5px; /* Space between input and button */
+background: #b64515; /* Button color */
+color: white; /* Text color */
+border: none; /* No border */
+border-radius: 5px; /* Rounded corners for buttons */
+cursor: pointer; /* Pointer on hover */
+}
+
+h3 {
+margin-top: 20px; /* Space above headers */
+color: #333; /* Darker color for headers */
+}
+
+.items, .priority-container, .tomorrow-container, .appointments-container {
+border: 1px solid #F1F1F1; /* Border around task lists */
+border-radius: 5px; /* Rounded corners */
+margin-bottom: 10px; /* Space below each list */
+padding: 10px; /* Inner padding */
+background: #f9f9f9; /* Light background for task lists */
+}
+
+.item, .priority-item, .tomorrow-item, .appointment-item {
+display: flex; /* Flex layout for task items */
+align-items: center; /* Center items vertically */
+border-bottom: 1px solid #F1F1F1; /* Bottom border for separation */
+padding: 5px 0; /* Space above and below items */
+}
+
+.item:last-child, .priority-item:last-child, .tomorrow-item:last-child, .appointment-item:last-child {
+border-bottom: 0; /* Remove bottom border for last item */
 }
 
 input[type="checkbox"] {
-margin: 20px;
-}
-
-p {
-margin: 0;
-padding: 20px;
-transition: background 0.2s;
-flex: 1;
-font-family: 'helvetica neue';
-font-size: 20px;
-font-weight: 200;
+margin: 0 10px 0 0; /* Space before checkbox */
 }
 
 textarea {
-width: 100%;
-height: 100px;
-margin-top: 10px;
+width: 100%; /* Full width */
+height: 100px; /* Fixed height */
+margin-top: 10px; /* Space above textarea */
+padding: 10px; /* Inner padding */
+font-size: 16px; /* Font size */
+border: 1px solid #ccc; /* Light border */
+border-radius: 5px; /* Rounded corners */
 }
 
-input[type="text"], input[type="date"] {
-width: calc(100% - 20px);
-padding: 10px;
-margin-bottom: 10px;
+.remove-completed {
+margin-top: 10px; /* Space above button */
+background: #b64515; /* Button color */
+color: white; /* Text color */
+border: none; /* No border */
+padding: 10px; /* Inner padding */
+cursor: pointer; /* Pointer on hover */
+width: 100%; /* Full width */
+border-radius: 5px; /* Rounded corners */
 }
 
-h2, h3 {
-margin-top: 20px;
+.remove-completed:hover {
+background: #FF2E2E; /* Darker color on hover */
 }
