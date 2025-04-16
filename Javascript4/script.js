@@ -31,6 +31,9 @@ itemsContainer.innerHTML = '';
 tasks.forEach((task, index) => {
 const item = document.createElement('div');
 item.classList.add('item');
+if (task.completed) {
+item.classList.add('completed'); // Add 'completed' class if the task is completed
+}
 item.innerHTML = `
 <input type="checkbox" id="task-${index}" ${task.completed ? 'checked' : ''}>
 <p>${task.text}</p>
@@ -50,10 +53,8 @@ renderTasks();
 }
 
 function handleCheck(e) {
-// Check if they had the shift key down AND check that they are checking it
 let inBetween = false;
 if (e.shiftKey && this.checked) {
-// Loop over every single checkbox
 const checkboxes = itemsContainer.querySelectorAll('input[type="checkbox"]');
 checkboxes.forEach(checkbox => {
 if (checkbox === this || checkbox === lastChecked) {
@@ -68,6 +69,7 @@ lastChecked = this; // Update lastChecked
 const index = e.target.id.split('-')[1];
 tasks[index].completed = e.target.checked;
 localStorage.setItem('tasks', JSON.stringify(tasks));
+renderTasks(); // Re-render tasks to update the display
 }
 
 function removeCompletedTasks() {
@@ -76,6 +78,7 @@ localStorage.setItem('tasks', JSON.stringify(tasks));
 renderTasks();
 }
 
+// Additional functions for priority, tomorrow, and appointment tasks
 function renderPriorityTasks() {
 priorityContainer.innerHTML = '';
 priorityTasks.forEach((task) => {
