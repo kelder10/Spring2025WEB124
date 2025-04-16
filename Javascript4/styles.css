@@ -74,7 +74,7 @@ margin-left: 5px; /* Space between input and button */
 background: #b64515; /* Button color */
 color: white; /* Text color */
 border: none; /* No border */
-border-radius: 5px; /* Rounded corners for buttons */
+border-radius: 5px; /* Rounded corners */
 cursor: pointer; /* Pointer on hover */
 }
 
@@ -104,6 +104,11 @@ word-wrap: break-word; /* Allow text to wrap */
 
 .item:last-child, .priority-item:last-child, .tomorrow-item:last-child, .appointment-item:last-child {
 border-bottom: 0; /* Remove bottom border for last item */
+}
+
+.item.completed p {
+text-decoration: line-through; /* Strikethrough effect */
+color: #999; /* Optional: change color for completed tasks */
 }
 
 input[type="checkbox"] {
@@ -137,9 +142,4 @@ border-radius: 5px; /* Rounded corners */
 
 .remove-completed:hover {
 background: #FF2E2E; /* Darker color on hover */
-}
-
-/* Positioning Notes */
-.notes-container {
-margin-top: 20px; /* Space above notes */
 }
