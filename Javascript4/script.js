@@ -3,6 +3,9 @@
 // Author: Your Name, Date: YYYY-MM-DD
 // Description: JavaScript for handling the Daily Planner application
 
+// Author: Your Name, Date: YYYY-MM-DD
+// Description: JavaScript for handling the Daily Planner application
+
 const addTaskBtn = document.getElementById('addTaskBtn');
 const taskInput = document.getElementById('taskInput');
 const itemsContainer = document.getElementById('itemsContainer');
