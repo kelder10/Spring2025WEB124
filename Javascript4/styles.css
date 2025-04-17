@@ -6,6 +6,7 @@ background: #b64515;
 .wrapper {
 padding: 30px;
 border-radius: 10px;
+box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
 }
 
 .container {
