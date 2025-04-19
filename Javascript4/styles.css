@@ -45,14 +45,12 @@ flex: 1;
 padding-left: 20px;
 }
 
-.add-task, .add-tomorrow-task, .add-appointment-task {
+.add-task {
 display: flex;
 margin-bottom: 10px;
 }
 
-.add-task input,
-.add-tomorrow-task input,
-.add-appointment-task input {
+.add-task input {
 flex: 1;
 padding: 10px;
 font-size: 14px;
@@ -62,9 +60,7 @@ border-radius: 5px;
 box-sizing: border-box;
 }
 
-.add-task button,
-.add-tomorrow-task button,
-.add-appointment-task button {
+.add-task button {
 padding: 10px 15px;
 margin-left: 5px;
 background: #b64515;
@@ -85,7 +81,7 @@ border-bottom: 2px solid #b64515;
 padding-bottom: 5px;
 }
 
-.items, .tomorrow-container, .appointments-container {
+.items {
 border: 1px solid #F1F1F1;
 border-radius: 5px;
 margin-bottom: 10px;
@@ -95,7 +91,7 @@ max-height: 200px;
 overflow-y: auto;
 }
 
-.item, .tomorrow-item, .appointment-item {
+.item {
 display: flex;
 align-items: center;
 border-bottom: 1px solid #F1F1F1;
@@ -103,13 +99,13 @@ padding: 5px 0;
 word-wrap: break-word;
 }
 
-.item:last-child, .tomorrow-item:last-child, .appointment-item:last-child {
+.item:last-child {
 border-bottom: 0;
 }
 
-.item.completed p {
+.completed-text {
 text-decoration: line-through;
-color: #999;
+color: #999; /* Optional: Change color of completed task text */
 }
 
 input[type="checkbox"] {
@@ -143,4 +139,24 @@ border-radius: 5px;
 
 .remove-completed:hover {
 background: #FF2E2E;
+}
+
+.priority-indicator {
+width: 10px;
+height: 10px;
+border-radius: 50%;
+display: inline-block;
+margin-right: 5px;
+}
+
+.priority-low {
+background-color: green;
+}
+
+.priority-medium {
+background-color: yellow;
+}
+
+.priority-high {
+background-color: red;
 }
