@@ -1,39 +1,28 @@
-// Author: Your Name, Date: YYYY-MM-DD
-// Description: JavaScript for handling the Daily Planner application
-
 const addTaskBtn = document.getElementById('addTaskBtn');
 const taskInput = document.getElementById('taskInput');
+const prioritySelect = document.getElementById('prioritySelect');
 const itemsContainer = document.getElementById('itemsContainer');
 const removeCompletedBtn = document.getElementById('removeCompletedBtn');
-const tomorrowContainer = document.getElementById('tomorrowContainer');
-const appointmentsContainer = document.getElementById('appointmentsContainer');
-const tomorrowTaskInput = document.getElementById('tomorrowTaskInput');
-const addTomorrowTaskBtn = document.getElementById('addTomorrowTaskBtn');
-const appointmentTaskInput = document.getElementById('appointmentTaskInput');
-const addAppointmentTaskBtn = document.getElementById('addAppointmentTaskBtn');
 
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-let tomorrowTasks = JSON.parse(localStorage.getItem('tomorrowTasks')) || [];
-let appointmentTasks = JSON.parse(localStorage.getItem('appointmentTasks')) || [];
+let lastChecked;
 
-let lastChecked; // Variable to keep track of the last checked checkbox
-
-// Call renderTasks to display existing tasks
 renderTasks();
-renderTomorrowTasks();
-renderAppointmentTasks();
 
 function renderTasks() {
 itemsContainer.innerHTML = '';
 tasks.forEach((task, index) => {
 const item = document.createElement('div');
 item.classList.add('item');
-if (task.completed) {
-item.classList.add('completed'); // Add 'completed' class if the task is completed
-}
+
+// Create priority indicator
+const priorityIndicator = document.createElement('span');
+priorityIndicator.classList.add('priority-indicator', `priority-${task.priority}`);
+
 item.innerHTML = `
+${priorityIndicator.outerHTML}
 <input type="checkbox" id="task-${index}" ${task.completed ? 'checked' : ''}>
-<p>${task.text}</p>
+<p class="${task.completed ? 'completed-text' : ''}">${task.text}</p>
 `;
 itemsContainer.appendChild(item);
 });
@@ -41,10 +30,13 @@ itemsContainer.appendChild(item);
 
 function addTask() {
 const taskText = taskInput.value.trim();
+const priorityLevel = prioritySelect.value;
+
 if (taskText) {
-tasks.push({ text: taskText, completed: false });
+tasks.push({ text: taskText, completed: false, priority: priorityLevel });
 localStorage.setItem('tasks', JSON.stringify(tasks));
 taskInput.value = '';
+prioritySelect.value = 'low'; // Reset to default
 renderTasks();
 }
 }
@@ -53,9 +45,8 @@ function handleCheck(e) {
 const checkboxes = itemsContainer.querySelectorAll('input[type="checkbox"]');
 const currentIndex = Array.from(checkboxes).indexOf(this);
 
-// Check if the currentIndex is valid
 if (currentIndex < 0 || currentIndex >= tasks.length) {
-return; // Exit the function if the index is out of bounds
+return;
 }
 
 if (e.shiftKey && lastChecked) {
@@ -63,26 +54,35 @@ const lastCheckedIndex = Array.from(checkboxes).indexOf(lastChecked);
 const start = Math.min(currentIndex, lastCheckedIndex);
 const end = Math.max(currentIndex, lastCheckedIndex);
 
-// Check all checkboxes in between
 for (let i = start; i <= end; i++) {
 if (checkboxes[i]) {
-checkboxes[i].checked = true; // Check the checkbox in between
+checkboxes[i].checked = true;
 const index = checkboxes[i].id.split('-')[1];
 if (index >= 0 && index < tasks.length) {
-tasks[index].completed = true; // Mark the task as completed in the tasks array
+tasks[index].completed = true;
 }
 }
 }
 } else {
 const index = e.target.id.split('-')[1];
 if (index >= 0 && index < tasks.length) {
-tasks[index].completed = e.target.checked; // Update individual task completion
+tasks[index].completed = e.target.checked;
 }
 }
 
-lastChecked = this; // Update lastChecked to the current checkbox
-localStorage.setItem('tasks', JSON.stringify(tasks)); // Save the updated tasks
-renderTasks(); // Re-render tasks to update the display
+// Update the completed class on the task item
+const item = checkboxes[currentIndex].closest('.item');
+if (item) {
+if (checkboxes[currentIndex].checked) {
+item.classList.add('completed'); // Add the completed class
+} else {
+item.classList.remove('completed'); // Remove the completed class
+}
+}
+
+lastChecked = this;
+localStorage.setItem('tasks', JSON.stringify(tasks));
+renderTasks();
 }
 
 function removeCompletedTasks() {
@@ -91,59 +91,16 @@ localStorage.setItem('tasks', JSON.stringify(tasks));
 renderTasks();
 }
 
-function renderTomorrowTasks() {
-tomorrowContainer.innerHTML = '';
-tomorrowTasks.forEach((task) => {
-const item = document.createElement('div');
-item.classList.add('tomorrow-item');
-item.innerHTML = `<p>${task.text}</p>`;
-tomorrowContainer.appendChild(item);
-});
-}
-
-function addTomorrowTask() {
-const taskText = tomorrowTaskInput.value.trim();
-if (taskText) {
-tomorrowTasks.push({ text: taskText });
-localStorage.setItem('tomorrowTasks', JSON.stringify(tomorrowTasks));
-tomorrowTaskInput.value = '';
-renderTomorrowTasks();
-}
-}
-
-function renderAppointmentTasks() {
-appointmentsContainer.innerHTML = '';
-appointmentTasks.forEach((task) => {
-const item = document.createElement('div');
-item.classList.add('appointment-item');
-item.innerHTML = `<p>${task.text}</p>`;
-appointmentsContainer.appendChild(item);
-});
-}
-
-function addAppointmentTask() {
-const taskText = appointmentTaskInput.value.trim();
-if (taskText) {
-appointmentTasks.push({ text: taskText });
-localStorage.setItem('appointmentTasks', JSON.stringify(appointmentTasks));
-appointmentTaskInput.value = '';
-renderAppointmentTasks();
-}
-}
-
 // Add event listener for checkbox clicks
 itemsContainer.addEventListener('click', (e) => {
 if (e.target.matches('input[type="checkbox"]')) {
-handleCheck.call(e.target, e); // Call handleCheck with the current target
+handleCheck.call(e.target, e);
 }
 });
 
 // Add event listeners for buttons
 addTaskBtn.addEventListener('click', addTask);
 removeCompletedBtn.addEventListener('click', removeCompletedTasks);
-addTomorrowTaskBtn.addEventListener('click', addTomorrowTask);
-addAppointmentTaskBtn.addEventListener('click', addAppointmentTask);
 
 // Initial render
-renderTomorrowTasks();
-renderAppointmentTasks();
+renderTasks();
