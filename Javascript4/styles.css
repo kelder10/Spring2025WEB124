@@ -51,7 +51,6 @@ margin-bottom: 10px;
 }
 
 .add-task input,
-.add-task select,
 .add-priority-task input,
 .add-tomorrow-task input,
 .add-appointment-task input {
@@ -147,3 +146,5 @@ border-radius: 5px;
 .remove-completed:hover {
 background: #FF2E2E;
 }
+
+
