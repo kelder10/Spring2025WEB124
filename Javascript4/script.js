@@ -5,20 +5,16 @@ const addTaskBtn = document.getElementById('addTaskBtn');
 const taskInput = document.getElementById('taskInput');
 const itemsContainer = document.getElementById('itemsContainer');
 const removeCompletedBtn = document.getElementById('removeCompletedBtn');
-const priorityContainer = document.getElementById('priorityContainer');
 const tomorrowContainer = document.getElementById('tomorrowContainer');
-const appointmentsContainer = document.querySelector('.appointments-container'); // Updated to use class selector
+const appointmentsContainer = document.querySelector('.appointments-container');
 const notesInput = document.getElementById('notesInput');
 
-const addPriorityTaskBtn = document.getElementById('addPriorityTaskBtn');
-const priorityTaskInput = document.getElementById('priorityTaskInput');
 const addTomorrowTaskBtn = document.getElementById('addTomorrowTaskBtn');
 const tomorrowTaskInput = document.getElementById('tomorrowTaskInput');
 const addAppointmentTaskBtn = document.getElementById('addAppointmentTaskBtn');
 const appointmentTaskInput = document.getElementById('appointmentTaskInput');
 
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-let priorityTasks = JSON.parse(localStorage.getItem('priorityTasks')) || [];
 let tomorrowTasks = JSON.parse(localStorage.getItem('tomorrowTasks')) || [];
 let appointmentTasks = JSON.parse(localStorage.getItem('appointmentTasks')) || [];
 
@@ -95,27 +91,6 @@ localStorage.setItem('tasks', JSON.stringify(tasks));
 renderTasks();
 }
 
-// Additional functions for priority, tomorrow, and appointment tasks
-function renderPriorityTasks() {
-priorityContainer.innerHTML = '';
-priorityTasks.forEach((task) => {
-const item = document.createElement('div');
-item.classList.add('priority-item');
-item.innerHTML = `<p>${task.text}</p>`;
-priorityContainer.appendChild(item);
-});
-}
-
-function addPriorityTask() {
-const taskText = priorityTaskInput.value.trim();
-if (taskText) {
-priorityTasks.push({ text: taskText });
-localStorage.setItem('priorityTasks', JSON.stringify(priorityTasks));
-priorityTaskInput.value = '';
-renderPriorityTasks();
-}
-}
-
 function renderTomorrowTasks() {
 tomorrowContainer.innerHTML = '';
 tomorrowTasks.forEach((task) => {
@@ -129,10 +104,13 @@ tomorrowContainer.appendChild(item);
 function addTomorrowTask() {
 const taskText = tomorrowTaskInput.value.trim();
 if (taskText) {
+console.log("Adding tomorrow task:", taskText); // Log the task being added
 tomorrowTasks.push({ text: taskText });
 localStorage.setItem('tomorrowTasks', JSON.stringify(tomorrowTasks));
 tomorrowTaskInput.value = '';
-renderTomorrowTasks();
+renderTomorrowTasks(); // Render the updated tasks
+} else {
+console.log("No task text entered."); // Log if no task is entered
 }
 }
 
@@ -166,11 +144,9 @@ handleCheck.call(e.target, e); // Call handleCheck with the current target
 // Add event listeners for buttons
 addTaskBtn.addEventListener('click', addTask);
 removeCompletedBtn.addEventListener('click', removeCompletedTasks);
-addPriorityTaskBtn.addEventListener('click', addPriorityTask);
 addTomorrowTaskBtn.addEventListener('click', addTomorrowTask);
 addAppointmentTaskBtn.addEventListener('click', addAppointmentTask);
 
 // Initial render
-renderPriorityTasks();
 renderTomorrowTasks();
 renderAppointmentTasks();
