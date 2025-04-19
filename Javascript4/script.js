@@ -1,148 +1,167 @@
 
-html {
-font-family: sans-serif;
-background: #b64515;
+
+// Author: Your Name, Date: YYYY-MM-DD
+// Description: JavaScript for handling the Daily Planner application
+
+const addTaskBtn = document.getElementById('addTaskBtn');
+const taskInput = document.getElementById('taskInput');
+const itemsContainer = document.getElementById('itemsContainer');
+const removeCompletedBtn = document.getElementById('removeCompletedBtn');
+const priorityContainer = document.getElementById('priorityContainer');
+const tomorrowContainer = document.getElementById('tomorrowContainer');
+const appointmentsContainer = document.querySelector('.appointments-container'); // Updated to use class selector
+const notesInput = document.getElementById('notesInput');
+
+const addPriorityTaskBtn = document.getElementById('addPriorityTaskBtn');
+const priorityTaskInput = document.getElementById('priorityTaskInput');
+const addTomorrowTaskBtn = document.getElementById('addTomorrowTaskBtn');
+const tomorrowTaskInput = document.getElementById('tomorrowTaskInput');
+const addAppointmentTaskBtn = document.getElementById('addAppointmentTaskBtn');
+const appointmentTaskInput = document.getElementById('appointmentTaskInput');
+
+let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+let priorityTasks = JSON.parse(localStorage.getItem('priorityTasks')) || [];
+let tomorrowTasks = JSON.parse(localStorage.getItem('tomorrowTasks')) || [];
+let appointmentTasks = JSON.parse(localStorage.getItem('appointmentTasks')) || [];
+
+let lastChecked; // Variable to keep track of the last checked checkbox
+
+// Call renderTasks to display existing tasks
+renderTasks();
+
+function renderTasks() {
+itemsContainer.innerHTML = '';
+tasks.forEach((task, index) => {
+const item = document.createElement('div');
+item.classList.add('item');
+if (task.completed) {
+item.classList.add('completed'); // Add 'completed' class if the task is completed
+}
+item.innerHTML = `
+<input type="checkbox" id="task-${index}" ${task.completed ? 'checked' : ''}>
+<p>${task.text}</p>
+`;
+itemsContainer.appendChild(item);
+});
 }
 
-.wrapper {
-padding: 30px;
+function addTask() {
+const taskText = taskInput.value.trim();
+if (taskText) {
+tasks.push({ text: taskText, completed: false });
+localStorage.setItem('tasks', JSON.stringify(tasks));
+taskInput.value = '';
+renderTasks();
+}
 }
 
-.container {
-display: flex;
-justify-content: space-between;
-background: #f4ece9;
-box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
-border: 40px solid transparent;
-border-image: url('./images/flowers.jpg') 30 stretch;
-border-radius: 15px;
-padding: 20px;
-flex-direction: row;
-max-height: 600px;
+function handleCheck(e) {
+const checkboxes = itemsContainer.querySelectorAll('input[type="checkbox"]');
+const currentIndex = Array.from(checkboxes).indexOf(this);
+
+if (e.shiftKey && lastChecked) {
+const lastCheckedIndex = Array.from(checkboxes).indexOf(lastChecked);
+const start = Math.min(currentIndex, lastCheckedIndex);
+const end = Math.max(currentIndex, lastCheckedIndex);
+
+// Check all checkboxes in between
+for (let i = start; i <= end; i++) {
+checkboxes[i].checked = true; // Check the checkbox in between
+const index = checkboxes[i].id.split('-')[1];
+tasks[index].completed = true; // Mark the task as completed in the tasks array
+}
+} else {
+const index = e.target.id.split('-')[1];
+tasks[index].completed = e.target.checked; // Update individual task completion
 }
 
-h2 {
-font-size: 2.2rem;
-font-family: Arial, sans-serif;
-font-style: italic;
-padding: 0.5rem 1rem;
-cursor: pointer;
-margin: 0 20px;
-border-radius: 10px;
-background-color: #b64515;
-color: white;
-border: 2px solid #fff;
-transition: background-color 0.3s, border-color 0.3s;
+lastChecked = this; // Update lastChecked to the current checkbox
+localStorage.setItem('tasks', JSON.stringify(tasks)); // Save the updated tasks
+renderTasks(); // Re-render tasks to update the display
 }
 
-.left-column {
-flex: 2;
-padding-right: 20px;
+function removeCompletedTasks() {
+tasks = tasks.filter(task => !task.completed);
+localStorage.setItem('tasks', JSON.stringify(tasks));
+renderTasks();
 }
 
-.right-column {
-flex: 1;
-padding-left: 20px;
+// Additional functions for priority, tomorrow, and appointment tasks
+function renderPriorityTasks() {
+priorityContainer.innerHTML = '';
+priorityTasks.forEach((task) => {
+const item = document.createElement('div');
+item.classList.add('priority-item');
+item.innerHTML = `<p>${task.text}</p>`;
+priorityContainer.appendChild(item);
+});
 }
 
-.add-task, .add-priority-task, .add-tomorrow-task, .add-appointment-task {
-display: flex;
-margin-bottom: 10px;
+function addPriorityTask() {
+const taskText = priorityTaskInput.value.trim();
+if (taskText) {
+priorityTasks.push({ text: taskText });
+localStorage.setItem('priorityTasks', JSON.stringify(priorityTasks));
+priorityTaskInput.value = '';
+renderPriorityTasks();
+}
 }
 
-.add-task input,
-.add-priority-task input,
-.add-tomorrow-task input,
-.add-appointment-task input {
-flex: 1;
-padding: 10px;
-font-size: 14px;
-height: 40px;
-border: 1px solid #ccc;
-border-radius: 5px;
-box-sizing: border-box;
+function renderTomorrowTasks() {
+tomorrowContainer.innerHTML = '';
+tomorrowTasks.forEach((task) => {
+const item = document.createElement('div');
+item.classList.add('tomorrow-item');
+item.innerHTML = `<p>${task.text}</p>`;
+tomorrowContainer.appendChild(item);
+});
 }
 
-.add-task button,
-.add-priority-task button,
-.add-tomorrow-task button,
-.add-appointment-task button {
-padding: 10px 15px;
-margin-left: 5px;
-background: #b64515;
-color: white;
-border: none;
-border-radius: 5px;
-cursor: pointer;
+function addTomorrowTask() {
+const taskText = tomorrowTaskInput.value.trim();
+if (taskText) {
+tomorrowTasks.push({ text: taskText });
+localStorage.setItem('tomorrowTasks', JSON.stringify(tomorrowTasks));
+tomorrowTaskInput.value = '';
+renderTomorrowTasks();
+}
 }
 
-h3 {
-margin-top: 20px;
-color: #555;
-font-family: 'Georgia', serif;
-font-size: 1rem;
-font-weight: bold;
-text-transform: uppercase;
-border-bottom: 2px solid #b64515;
-padding-bottom: 5px;
+function renderAppointmentTasks() {
+appointmentsContainer.innerHTML = '';
+appointmentTasks.forEach((task) => {
+const item = document.createElement('div');
+item.classList.add('appointment-item');
+item.innerHTML = `<p>${task.text}</p>`;
+appointmentsContainer.appendChild(item);
+});
 }
 
-.items, .priority-container, .tomorrow-container, .appointments-container {
-border: 1px solid #F1F1F1;
-border-radius: 5px;
-margin-bottom: 10px;
-padding: 10px;
-background: #f9f9f9;
-max-height: 200px;
-overflow-y: auto;
+function addAppointmentTask() {
+const taskText = appointmentTaskInput.value.trim();
+if (taskText) {
+appointmentTasks.push({ text: taskText });
+localStorage.setItem('appointmentTasks', JSON.stringify(appointmentTasks));
+appointmentTaskInput.value = '';
+renderAppointmentTasks();
+}
 }
 
-.item, .priority-item, .tomorrow-item, .appointment-item {
-display: flex;
-align-items: center;
-border-bottom: 1px solid #F1F1F1;
-padding: 5px 0;
-word-wrap: break-word;
+// Add event listener for checkbox clicks
+itemsContainer.addEventListener('click', (e) => {
+if (e.target.matches('input[type="checkbox"]')) {
+handleCheck.call(e.target, e); // Call handleCheck with the current target
 }
+});
 
-.item:last-child, .priority-item:last-child, .tomorrow-item:last-child, .appointment-item:last-child {
-border-bottom: 0;
-}
+// Add event listeners for buttons
+addTaskBtn.addEventListener('click', addTask);
+removeCompletedBtn.addEventListener('click', removeCompletedTasks);
+addPriorityTaskBtn.addEventListener('click', addPriorityTask);
+addTomorrowTaskBtn.addEventListener('click', addTomorrowTask);
+addAppointmentTaskBtn.addEventListener('click', addAppointmentTask);
 
-.item.completed p {
-text-decoration: line-through;
-color: #999;
-}
-
-input[type="checkbox"] {
-margin: 0 10px 0 0;
-}
-
-.notes-container {
-margin-top: 10px;
-}
-
-textarea {
-width: 100%;
-height: 100px;
-padding: 10px;
-font-size: 16px;
-border: 1px solid #ccc;
-border-radius: 5px;
-box-sizing: border-box;
-}
-
-.remove-completed {
-margin-top: 10px;
-background: #b64515;
-color: white;
-border: none;
-padding: 10px;
-cursor: pointer;
-width: 100%;
-border-radius: 5px;
-}
-
-.remove-completed:hover {
-background: #FF2E2E;
-}
+// Initial render
+renderPriorityTasks();
+renderTomorrowTasks();
+renderAppointmentTasks();
