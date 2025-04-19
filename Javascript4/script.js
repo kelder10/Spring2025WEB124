@@ -5,15 +5,22 @@ const addTaskBtn = document.getElementById('addTaskBtn');
 const taskInput = document.getElementById('taskInput');
 const itemsContainer = document.getElementById('itemsContainer');
 const removeCompletedBtn = document.getElementById('removeCompletedBtn');
+const tomorrowContainer = document.getElementById('tomorrowContainer');
 const appointmentsContainer = document.getElementById('appointmentsContainer');
+const tomorrowTaskInput = document.getElementById('tomorrowTaskInput');
+const addTomorrowTaskBtn = document.getElementById('addTomorrowTaskBtn');
 const appointmentTaskInput = document.getElementById('appointmentTaskInput');
 const addAppointmentTaskBtn = document.getElementById('addAppointmentTaskBtn');
 
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+let tomorrowTasks = JSON.parse(localStorage.getItem('tomorrowTasks')) || [];
 let appointmentTasks = JSON.parse(localStorage.getItem('appointmentTasks')) || [];
 
-// Call renderTasks and renderAppointmentTasks to display existing tasks and appointments
+let lastChecked; // Variable to keep track of the last checked checkbox
+
+// Call renderTasks to display existing tasks
 renderTasks();
+renderTomorrowTasks();
 renderAppointmentTasks();
 
 function renderTasks() {
@@ -84,6 +91,26 @@ localStorage.setItem('tasks', JSON.stringify(tasks));
 renderTasks();
 }
 
+function renderTomorrowTasks() {
+tomorrowContainer.innerHTML = '';
+tomorrowTasks.forEach((task) => {
+const item = document.createElement('div');
+item.classList.add('tomorrow-item');
+item.innerHTML = `<p>${task.text}</p>`;
+tomorrowContainer.appendChild(item);
+});
+}
+
+function addTomorrowTask() {
+const taskText = tomorrowTaskInput.value.trim();
+if (taskText) {
+tomorrowTasks.push({ text: taskText });
+localStorage.setItem('tomorrowTasks', JSON.stringify(tomorrowTasks));
+tomorrowTaskInput.value = '';
+renderTomorrowTasks();
+}
+}
+
 function renderAppointmentTasks() {
 appointmentsContainer.innerHTML = '';
 appointmentTasks.forEach((task) => {
@@ -114,8 +141,17 @@ handleCheck.call(e.target, e); // Call handleCheck with the current target
 // Add event listeners for buttons
 addTaskBtn.addEventListener('click', addTask);
 removeCompletedBtn.addEventListener('click', removeCompletedTasks);
+addTomorrowTaskBtn.addEventListener('click', addTomorrowTask);
 addAppointmentTaskBtn.addEventListener('click', addAppointmentTask);
 
 // Initial render
-renderTasks();
+renderTomorrowTasks();
 renderAppointmentTasks();
+```
+
+### Summary of Changes
+1. **HTML**: Both the "For Tomorrow" and "Appointments/Calls" sections now exist, each with its own input box and button.
+2. **JavaScript**: Added functionality for the "For Tomorrow" section while keeping the handling for appointments/calls intact.
+
+With these changes, your application will now have both sections as requested, allowing you to add tasks for tomorrow as well as appointments/calls.
+
