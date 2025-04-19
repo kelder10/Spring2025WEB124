@@ -5,22 +5,16 @@ const addTaskBtn = document.getElementById('addTaskBtn');
 const taskInput = document.getElementById('taskInput');
 const itemsContainer = document.getElementById('itemsContainer');
 const removeCompletedBtn = document.getElementById('removeCompletedBtn');
-const tomorrowContainer = document.getElementById('tomorrowContainer');
-const appointmentsContainer = document.querySelector('.appointments-container');
-const notesInput = document.getElementById('notesInput');
-
-const addTomorrowTaskBtn = document.getElementById('addTomorrowTaskBtn');
-const tomorrowTaskInput = document.getElementById('tomorrowTaskInput');
-const addAppointmentTaskBtn = document.getElementById('addAppointmentTaskBtn');
+const appointmentsContainer = document.getElementById('appointmentsContainer');
 const appointmentTaskInput = document.getElementById('appointmentTaskInput');
+const addAppointmentTaskBtn = document.getElementById('addAppointmentTaskBtn');
 
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-let tomorrowTasks = JSON.parse(localStorage.getItem('tomorrowTasks')) || [];
 let appointmentTasks = JSON.parse(localStorage.getItem('appointmentTasks')) || [];
 
-// Call renderTasks to display existing tasks
+// Call renderTasks and renderAppointmentTasks to display existing tasks and appointments
 renderTasks();
-renderTomorrowTasks(); // Render existing tomorrow tasks on initial load
+renderAppointmentTasks();
 
 function renderTasks() {
 itemsContainer.innerHTML = '';
@@ -48,40 +42,46 @@ renderTasks();
 }
 }
 
+function handleCheck(e) {
+const checkboxes = itemsContainer.querySelectorAll('input[type="checkbox"]');
+const currentIndex = Array.from(checkboxes).indexOf(this);
+
+// Check if the currentIndex is valid
+if (currentIndex < 0 || currentIndex >= tasks.length) {
+return; // Exit the function if the index is out of bounds
+}
+
+if (e.shiftKey && lastChecked) {
+const lastCheckedIndex = Array.from(checkboxes).indexOf(lastChecked);
+const start = Math.min(currentIndex, lastCheckedIndex);
+const end = Math.max(currentIndex, lastCheckedIndex);
+
+// Check all checkboxes in between
+for (let i = start; i <= end; i++) {
+if (checkboxes[i]) {
+checkboxes[i].checked = true; // Check the checkbox in between
+const index = checkboxes[i].id.split('-')[1];
+if (index >= 0 && index < tasks.length) {
+tasks[index].completed = true; // Mark the task as completed in the tasks array
+}
+}
+}
+} else {
+const index = e.target.id.split('-')[1];
+if (index >= 0 && index < tasks.length) {
+tasks[index].completed = e.target.checked; // Update individual task completion
+}
+}
+
+lastChecked = this; // Update lastChecked to the current checkbox
+localStorage.setItem('tasks', JSON.stringify(tasks)); // Save the updated tasks
+renderTasks(); // Re-render tasks to update the display
+}
+
 function removeCompletedTasks() {
-// Remove completed tasks from the main task list
 tasks = tasks.filter(task => !task.completed);
 localStorage.setItem('tasks', JSON.stringify(tasks));
-
-// Clear tomorrow tasks as there's no longer a completed state
-tomorrowTasks = [];
-localStorage.setItem('tomorrowTasks', JSON.stringify(tomorrowTasks));
-
-renderTasks(); // Re-render main tasks
-renderTomorrowTasks(); // Re-render tomorrow tasks
-}
-
-function renderTomorrowTasks() {
-tomorrowContainer.innerHTML = '';
-tomorrowTasks.forEach((task) => {
-const item = document.createElement('div');
-item.classList.add('tomorrow-item');
-item.innerHTML = `<p>${task.text}</p>`; // Display the task as text
-tomorrowContainer.appendChild(item);
-});
-}
-
-function addTomorrowTask() {
-const taskText = tomorrowTaskInput.value.trim();
-if (taskText) {
-console.log("Adding tomorrow task:", taskText); // Log the task being added
-tomorrowTasks.push({ text: taskText }); // Add task without completed state
-localStorage.setItem('tomorrowTasks', JSON.stringify(tomorrowTasks));
-tomorrowTaskInput.value = '';
-renderTomorrowTasks(); // Render the updated tasks
-} else {
-console.log("No task text entered."); // Log if no task is entered
-}
+renderTasks();
 }
 
 function renderAppointmentTasks() {
@@ -104,20 +104,18 @@ renderAppointmentTasks();
 }
 }
 
-// Add event listener for checkbox clicks in the main task list
+// Add event listener for checkbox clicks
 itemsContainer.addEventListener('click', (e) => {
 if (e.target.matches('input[type="checkbox"]')) {
-handleCheck.call(e.target, e, tasks, renderTasks); // Call handleCheck for main tasks
+handleCheck.call(e.target, e); // Call handleCheck with the current target
 }
 });
 
 // Add event listeners for buttons
 addTaskBtn.addEventListener('click', addTask);
 removeCompletedBtn.addEventListener('click', removeCompletedTasks);
-addTomorrowTaskBtn.addEventListener('click', addTomorrowTask);
 addAppointmentTaskBtn.addEventListener('click', addAppointmentTask);
 
 // Initial render
-renderTomorrowTasks();
+renderTasks();
 renderAppointmentTasks();
-
