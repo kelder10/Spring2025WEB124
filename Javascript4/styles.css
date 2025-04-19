@@ -51,7 +51,6 @@ margin-bottom: 10px;
 }
 
 .add-task input,
-.add-task select,
 .add-priority-task input,
 .add-tomorrow-task input,
 .add-appointment-task input {
@@ -142,6 +141,30 @@ padding: 10px;
 cursor: pointer;
 width: 100%;
 border-radius: 5px;
+}
+
+.remove-completed:hover {
+background: #FF2E2E;
+}
+
+.priority-indicator {
+width: 10px;
+height: 10px;
+border-radius: 50%;
+display: inline-block;
+margin-right: 5px;
+}
+
+.priority-low {
+background-color: green;
+}
+
+.priority-medium {
+background-color: yellow;
+}
+
+.priority-high {
+background-color: red;
 }
 
 .remove-completed:hover {
