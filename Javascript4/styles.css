@@ -111,7 +111,7 @@ border-bottom: 0;
 
 .item.completed p {
 text-decoration: line-through;
-color: #999;
+color: #999; /* Optional: Change color of completed task text */
 }
 
 input[type="checkbox"] {
