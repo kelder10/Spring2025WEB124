@@ -87,17 +87,32 @@ renderTasks(); // Re-render tasks to update the display
 }
 
 function removeCompletedTasks() {
+// Remove completed tasks from the main task list
 tasks = tasks.filter(task => !task.completed);
 localStorage.setItem('tasks', JSON.stringify(tasks));
+
+// Remove completed tasks from tomorrow tasks
+const tomorrowCheckboxes = tomorrowContainer.querySelectorAll('input[type="checkbox"]');
+tomorrowCheckboxes.forEach((checkbox, index) => {
+if (checkbox.checked) {
+tomorrowTasks.splice(index, 1); // Remove the task from the tomorrowTasks array
+}
+});
+
+localStorage.setItem('tomorrowTasks', JSON.stringify(tomorrowTasks));
 renderTasks();
+renderTomorrowTasks(); // Re-render tomorrow tasks
 }
 
 function renderTomorrowTasks() {
 tomorrowContainer.innerHTML = '';
-tomorrowTasks.forEach((task) => {
+tomorrowTasks.forEach((task, index) => {
 const item = document.createElement('div');
 item.classList.add('tomorrow-item');
-item.innerHTML = `<p>${task.text}</p>`;
+item.innerHTML = `
+<input type="checkbox" id="tomorrow-task-${index}">
+<p>${task.text}</p>
+`;
 tomorrowContainer.appendChild(item);
 });
 }
@@ -135,7 +150,7 @@ renderAppointmentTasks();
 }
 }
 
-// Add event listener for checkbox clicks
+// Add event listener for checkbox clicks in the main task list
 itemsContainer.addEventListener('click', (e) => {
 if (e.target.matches('input[type="checkbox"]')) {
 handleCheck.call(e.target, e); // Call handleCheck with the current target
@@ -151,4 +166,3 @@ addAppointmentTaskBtn.addEventListener('click', addAppointmentTask);
 // Initial render
 renderTomorrowTasks();
 renderAppointmentTasks();
-
