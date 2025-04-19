@@ -1,15 +1,10 @@
 // Author: Your Name, Date: YYYY-MM-DD
 // Description: JavaScript for handling the Daily Planner application
-
-// Author: Your Name, Date: YYYY-MM-DD
-// Description: JavaScript for handling the Daily Planner application
-
 const addTaskBtn = document.getElementById('addTaskBtn');
 const taskInput = document.getElementById('taskInput');
-const taskCategoryInput = document.getElementById('taskCategoryInput');
+const prioritySelect = document.getElementById('prioritySelect');
 const itemsContainer = document.getElementById('itemsContainer');
 const removeCompletedBtn = document.getElementById('removeCompletedBtn');
-const categoryFilter = document.getElementById('categoryFilter');
 const priorityContainer = document.getElementById('priorityContainer');
 const tomorrowContainer = document.getElementById('tomorrowContainer');
 const appointmentsContainer = document.querySelector('.appointments-container');
@@ -27,38 +22,40 @@ let priorityTasks = JSON.parse(localStorage.getItem('priorityTasks')) || [];
 let tomorrowTasks = JSON.parse(localStorage.getItem('tomorrowTasks')) || [];
 let appointmentTasks = JSON.parse(localStorage.getItem('appointmentTasks')) || [];
 
-let lastChecked; // Variable to keep track of the last checked checkbox
+let lastChecked;
 
-// Call renderTasks to display existing tasks
 renderTasks();
 
 function renderTasks() {
 itemsContainer.innerHTML = '';
-const selectedCategory = categoryFilter.value;
-
 tasks.forEach((task, index) => {
-if (selectedCategory === 'All' || task.category === selectedCategory) {
 const item = document.createElement('div');
 item.classList.add('item');
+
+const priorityIndicator = document.createElement('span');
+priorityIndicator.classList.add('priority-indicator', `priority-${task.priority}`);
+
 if (task.completed) {
 item.classList.add('completed');
 }
 item.innerHTML = `
+${priorityIndicator.outerHTML}
 <input type="checkbox" id="task-${index}" ${task.completed ? 'checked' : ''}>
-<p>${task.text} <span>(${task.category})</span></p>
+<p>${task.text}</p>
 `;
 itemsContainer.appendChild(item);
-}
 });
 }
 
 function addTask() {
 const taskText = taskInput.value.trim();
-const category = taskCategoryInput.value; // Get selected category
+const priorityLevel = prioritySelect.value;
+
 if (taskText) {
-tasks.push({ text: taskText, category: category, completed: false });
+tasks.push({ text: taskText, completed: false, priority: priorityLevel });
 localStorage.setItem('tasks', JSON.stringify(tasks));
 taskInput.value = '';
+prioritySelect.value = 'low'; // Reset to default
 renderTasks();
 }
 }
@@ -67,9 +64,8 @@ function handleCheck(e) {
 const checkboxes = itemsContainer.querySelectorAll('input[type="checkbox"]');
 const currentIndex = Array.from(checkboxes).indexOf(this;
 
-// Check if the currentIndex is valid
 if (currentIndex < 0 || currentIndex >= tasks.length) {
-return; // Exit the function if the index is out of bounds
+return;
 }
 
 if (e.shiftKey && lastChecked) {
@@ -77,26 +73,25 @@ const lastCheckedIndex = Array.from(checkboxes).indexOf(lastChecked);
 const start = Math.min(currentIndex, lastCheckedIndex);
 const end = Math.max(currentIndex, lastCheckedIndex);
 
-// Check all checkboxes in between
 for (let i = start; i <= end; i++) {
 if (checkboxes[i]) {
-checkboxes[i].checked = true; // Check the checkbox in between
+checkboxes[i].checked = true;
 const index = checkboxes[i].id.split('-')[1];
 if (index >= 0 && index < tasks.length) {
-tasks[index].completed = true; // Mark the task as completed in the tasks array
+tasks[index].completed = true;
 }
 }
 }
 } else {
 const index = e.target.id.split('-')[1];
 if (index >= 0 && index < tasks.length) {
-tasks[index].completed = e.target.checked; // Update individual task completion
+tasks[index].completed = e.target.checked;
 }
 }
 
-lastChecked = this; // Update lastChecked to the current checkbox
-localStorage.setItem('tasks', JSON.stringify(tasks)); // Save the updated tasks
-renderTasks(); // Re-render tasks to update the display
+lastChecked = this;
+localStorage.setItem('tasks', JSON.stringify(tasks));
+renderTasks();
 }
 
 function removeCompletedTasks() {
@@ -169,12 +164,9 @@ renderAppointmentTasks();
 // Add event listener for checkbox clicks
 itemsContainer.addEventListener('click', (e) => {
 if (e.target.matches('input[type="checkbox"]')) {
-handleCheck.call(e.target, e); // Call handleCheck with the current target
+handleCheck.call(e.target, e);
 }
 });
-
-// Add event listener for category filter change
-categoryFilter.addEventListener('change', renderTasks);
 
 // Add event listeners for buttons
 addTaskBtn.addEventListener('click', addTask);
