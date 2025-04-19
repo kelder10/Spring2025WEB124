@@ -1,6 +1,7 @@
 // Author: Your Name, Date: YYYY-MM-DD
 // Description: JavaScript for handling the Daily Planner application
 
+
 const addTaskBtn = document.getElementById('addTaskBtn');
 const taskInput = document.getElementById('taskInput');
 const prioritySelect = document.getElementById('prioritySelect');
@@ -70,6 +71,16 @@ tasks[index].completed = true;
 const index = e.target.id.split('-')[1];
 if (index >= 0 && index < tasks.length) {
 tasks[index].completed = e.target.checked;
+}
+}
+
+// Update the completed class on the task item
+const item = checkboxes[currentIndex].closest('.item');
+if (item) {
+if (checkboxes[currentIndex].checked) {
+item.classList.add('completed'); // Add the completed class
+} else {
+item.classList.remove('completed'); // Remove the completed class
 }
 }
 
