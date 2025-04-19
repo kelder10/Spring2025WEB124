@@ -22,6 +22,7 @@ let lastChecked; // Variable to keep track of the last checked checkbox
 
 // Call renderTasks to display existing tasks
 renderTasks();
+renderTomorrowTasks(); // Render existing tomorrow tasks on initial load
 
 function renderTasks() {
 itemsContainer.innerHTML = '';
@@ -150,3 +151,4 @@ addAppointmentTaskBtn.addEventListener('click', addAppointmentTask);
 // Initial render
 renderTomorrowTasks();
 renderAppointmentTasks();
+
