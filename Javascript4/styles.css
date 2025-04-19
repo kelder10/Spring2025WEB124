@@ -160,3 +160,24 @@ background-color: yellow;
 .priority-high {
 background-color: red;
 }
+
+/* Added border to appointments and tomorrow containers */
+.appointments-container {
+border: 1px solid #F1F1F1; /* Border for appointments */
+border-radius: 5px;
+margin-bottom: 10px;
+padding: 10px;
+background: #f9f9f9;
+max-height: 200px;
+overflow-y: auto;
+}
+
+.tomorrow-container {
+border: 1px solid #F1F1F1; /* Border for tomorrow tasks */
+border-radius: 5px;
+margin-bottom: 10px;
+padding: 10px;
+background: #f9f9f9;
+max-height: 200px;
+overflow-y: auto;
+}
