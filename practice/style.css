@@ -1,10 +1,13 @@
+
 html {
 font-family: sans-serif;
-background: #2e1462;
+background: #b64515;
 }
 
 .wrapper {
 padding: 30px;
+border-radius: 10px;
+box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
 }
 
 .container {
@@ -13,8 +16,8 @@ justify-content: space-between;
 background: #f4ece9;
 box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
 border: 40px solid transparent;
-border-image: url('./image/flowers2.jpg') 100 stretch;
-border-radius: 15px;
+border-image: url('./images/flowers.jpg') 80 stretch;
+border-radius: 10px;
 padding: 20px;
 flex-direction: row;
 max-height: 600px;
@@ -25,10 +28,9 @@ font-size: 2.2rem;
 font-family: Arial, sans-serif;
 font-style: italic;
 padding: 0.5rem 1rem;
-cursor: pointer;
-margin: 0 20px;
+margin: 0 10px;
 border-radius: 10px;
-background-color: #2e1462;
+background-color: #b64515;
 color: white;
 border: 2px solid #fff;
 transition: background-color 0.3s, border-color 0.3s;
@@ -110,7 +112,7 @@ border-bottom: 0;
 
 .item.completed p {
 text-decoration: line-through;
-color: #999;
+color: #999; /* Optional: Change color of completed task text */
 }
 
 input[type="checkbox"] {
@@ -144,4 +146,24 @@ border-radius: 5px;
 
 .remove-completed:hover {
 background: #FF2E2E;
+}
+
+.priority-indicator {
+width: 10px;
+height: 10px;
+border-radius: 50%;
+display: inline-block;
+margin-right: 5px;
+}
+
+.priority-low {
+background-color: green;
+}
+
+.priority-medium {
+background-color: yellow;
+}
+
+.priority-high {
+background-color: red;
 }
