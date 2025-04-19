@@ -1,3 +1,4 @@
+
 html {
 font-family: sans-serif;
 background: #b64515;
@@ -5,8 +6,6 @@ background: #b64515;
 
 .wrapper {
 padding: 30px;
-border-radius: 10px;
-box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
 }
 
 .container {
@@ -15,8 +14,8 @@ justify-content: space-between;
 background: #f4ece9;
 box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
 border: 40px solid transparent;
-border-image: url('./images/flowers.jpg') 80 stretch;
-border-radius: 10px;
+border-image: url('./images/flowers.jpg') 30 stretch;
+border-radius: 15px;
 padding: 20px;
 flex-direction: row;
 max-height: 600px;
@@ -27,7 +26,8 @@ font-size: 2.2rem;
 font-family: Arial, sans-serif;
 font-style: italic;
 padding: 0.5rem 1rem;
-margin: 0 10px;
+cursor: pointer;
+margin: 0 20px;
 border-radius: 10px;
 background-color: #b64515;
 color: white;
@@ -146,5 +146,3 @@ border-radius: 5px;
 .remove-completed:hover {
 background: #FF2E2E;
 }
-
-
