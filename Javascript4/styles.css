@@ -45,12 +45,13 @@ flex: 1;
 padding-left: 20px;
 }
 
-.add-task, .add-appointment-task {
+.add-task, .add-tomorrow-task, .add-appointment-task {
 display: flex;
 margin-bottom: 10px;
 }
 
 .add-task input,
+.add-tomorrow-task input,
 .add-appointment-task input {
 flex: 1;
 padding: 10px;
@@ -62,6 +63,7 @@ box-sizing: border-box;
 }
 
 .add-task button,
+.add-tomorrow-task button,
 .add-appointment-task button {
 padding: 10px 15px;
 margin-left: 5px;
@@ -83,7 +85,7 @@ border-bottom: 2px solid #b64515;
 padding-bottom: 5px;
 }
 
-.items, .appointments-container {
+.items, .tomorrow-container, .appointments-container {
 border: 1px solid #F1F1F1;
 border-radius: 5px;
 margin-bottom: 10px;
@@ -93,7 +95,7 @@ max-height: 200px;
 overflow-y: auto;
 }
 
-.item, .appointment-item {
+.item, .tomorrow-item, .appointment-item {
 display: flex;
 align-items: center;
 border-bottom: 1px solid #F1F1F1;
@@ -101,7 +103,7 @@ padding: 5px 0;
 word-wrap: break-word;
 }
 
-.item:last-child, .appointment-item:last-child {
+.item:last-child, .tomorrow-item:last-child, .appointment-item:last-child {
 border-bottom: 0;
 }
 
