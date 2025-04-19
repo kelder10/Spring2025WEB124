@@ -6,11 +6,13 @@
 
 const addTaskBtn = document.getElementById('addTaskBtn');
 const taskInput = document.getElementById('taskInput');
+const taskCategoryInput = document.getElementById('taskCategoryInput');
 const itemsContainer = document.getElementById('itemsContainer');
 const removeCompletedBtn = document.getElementById('removeCompletedBtn');
+const categoryFilter = document.getElementById('categoryFilter');
 const priorityContainer = document.getElementById('priorityContainer');
 const tomorrowContainer = document.getElementById('tomorrowContainer');
-const appointmentsContainer = document.querySelector('.appointments-container'); // Updated to use class selector
+const appointmentsContainer = document.querySelector('.appointments-container');
 const notesInput = document.getElementById('notesInput');
 
 const addPriorityTaskBtn = document.getElementById('addPriorityTaskBtn');
@@ -32,24 +34,29 @@ renderTasks();
 
 function renderTasks() {
 itemsContainer.innerHTML = '';
+const selectedCategory = categoryFilter.value;
+
 tasks.forEach((task, index) => {
+if (selectedCategory === 'All' || task.category === selectedCategory) {
 const item = document.createElement('div');
 item.classList.add('item');
 if (task.completed) {
-item.classList.add('completed'); // Add 'completed' class if the task is completed
+item.classList.add('completed');
 }
 item.innerHTML = `
 <input type="checkbox" id="task-${index}" ${task.completed ? 'checked' : ''}>
-<p>${task.text}</p>
+<p>${task.text} <span>(${task.category})</span></p>
 `;
 itemsContainer.appendChild(item);
+}
 });
 }
 
 function addTask() {
 const taskText = taskInput.value.trim();
+const category = taskCategoryInput.value; // Get selected category
 if (taskText) {
-tasks.push({ text: taskText, completed: false });
+tasks.push({ text: taskText, category: category, completed: false });
 localStorage.setItem('tasks', JSON.stringify(tasks));
 taskInput.value = '';
 renderTasks();
@@ -58,7 +65,7 @@ renderTasks();
 
 function handleCheck(e) {
 const checkboxes = itemsContainer.querySelectorAll('input[type="checkbox"]');
-const currentIndex = Array.from(checkboxes).indexOf(this);
+const currentIndex = Array.from(checkboxes).indexOf(this;
 
 // Check if the currentIndex is valid
 if (currentIndex < 0 || currentIndex >= tasks.length) {
@@ -165,6 +172,9 @@ if (e.target.matches('input[type="checkbox"]')) {
 handleCheck.call(e.target, e); // Call handleCheck with the current target
 }
 });
+
+// Add event listener for category filter change
+categoryFilter.addEventListener('change', renderTasks);
 
 // Add event listeners for buttons
 addTaskBtn.addEventListener('click', addTask);
