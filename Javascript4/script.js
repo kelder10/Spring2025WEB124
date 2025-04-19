@@ -52,31 +52,15 @@ if (currentIndex < 0 || currentIndex >= tasks.length) {
 return;
 }
 
-if (e.shiftKey && lastChecked) {
-const lastCheckedIndex = Array.from(checkboxes).indexOf(lastChecked);
-const start = Math.min(currentIndex, lastCheckedIndex);
-const end = Math.max(currentIndex, lastCheckedIndex);
-
-for (let i = start; i <= end; i++) {
-if (checkboxes[i]) {
-checkboxes[i].checked = true;
-const index = checkboxes[i].id.split('-')[1];
-if (index >= 0 && index < tasks.length) {
-tasks[index].completed = true;
-}
-}
-}
-} else {
 const index = e.target.id.split('-')[1];
 if (index >= 0 && index < tasks.length) {
-tasks[index].completed = e.target.checked;
-}
+tasks[index].completed = e.target.checked; // Update task completion status
 }
 
 // Update the completed class on the task item
 const item = checkboxes[currentIndex].closest('.item');
 if (item) {
-if (checkboxes[currentIndex].checked) {
+if (e.target.checked) {
 item.classList.add('completed'); // Add the completed class
 } else {
 item.classList.remove('completed'); // Remove the completed class
@@ -107,3 +91,4 @@ removeCompletedBtn.addEventListener('click', removeCompletedTasks);
 
 // Initial render
 renderTasks();
+
