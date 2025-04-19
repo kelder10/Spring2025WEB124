@@ -50,12 +50,12 @@ renderTasks();
 }
 }
 
-function handleCheck(e) {
-const checkboxes = itemsContainer.querySelectorAll('input[type="checkbox"]');
+function handleCheck(e, taskArray, renderFunction) {
+const checkboxes = tomorrowContainer.querySelectorAll('input[type="checkbox"]');
 const currentIndex = Array.from(checkboxes).indexOf(this);
 
 // Check if the currentIndex is valid
-if (currentIndex < 0 || currentIndex >= tasks.length) {
+if (currentIndex < 0 || currentIndex >= taskArray.length) {
 return; // Exit the function if the index is out of bounds
 }
 
@@ -64,26 +64,27 @@ const lastCheckedIndex = Array.from(checkboxes).indexOf(lastChecked);
 const start = Math.min(currentIndex, lastCheckedIndex);
 const end = Math.max(currentIndex, lastCheckedIndex);
 
-// Check all checkboxes in between
+// Check all checkboxes in between and update the tasks array
 for (let i = start; i <= end; i++) {
 if (checkboxes[i]) {
 checkboxes[i].checked = true; // Check the checkbox in between
-const index = checkboxes[i].id.split('-')[1];
-if (index >= 0 && index < tasks.length) {
-tasks[index].completed = true; // Mark the task as completed in the tasks array
+const index = checkboxes[i].id.split('-')[2]; // Update index for tomorrow tasks
+
+if (index >= 0 && index < taskArray.length) {
+taskArray[index].completed = true; // Mark the task as completed in the tomorrowTasks array
 }
 }
 }
 } else {
-const index = e.target.id.split('-')[1];
-if (index >= 0 && index < tasks.length) {
-tasks[index].completed = e.target.checked; // Update individual task completion
+const index = e.target.id.split('-')[2]; // Update index for tomorrow tasks
+if (index >= 0 && index < taskArray.length) {
+taskArray[index].completed = e.target.checked; // Update individual task completion
 }
 }
 
 lastChecked = this; // Update lastChecked to the current checkbox
-localStorage.setItem('tasks', JSON.stringify(tasks)); // Save the updated tasks
-renderTasks(); // Re-render tasks to update the display
+localStorage.setItem('tomorrowTasks', JSON.stringify(taskArray)); // Save the updated tomorrow tasks
+renderFunction(); // Re-render the tomorrow tasks to update the display
 }
 
 function removeCompletedTasks() {
@@ -92,15 +93,10 @@ tasks = tasks.filter(task => !task.completed);
 localStorage.setItem('tasks', JSON.stringify(tasks));
 
 // Remove completed tasks from tomorrow tasks
-const tomorrowCheckboxes = tomorrowContainer.querySelectorAll('input[type="checkbox"]');
-tomorrowCheckboxes.forEach((checkbox, index) => {
-if (checkbox.checked) {
-tomorrowTasks.splice(index, 1); // Remove the task from the tomorrowTasks array
-}
-});
-
+tomorrowTasks = tomorrowTasks.filter(task => !task.completed);
 localStorage.setItem('tomorrowTasks', JSON.stringify(tomorrowTasks));
-renderTasks();
+
+renderTasks(); // Re-render main tasks
 renderTomorrowTasks(); // Re-render tomorrow tasks
 }
 
@@ -109,8 +105,9 @@ tomorrowContainer.innerHTML = '';
 tomorrowTasks.forEach((task, index) => {
 const item = document.createElement('div');
 item.classList.add('tomorrow-item');
+item.classList.toggle('completed', task.completed); // Add 'completed' class based on task status
 item.innerHTML = `
-<input type="checkbox" id="tomorrow-task-${index}">
+<input type="checkbox" id="tomorrow-task-${index}" ${task.completed ? 'checked' : ''}>
 <p>${task.text}</p>
 `;
 tomorrowContainer.appendChild(item);
@@ -121,7 +118,7 @@ function addTomorrowTask() {
 const taskText = tomorrowTaskInput.value.trim();
 if (taskText) {
 console.log("Adding tomorrow task:", taskText); // Log the task being added
-tomorrowTasks.push({ text: taskText });
+tomorrowTasks.push({ text: taskText, completed: false }); // Set completed to false
 localStorage.setItem('tomorrowTasks', JSON.stringify(tomorrowTasks));
 tomorrowTaskInput.value = '';
 renderTomorrowTasks(); // Render the updated tasks
@@ -153,7 +150,14 @@ renderAppointmentTasks();
 // Add event listener for checkbox clicks in the main task list
 itemsContainer.addEventListener('click', (e) => {
 if (e.target.matches('input[type="checkbox"]')) {
-handleCheck.call(e.target, e); // Call handleCheck with the current target
+handleCheck.call(e.target, e, tasks, renderTasks); // Call handleCheck for main tasks
+}
+});
+
+// Add event listener for checkbox clicks in the tomorrow tasks
+tomorrowContainer.addEventListener('click', (e) => {
+if (e.target.matches('input[type="checkbox"]')) {
+handleCheck.call(e.target, e, tomorrowTasks, renderTomorrowTasks); // Call handleCheck for tomorrow tasks
 }
 });
 
