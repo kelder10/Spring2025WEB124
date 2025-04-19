@@ -22,7 +22,7 @@ priorityIndicator.classList.add('priority-indicator', `priority-${task.priority}
 item.innerHTML = `
 ${priorityIndicator.outerHTML}
 <input type="checkbox" id="task-${index}" ${task.completed ? 'checked' : ''}>
-<p>${task.text}</p>
+<p class="${task.completed ? 'completed-text' : ''}">${task.text}</p>
 `;
 itemsContainer.appendChild(item);
 });
