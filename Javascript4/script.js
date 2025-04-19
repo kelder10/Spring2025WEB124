@@ -147,11 +147,3 @@ addAppointmentTaskBtn.addEventListener('click', addAppointmentTask);
 // Initial render
 renderTomorrowTasks();
 renderAppointmentTasks();
-```
-
-### Summary of Changes
-1. **HTML**: Both the "For Tomorrow" and "Appointments/Calls" sections now exist, each with its own input box and button.
-2. **JavaScript**: Added functionality for the "For Tomorrow" section while keeping the handling for appointments/calls intact.
-
-With these changes, your application will now have both sections as requested, allowing you to add tasks for tomorrow as well as appointments/calls.
-
