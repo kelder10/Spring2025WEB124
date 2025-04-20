@@ -31,9 +31,7 @@ font-weight: 600;
 padding: 0.5rem 1rem;
 margin: 0 10px;
 border-radius: 10px;
-background-color: #b64515;
-color: white;
-border: 2px solid #fff;
+color: #323940;
 transition: background-color 0.3s, border-color 0.3s;
 }
 
