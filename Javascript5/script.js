@@ -30,9 +30,10 @@ const spacing = document.getElementById('spacing').value;
 const blur = document.getElementById('blur').value;
 const brightness = document.getElementById('brightness').value;
 const contrast = document.getElementById('contrast').value;
+const baseColor = document.getElementById('base').value; // Get base color
 
 // Draw a border around the image
-ctx.strokeStyle = '#ffffff'; // Set border color
+ctx.strokeStyle = baseColor; // Set border color to base color
 ctx.lineWidth = spacing; // Use spacing value for border width
 ctx.strokeRect(spacing / 2, spacing / 2, canvas.width - spacing, canvas.height - spacing); // Draw border
 
@@ -46,6 +47,7 @@ document.getElementById('spacing').addEventListener('input', updateCanvas);
 document.getElementById('blur').addEventListener('input', updateCanvas);
 document.getElementById('brightness').addEventListener('input', updateCanvas);
 document.getElementById('contrast').addEventListener('input', updateCanvas);
+document.getElementById('base').addEventListener('input', updateCanvas); // Listen for base color changes
 
 // Download functionality
 document.getElementById('download').addEventListener('click', function () {
@@ -54,4 +56,3 @@ link.download = 'edited-image.png';
 link.href = canvas.toDataURL();
 link.click();
 });
-
