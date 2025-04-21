@@ -1,3 +1,4 @@
+
 const upload = document.getElementById('upload');
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
@@ -10,23 +11,13 @@ const reader = new FileReader();
 reader.onload = function (event) {
 const img = new Image();
 img.onload = function () {
-const maxWidth = canvas.width; // Canvas width
-const maxHeight = canvas.height; // Canvas height
+const maxWidth = 500; // Set a maximum width for the image
+const maxHeight = (img.height / img.width) * maxWidth; // Maintain aspect ratio
 
-// Calculate the scaling factor to maintain aspect ratio
-let scale = Math.min(maxWidth / img.width, maxHeight / img.height);
+canvas.width = maxWidth; // Set canvas width
+canvas.height = maxHeight; // Set canvas height to maintain aspect ratio
 
-// Set new width and height based on the scaling factor
-const imgWidth = img.width * scale;
-const imgHeight = img.height * scale;
-
-// Adjust canvas size based on new image size
-canvas.width = imgWidth;
-canvas.height = imgHeight;
-
-// Clear previous image and draw the new image
-ctx.clearRect(0, 0, canvas.width, canvas.height);
-ctx.drawImage(img, 0, 0, imgWidth, imgHeight);
+ctx.drawImage(img, 0, 0, maxWidth, maxHeight); // Draw image on the canvas
 originalImage = ctx.getImageData(0, 0, canvas.width, canvas.height); // Store original image data
 }
 img.src = event.target.result;
