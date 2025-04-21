@@ -11,24 +11,39 @@ color: white;
 font-family: 'helvetica neue', sans-serif;
 font-weight: 100;
 font-size: 20px;
+margin: 0; /* Remove default margin */
+padding: 20px; /* Add some padding */
 }
 
-img {
-padding: var(--spacing);
-background: var(--base);
-filter: blur(var(--blur));
+.container {
+display: flex; /* Use flexbox for layout */
+flex-direction: row; /* Arrange items in a row */
+justify-content: center; /* Center items horizontally */
 }
 
 .controls {
-margin-bottom: 50px;
+flex: 1; /* Allow controls to take up one part */
+padding: 20px; /* Add padding for better spacing */
+max-width: 300px; /* Set a maximum width for controls */
 }
 
 input {
-width: 100px;
-margin: 10px;
+width: 100%; /* Make inputs take full width of the controls */
+margin: 10px 0; /* Vertical margin */
 }
 
 canvas {
-max-width: 100%;
+flex: 2; /* Allow canvas to take up more space */
+max-width: 100%; /* Ensure the canvas is responsive */
 border: 1px solid white;
+}
+
+@media (max-width: 768px) { /* Responsive adjustments */
+.container {
+flex-direction: column; /* Stack controls and canvas vertically */
+}
+
+.controls {
+max-width: none; /* Remove max-width for smaller screens */
+}
 }
