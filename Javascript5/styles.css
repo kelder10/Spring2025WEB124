@@ -1,5 +1,5 @@
 :root {
---base: #ffc600;
+--base: #ffc600; /* This can be set dynamically via JS */
 --spacing: 10px;
 --blur: 0px;
 }
@@ -11,8 +11,6 @@ color: white;
 font-family: 'helvetica neue', sans-serif;
 font-weight: 100;
 font-size: 20px;
-margin: 0; /* Remove default margin */
-padding: 20px; /* Add some padding */
 }
 
 .container {
@@ -40,10 +38,10 @@ border: 1px solid white;
 
 @media (max-width: 768px) { /* Responsive adjustments */
 .container {
-    flex-direction: column; /* Stack controls and canvas vertically */
-  }
-  
-  .controls {
-    max-width: none; /* Remove max-width for smaller screens */
-  }
+flex-direction: column; /* Stack controls and canvas vertically */
+}
+
+.controls {
+max-width: none; /* Remove max-width for smaller screens */
+}
 }
