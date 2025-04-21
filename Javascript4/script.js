@@ -7,7 +7,6 @@ New JS features
     Implemented task management using local storage.
     Enabled the removal of completed tasks.
 */
-
 const addTaskBtn = document.getElementById('addTaskBtn'); // Button to add a new task
 const taskInput = document.getElementById('taskInput'); // Input field for task description
 const prioritySelect = document.getElementById('prioritySelect'); // Dropdown for task priority
