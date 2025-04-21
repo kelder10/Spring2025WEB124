@@ -1,185 +1,205 @@
+/*
+Katie Elder, 4-19-25
+  Adapted from https://javascript30.com/
+  Hold Shift and Check Checkboxes
+New css features
+  Styled the priority indicators to visually represent task importance.
+  Added styles for the notes section and other UI elements for improved usability.
+*/
 html {
-font-family: sans-serif;
-background: #b64515;
+    font-family: sans-serif;
+    background: #b64515;
 }
 
+/* Wrapper styles for overall layout */
 .wrapper {
-padding: 30px;
-border-radius: 10px;
-box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
 }
 
+/* Container styles for the main content layout */
 .container {
-display: flex;
-justify-content: space-between;
-background: #f4ece9;
-box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
-border: 40px solid transparent;
-border-image: url('./images/flowers.jpg') 80 stretch;
-border-radius: 10px;
-padding: 20px;
-flex-direction: row;
-max-height: 600px;
+    display: flex;
+    justify-content: space-between;
+    background: #f4ece9;
+    box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+    border: 40px solid transparent;
+    border-image: url('./images/flowers.jpg') 80 stretch;
+    border-radius: 10px;
+    padding: 20px;
+    flex-direction: row;
+    max-height: 600px;
 }
 
+/* Main title styles */
 h2 {
-font-size: 3rem;
-text-align: center;
-font-family: Times, Times New Roman, serif;
-font-style: italic;
-font-weight: 600;
-padding: 0.5rem 1rem;
-margin: 0 10px;
-border-radius: 10px;
-color: #4b415b;
-transition: background-color 0.3s, border-color 0.3s;
+    font-size: 3rem;
+    text-align: center;
+    font-family: Times, Times New Roman, serif;
+    font-style: italic;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    margin: 0 10px;
+    border-radius: 10px;
+    color: #4b415b;
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
+ /* Column layout styles */
 .left-column {
-flex: 2;
-padding-right: 40px;
-padding-left: 20px;
+    flex: 2;
+    padding-right: 40px;
+    padding-left: 20px;
 }
 
 .right-column {
-flex: 1;
-padding-left: 30px;
-padding-right: 20px;
+    flex: 1;
+    padding-left: 30px;
+    padding-right: 20px;
 }
 
+/* Styles for the task addition section */
 .add-task {
-display: flex;
-margin-bottom: 10px;
+    display: flex;
+    margin-bottom: 10px;
 }
 
 .add-task input {
-flex: 1;
-padding: 10px;
-font-size: 14px;
-height: 40px;
-border: 1px solid #ccc;
-border-radius: 5px;
-box-sizing: border-box;
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 .add-task button {
-padding: 10px 15px;
-margin-left: 5px;
-background: #645976;
-color: white;
-border: none;
-border-radius: 5px;
-cursor: pointer;
+    padding: 10px 15px;
+    margin-left: 5px;
+    background: #645976;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
+/* Styles for subheadings */
 h3 {
-margin-top: 20px;
-color: #555;
-font-family: 'Georgia', serif;
-font-size: 1rem;
-font-weight: bold;
-text-transform: uppercase;
-border-bottom: 2px solid #b64515;
-padding-bottom: 5px;
+    margin-top: 20px;
+    color: #555;
+    font-family: 'Georgia', serif;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 2px solid #b64515;
+    padding-bottom: 5px;
 }
 
+/* Styles for the task items container */
 .items {
-border: 1px solid #F1F1F1;
-border-radius: 5px;
-margin-bottom: 10px;
-padding: 10px;
-background: #f9f9f9;
-max-height: 200px;
-overflow-y: auto;
+    border: 1px solid #F1F1F1;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #f9f9f9;
+    max-height: 200px;
+    overflow-y: auto;
 }
 
+ /* Styles for individual task items */
 .item {
-display: flex;
-align-items: center;
-border-bottom: 1px solid #F1F1F1;
-padding: 5px 0;
-word-wrap: break-word;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #F1F1F1;
+    padding: 5px 0;
+    word-wrap: break-word;
 }
 
 .item:last-child {
-border-bottom: 0;
+    border-bottom: 0;
 }
 
+/* Styles for completed task text */
 .completed-text {
-text-decoration: line-through;
-color: #999; /* Optional: Change color of completed task text */
+    text-decoration: line-through;
+    color: #999;
 }
 
+/* Styles for checkboxes */
 input[type="checkbox"] {
-margin: 0 10px 0 0;
+    margin: 0 10px 0 0;
 }
 
+/* Styles for the notes section */
 .notes-container {
-margin-top: 10px;
+    margin-top: 10px;
 }
 
 textarea {
-width: 100%;
-height: 100px;
-padding: 10px;
-font-size: 16px;
-border: 1px solid #ccc;
-border-radius: 5px;
-box-sizing: border-box;
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 .remove-completed {
-margin-top: 10px;
-background: #645976;
-color: white;
-border: none;
-padding: 10px;
-cursor: pointer;
-width: 100%;
-border-radius: 5px;
+    margin-top: 10px;
+    background: #645976;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
 }
 
 .remove-completed:hover {
-background: #4b415b;
+    background: #4b415b;
 }
 
+/* Styles for priority indicators */
 .priority-indicator {
-width: 10px;
-height: 10px;
-border-radius: 50%;
-display: inline-block;
-margin-right: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
 }
 
 .priority-low {
-background-color: green;
+    background-color: green; /* Green for low priority */
 }
 
 .priority-medium {
-background-color: yellow;
+    background-color: yellow; /* Yellow for medium priority */
 }
 
 .priority-high {
-background-color: red;
+    background-color: red; /* Red for high priority */
 }
 
-/* Added border to appointments and tomorrow containers */
+/* Styling for appointments and tomorrow containers */
 .appointments-container {
-border: 1px solid #F1F1F1; /* Border for appointments */
-border-radius: 5px;
-margin-bottom: 10px;
-padding: 10px;
-background: #f9f9f9;
-max-height: 200px;
-overflow-y: auto;
+    border: 1px solid #F1F1F1; 
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #f9f9f9;
+    max-height: 200px;
+    overflow-y: auto;
 }
 
 .tomorrow-container {
-border: 1px solid #F1F1F1; /* Border for tomorrow tasks */
-border-radius: 5px;
-margin-bottom: 10px;
-padding: 10px;
-background: #f9f9f9;
-max-height: 200px;
-overflow-y: auto;
+    border: 1px solid #F1F1F1; 
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #f9f9f9;
+    max-height: 200px;
+    overflow-y: auto;
 }
