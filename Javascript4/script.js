@@ -1,106 +1,124 @@
-const addTaskBtn = document.getElementById('addTaskBtn');
-const taskInput = document.getElementById('taskInput');
-const prioritySelect = document.getElementById('prioritySelect');
-const itemsContainer = document.getElementById('itemsContainer');
-const removeCompletedBtn = document.getElementById('removeCompletedBtn');
+/*
+Author: [Your Name]
+Date: [Current Date]
+Description: This script handles the functionality of the Daily Planner application.
+Changes made:
+- Implemented task management using local storage to persist data.
+- Added functionality for task priority selection.
+- Enabled the removal of completed tasks.
+- Provided visual feedback for completed tasks using CSS classes.
+*/
 
-let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-let lastChecked;
+const addTaskBtn = document.getElementById('addTaskBtn'); // Button to add a new task
+const taskInput = document.getElementById('taskInput'); // Input field for task description
+const prioritySelect = document.getElementById('prioritySelect'); // Dropdown for task priority
+const itemsContainer = document.getElementById('itemsContainer'); // Container for displaying tasks
+const removeCompletedBtn = document.getElementById('removeCompletedBtn'); // Button to remove completed tasks
 
-renderTasks();
+let tasks = JSON.parse(localStorage.getItem('tasks')) || []; // Load tasks from local storage or initialize empty array
+let lastChecked; // Variable to keep track of the last checked checkbox
 
+renderTasks(); // Initial render of tasks when the application loads
+
+// Function to render tasks in the UI
 function renderTasks() {
-    itemsContainer.innerHTML = '';
-    tasks.forEach((task, index) => {
-        const item = document.createElement('div');
-        item.classList.add('item');
+itemsContainer.innerHTML = ''; // Clear existing tasks to avoid duplication
+tasks.forEach((task, index) => {
+const item = document.createElement('div'); // Create a new task item container
+item.classList.add('item'); // Add class for styling
 
-        // Create priority indicator
-        const priorityIndicator = document.createElement('span');
-        priorityIndicator.classList.add('priority-indicator', `priority-${task.priority}`);
+// Create priority indicator element to show task priority visually
+const priorityIndicator = document.createElement('span');
+priorityIndicator.classList.add('priority-indicator', `priority-${task.priority}`);
 
-        item.innerHTML = `
-            ${priorityIndicator.outerHTML}      
-            <input type="checkbox" id="task-${index}" ${task.completed ? 'checked' : ''}>
-            <p class="${task.completed ? 'completed-text' : ''}">${task.text}</p>
-        `;
-        itemsContainer.appendChild(item);
-    });
+// Set inner HTML to include checkbox and task description, applying styles based on completion
+item.innerHTML = `
+${priorityIndicator.outerHTML}
+<input type="checkbox" id="task-${index}" ${task.completed ? 'checked' : ''}>
+<p class="${task.completed ? 'completed-text' : ''}">${task.text}</p>
+`;
+itemsContainer.appendChild(item); // Append the created item to the tasks container
+});
 }
 
+// Function to add a new task
 function addTask() {
-    const taskText = taskInput.value.trim();
-    const priorityLevel = prioritySelect.value;
+const taskText = taskInput.value.trim(); // Get and trim user input for task text
+const priorityLevel = prioritySelect.value; // Get selected priority level from dropdown
 
-    if (taskText) {
-        tasks.push({ text: taskText, completed: false, priority: priorityLevel });
-        localStorage.setItem('tasks', JSON.stringify(tasks));
-        taskInput.value = '';
-        prioritySelect.value = 'low'; // Reset to default
-        renderTasks();
-    }
+if (taskText) { // Check if input is not empty
+tasks.push({ text: taskText, completed: false, priority: priorityLevel }); // Add new task to tasks array
+localStorage.setItem('tasks', JSON.stringify(tasks)); // Save updated tasks to local storage
+taskInput.value = ''; // Clear input field after adding task
+prioritySelect.value = 'low'; // Reset priority to default after adding task
+renderTasks(); // Re-render tasks to reflect the updated list
+}
 }
 
+// Function to handle checkbox checks and manage task completion
 function handleCheck(e) {
-    const checkboxes = itemsContainer.querySelectorAll('input[type="checkbox"]');
-    const currentIndex = Array.from(checkboxes).indexOf(this);
+const checkboxes = itemsContainer.querySelectorAll('input[type="checkbox"]'); // Get all checkboxes in the tasks container
+const currentIndex = Array.from(checkboxes).indexOf(this); // Get index of the current checkbox
 
-    if (currentIndex < 0 || currentIndex >= tasks.length) {
-        return;
-    }
-
-    if (e.shiftKey && lastChecked) {
-        const lastCheckedIndex = Array.from(checkboxes).indexOf(lastChecked);
-        const start = Math.min(currentIndex, lastCheckedIndex);
-        const end = Math.max(currentIndex, lastCheckedIndex);
-
-        for (let i = start; i <= end; i++) {
-            if (checkboxes[i]) {
-                checkboxes[i].checked = true;
-                const index = checkboxes[i].id.split('-')[1];
-                if (index >= 0 && index < tasks.length) {
-                    tasks[index].completed = true;
-                }
-            }
-        }
-    } else {
-        const index = e.target.id.split('-')[1];
-        if (index >= 0 && index < tasks.length) {
-            tasks[index].completed = e.target.checked;
-        }
-    }
-
-    // Update the completed class on the task item
-    const item = checkboxes[currentIndex].closest('.item');
-    if (item) {
-        if (checkboxes[currentIndex].checked) {
-            item.classList.add('completed'); // Add the completed class
-        } else {
-            item.classList.remove('completed'); // Remove the completed class
-        }
-    }
-
-    lastChecked = this;
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-    renderTasks();
+if (currentIndex < 0 || currentIndex >= tasks.length) {
+return; // Ensure valid index to prevent errors
 }
 
+// Handle shift-click for checking multiple boxes
+if (e.shiftKey && lastChecked) {
+const lastCheckedIndex = Array.from(checkboxes).indexOf(lastChecked); // Get index of the last checked checkbox
+const start = Math.min(currentIndex, lastCheckedIndex); // Determine the starting index
+const end = Math.max(currentIndex, lastCheckedIndex); // Determine the ending index
+
+// Loop through the range and check all boxes in between
+for (let i = start; i <= end; i++) {
+if (checkboxes[i]) {
+checkboxes[i].checked = true; // Check the box
+const index = checkboxes[i].id.split('-')[1]; // Get the task index from the checkbox ID
+if (index >= 0 && index < tasks.length) {
+tasks[index].completed = true; // Mark the corresponding task as completed
+}
+}
+}
+} else {
+const index = e.target.id.split('-')[1]; // Get task index from the clicked checkbox ID
+if (index >= 0 && index < tasks.length) {
+tasks[index].completed = e.target.checked; // Update task completion status
+}
+}
+
+// Update the completed class on the task item for visual feedback
+const item = checkboxes[currentIndex].closest('.item');
+if (item) {
+if (checkboxes[currentIndex].checked) {
+item.classList.add('completed'); // Add completed class if checked
+} else {
+item.classList.remove('completed'); // Remove completed class if unchecked
+}
+}
+
+lastChecked = this; // Update last checked checkbox for future shift-clicks
+localStorage.setItem('tasks', JSON.stringify(tasks)); // Save updated tasks to local storage
+renderTasks(); // Re-render tasks to reflect updated states
+}
+
+// Function to remove completed tasks from the list
 function removeCompletedTasks() {
-    tasks = tasks.filter(task => !task.completed);
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-    renderTasks();
+tasks = tasks.filter(task => !task.completed); // Filter out completed tasks
+localStorage.setItem('tasks', JSON.stringify(tasks)); // Save updated tasks to local storage
+renderTasks(); // Re-render tasks to reflect changes
 }
 
-// Add event listener for checkbox clicks
+// Event listener for checkbox clicks to manage task completion
 itemsContainer.addEventListener('click', (e) => {
-    if (e.target.matches('input[type="checkbox"]')) {
-        handleCheck.call(e.target, e);
-    }
+if (e.target.matches('input[type="checkbox"]')) {
+handleCheck.call(e.target, e); // Call handleCheck with the context of the clicked checkbox
+}
 });
 
-// Add event listeners for buttons
-addTaskBtn.addEventListener('click', addTask);
-removeCompletedBtn.addEventListener('click', removeCompletedTasks);
+// Event listeners for buttons to trigger respective functions
+addTaskBtn.addEventListener('click', addTask); // Event for adding a new task
+removeCompletedBtn.addEventListener('click', removeCompletedTasks); // Event for removing completed tasks
 
-// Initial render
-renderTasks();
+// Initial render of tasks
+renderTasks(); // Render tasks when the application loads
