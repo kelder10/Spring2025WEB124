@@ -11,13 +11,13 @@ const reader = new FileReader();
 reader.onload = function (event) {
 const img = new Image();
 img.onload = function () {
-const maxWidth = 500; // Set a maximum width for the image
-const maxHeight = (img.height / img.width) * maxWidth; // Maintain aspect ratio
+// Set canvas dimensions to match image container dimensions
+const container = document.querySelector('.image-container');
+canvas.width = container.clientWidth; // Set canvas width to container width
+canvas.height = container.clientHeight; // Set canvas height to container height
 
-canvas.width = maxWidth; // Set canvas width
-canvas.height = maxHeight; // Set canvas height to maintain aspect ratio
-
-ctx.drawImage(img, 0, 0, maxWidth, maxHeight); // Draw image on the canvas
+// Draw image on the canvas to cover the entire area
+ctx.drawImage(img, 0, 0, canvas.width, canvas.height); // Fill the entire canvas
 originalImage = ctx.getImageData(0, 0, canvas.width, canvas.height); // Store original image data
 }
 img.src = event.target.result;
@@ -61,3 +61,4 @@ link.download = 'edited-image.png';
 link.href = canvas.toDataURL();
 link.click();
 });
+
