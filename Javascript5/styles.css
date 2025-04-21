@@ -25,13 +25,18 @@ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 border-radius: 8px; /* Round the corners */
 }
 
+.controls input {
+  height: 40px;
+}
+
 .controls {
 flex: 1; /* Allow controls to take up one part */
 padding: 20px; /* Add padding for better spacing */
 max-width: 300px; /* Set a maximum width for controls */
 background: #ffffff; /* White background for controls */
 border-radius: 8px; /* Round the corners of the controls panel */
-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth 
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth*/
+overflow: auto;
 }
 
 input {
@@ -48,6 +53,7 @@ max-width: 500px; /* Set a maximum width for the canvas */
 width: 100%; /* Make it responsive */
 height: auto; /* Maintain aspect ratio */
 border: 1px solid white;
+overflow: auto
 }
 
 @media (max-width: 768px) { /* Responsive adjustments */
