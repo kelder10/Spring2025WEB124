@@ -40,10 +40,10 @@ border: 1px solid white;
 
 @media (max-width: 768px) { /* Responsive adjustments */
 .container {
-flex-direction: column; /* Stack controls and canvas vertically */
-}
-
-.controls {
-max-width: none; /* Remove max-width for smaller screens */
-}
+    flex-direction: column; /* Stack controls and canvas vertically */
+  }
+  
+  .controls {
+    max-width: none; /* Remove max-width for smaller screens */
+  }
 }
