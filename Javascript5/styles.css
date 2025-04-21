@@ -53,6 +53,7 @@ max-width: 600px; /* Set a maximum width for the image container */
 width: 100%; /* Make it responsive */
 border: 1px solid white; /* Border for the image container */
 border-radius: 8px; /* Round the corners of the image container */
+padding-left: 20px;
 overflow: hidden; /* Hide overflow */
 display: flex; /* Flex display for centering the image */
 justify-content: center; /* Center image horizontally */
