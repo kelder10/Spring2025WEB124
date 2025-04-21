@@ -11,6 +11,8 @@ color: white;
 font-family: 'helvetica neue', sans-serif;
 font-weight: 100;
 font-size: 20px;
+margin: 0; /* Remove default margin */
+padding: 20px; /* Add padding for better spacing */
 }
 
 .container {
@@ -32,7 +34,9 @@ margin: 10px 0; /* Vertical margin */
 
 canvas {
 flex: 2; /* Allow canvas to take up more space */
-max-width: 100%; /* Ensure the canvas is responsive */
+max-width: 500px; /* Set a maximum width for the canvas */
+width: 100%; /* Make it responsive */
+height: auto; /* Maintain aspect ratio */
 border: 1px solid white;
 }
 
