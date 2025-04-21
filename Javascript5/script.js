@@ -20,15 +20,21 @@ img.src = event.target.result;
 reader.readAsDataURL(file);
 });
 
-// Update canvas filters based on sliders
 function updateCanvas() {
 if (!originalImage) return; // Ensure there's an image to work with
 
-ctx.putImageData(originalImage, 0, 0); // Restore the original image
+// Restore the original image
+ctx.putImageData(originalImage, 0, 0);
+
 const spacing = document.getElementById('spacing').value;
 const blur = document.getElementById('blur').value;
 const brightness = document.getElementById('brightness').value;
 const contrast = document.getElementById('contrast').value;
+
+// Draw a border around the image
+ctx.strokeStyle = '#ffffff'; // Set border color
+ctx.lineWidth = spacing; // Use spacing value for border width
+ctx.strokeRect(spacing / 2, spacing / 2, canvas.width - spacing, canvas.height - spacing); // Draw border
 
 // Apply filters
 ctx.filter = `blur(${blur}px) brightness(${brightness}%) contrast(${contrast}%)`;
