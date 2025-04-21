@@ -10,10 +10,24 @@ const reader = new FileReader();
 reader.onload = function (event) {
 const img = new Image();
 img.onload = function () {
-canvas.width = img.width;
-canvas.height = img.height;
-ctx.drawImage(img, 0, 0);
-originalImage = ctx.getImageData(0, 0, canvas.width, canvas.height); // Store the original image data
+const maxWidth = canvas.width; // Canvas width
+const maxHeight = canvas.height; // Canvas height
+
+// Calculate the scaling factor to maintain aspect ratio
+let scale = Math.min(maxWidth / img.width, maxHeight / img.height);
+
+// Set new width and height based on the scaling factor
+const imgWidth = img.width * scale;
+const imgHeight = img.height * scale;
+
+// Adjust canvas size based on new image size
+canvas.width = imgWidth;
+canvas.height = imgHeight;
+
+// Clear previous image and draw the new image
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+ctx.drawImage(img, 0, 0, imgWidth, imgHeight);
+originalImage = ctx.getImageData(0, 0, canvas.width, canvas.height); // Store original image data
 }
 img.src = event.target.result;
 }
