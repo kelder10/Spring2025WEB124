@@ -2,67 +2,76 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Understanding JavaScript's Capture</title>
+  <title>Scoped CSS Variables and JS</title>
   <link rel="icon" href="https://fav.farm/✅" />
 </head>
-<body class="bod">
+<body>
+  <h2>Update CSS Variables with <span class='hl'>JS</span></h2>
 
-  <div class="one">
-    <div class="two">
-      <div class="three">
-      </div>
-    </div>
+  <div class="controls">
+    <label for="spacing">Spacing:</label>
+    <input id="spacing" type="range" name="spacing" min="10" max="200" value="10" data-sizing="px">
+
+    <label for="blur">Blur:</label>
+    <input id="blur" type="range" name="blur" min="0" max="25" value="10" data-sizing="px">
+
+    <label for="base">Base Color</label>
+    <input id="base" type="color" name="base" value="#ffc600">
   </div>
 
-<style>
-  html {
-    box-sizing: border-box;
-  }
+  <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500">
 
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
+  <style>
+    :root {
+      --base: #ffc600;
+      --spacing: 10px;
+      --blur: 10px;
+    }
 
-  div {
-    width: 100%;
-    padding: 100px;
-  }
+    img {
+      padding: var(--spacing);
+      background: var(--base);
+      filter: blur(var(--blur));
+    }
 
-  .one {
-    background: thistle;
-  }
+    .hl {
+      color: var(--base);
+    }
 
-  .two {
-    background: mistyrose;
-  }
+    /*
+      misc styles, nothing to do with CSS variables
+    */
 
-  .three {
-    background: coral;
-  }
-</style>
+    body {
+      text-align: center;
+      background: #193549;
+      color: white;
+      font-family: 'helvetica neue', sans-serif;
+      font-weight: 100;
+      font-size: 50px;
+    }
 
-<button></button>
-<script>
-  const divs = document.querySelectorAll('div');
-  const button = document.querySelector('button');
+    .controls {
+      margin-bottom: 50px;
+    }
 
-  function logText(e) {
-    console.log(this.classList.value);
-    // e.stopPropagation(); // stop bubbling!
-    // console.log(this);
-  }
+    input {
+      width: 100px;
+    }
+  </style>
 
-  divs.forEach(div => div.addEventListener('click', logText, {
-    capture: false,
-    once: true
-  }));
+  <script>
+    const inputs = document.querySelectorAll('.controls input');
 
-  button.addEventListener('click', () => {
-    console.log('Click!!!');
-  }, {
-    once: true
-  });
+    function handleUpdate() {
+      const suffix = this.dataset.sizing || '';
+      document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+    }
 
-</script>
+    inputs.forEach(input => input.addEventListener('change', handleUpdate));
+    inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
+  </script>
+
+
 </body>
 </html>
