@@ -61,4 +61,3 @@ link.download = 'edited-image.png';
 link.href = canvas.toDataURL();
 link.click();
 });
-
