@@ -20,6 +20,7 @@ padding: 20px; /* Add padding for better spacing */
 display: flex; /* Use flexbox for layout */
 flex-direction: row; /* Arrange items in a row */
 justify-content: center; /* Center items horizontally */
+background: white;
 margin: auto; /* Center the container */
 padding: 20px; /* Add some padding around the container */
 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
