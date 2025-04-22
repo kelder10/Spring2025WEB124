@@ -79,8 +79,8 @@ align-items: center; /* Center image vertically */
 
 .pop-out-image {
 position: absolute;
-top: 40px;
-right: 40px;
+top: 10px;
+right: 10px;
 width: 100px; /* Set a width for the pop-out image */
 height: 100px; /* Maintain aspect ratio */
 }
