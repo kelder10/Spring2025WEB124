@@ -36,6 +36,7 @@ padding-right: 40px;
 padding: 20px; /* Add some padding around the container */
 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 border-radius: 8px; /* Round the corners */
+gap: 20px;
 }
 
 .controls {
