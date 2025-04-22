@@ -77,12 +77,12 @@ align-items: center; /* Center image vertically */
 }
 
 .pop-out-image {
-  position: absolute;
-  top: -20px;
-  right: -20px;
-  width: 100px;
-  height: auto;
-  z-index: 1;
+position: absolute;
+top: -20px; /* Adjust this value to control vertical positioning */
+right: -20px; /* Adjust this value to control horizontal positioning */
+width: 100px; /* Set a width for the pop-out image */
+height: auto; /* Maintain aspect ratio */
+z-index: 1; /* Ensure it appears above other elements */
 }
 
 canvas {
@@ -99,7 +99,3 @@ flex-direction: column; /* Stack controls and canvas vertically */
 max-width: none; /* Remove max-width for smaller screens */
 }
 }
-
-
-
-
