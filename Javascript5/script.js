@@ -1,8 +1,19 @@
-
 const upload = document.getElementById('upload');
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 let originalImage = null; // Variable to hold the original image
+
+// Function to load the default image onto the canvas
+function loadDefaultImage() {
+const defaultImage = document.getElementById('default-image');
+const container = document.querySelector('.image-container');
+canvas.width = container.clientWidth; // Set canvas width to container width
+canvas.height = container.clientHeight; // Set canvas height to container height
+ctx.drawImage(defaultImage, 0, 0, canvas.width, canvas.height); // Fill the entire canvas with default image
+}
+
+// Load the default image when the page loads
+window.onload = loadDefaultImage;
 
 upload.addEventListener('change', function () {
 const file = this.files[0];
@@ -19,9 +30,9 @@ canvas.height = container.clientHeight; // Set canvas height to container height
 // Draw image on the canvas to cover the entire area
 ctx.drawImage(img, 0, 0, canvas.width, canvas.height); // Fill the entire canvas
 originalImage = ctx.getImageData(0, 0, canvas.width, canvas.height); // Store original image data
-}
+};
 img.src = event.target.result;
-}
+};
 reader.readAsDataURL(file);
 });
 
