@@ -19,8 +19,6 @@ margin: 0; /* Remove default margin */
 padding: 20px; /* Add padding for better spacing */
 }
 
-
-
 .header-strip {
 background: linear-gradient(to right, #4a90e2, #50e3c2); /* Gradient strip */
 padding: 15px 0; /* Padding for the strip */
@@ -36,7 +34,6 @@ font-weight: 300; /* Lighter weight for better contrast */
 color: #0c0c0c; /* White text for contrast against the strip */
 margin: 0; /* Remove default margin from h2 */
 }
-
 
 .container {
 display: flex; /* Use flexbox for layout */
@@ -109,3 +106,32 @@ flex-direction: column; /* Stack controls and canvas vertically */
 max-width: none; /* Remove max-width for smaller screens */
 }
 }
+
+/* Slider styles */
+input[type="range"] {
+-webkit-appearance: none; /* Remove default styling */
+width: 100%; /* Full width */
+height: 6px; /* Height of the track */
+background: #ddd; /* Track color */
+border-radius: 5px; /* Rounded track */
+outline: none; /* Remove outline */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+-webkit-appearance: none; /* Remove default styling */
+appearance: none; /* For modern browsers */
+width: 20px; /* Thumb width */
+height: 20px; /* Thumb height */
+border-radius: 50%; /* Round thumb */
+background: #4a90e2; /* Thumb color */
+cursor: pointer; /* Pointer cursor on hover */
+}
+
+input[type="range"]::-moz-range-thumb {
+width: 20px; /* Thumb width */
+height: 20px; /* Thumb height */
+border-radius: 50%; /* Round thumb */
+background: #4a90e2; /* Thumb color */
+cursor: pointer; /* Pointer cursor on hover */
+}
+
