@@ -21,8 +21,8 @@ padding: 20px; /* Add padding for better spacing */
 
 h2 {
 font-family: 'Dancing Script', cursive;
-font-size: 48px; /* Increased size for visibility */
-font-weight: 700; /* Bold weight for prominence */
+font-size: 80px; /* Increased size for visibility */
+font-weight: 100; /* Bold weight for prominence */
 font-style: italic;
 text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
 color: #0c0c0c;
