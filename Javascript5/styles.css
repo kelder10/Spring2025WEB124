@@ -6,9 +6,9 @@
 
 body {
 text-align: center;
-background: #f8f9fa;
+background: #f8f9fa url('./images/watercolor_wave.jpg');
+background-size: cover;
 color: #343a40;
-background: url('./images/watercolor_wave.jpg')
 font-family: 'helvetica neue', sans-serif;
 font-weight: 100;
 font-size: 20px;
