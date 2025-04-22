@@ -61,6 +61,7 @@ background: #f8f9fa; /* Light background for inputs */
 }
 
 .image-container {
+position: relative;
 flex: 2; /* Allow image container to take up more space (2/3) */
 max-width: 700px; /* Set a maximum width for the image container */
 width: 100%; /* Make it responsive */
@@ -73,6 +74,15 @@ overflow: hidden; /* Hide overflow */
 display: flex; /* Flex display for centering the image */
 justify-content: center; /* Center image horizontally */
 align-items: center; /* Center image vertically */
+}
+
+.pop-out-image {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 100px;
+  height: auto;
+  z-index: 1;
 }
 
 canvas {
