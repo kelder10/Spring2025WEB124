@@ -20,7 +20,6 @@ padding: 20px; /* Add padding for better spacing */
 display: flex; /* Use flexbox for layout */
 flex-direction: row; /* Arrange items in a row */
 justify-content: center; /* Center items horizontally */
-background: white;
 margin: auto; /* Center the container */
 padding: 20px; /* Add some padding around the container */
 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
@@ -53,9 +52,10 @@ background: #f8f9fa; /* Light background for inputs */
 flex: 2; /* Allow image container to take up more space (2/3) */
 max-width: 700px; /* Set a maximum width for the image container */
 width: 100%; /* Make it responsive */
+background: white;
 border: 1px solid white; /* Border for the image container */
 border-radius: 8px; /* Round the corners of the image container */
-padding-left: 40px;
+padding-left: 30px;
 overflow: hidden; /* Hide overflow */
 display: flex; /* Flex display for centering the image */
 justify-content: center; /* Center image horizontally */
