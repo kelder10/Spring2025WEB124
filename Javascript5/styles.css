@@ -20,7 +20,7 @@ padding: 20px; /* Add padding for better spacing */
 }
 
 h2 {
-font-family: 'Apple Chancery', cursive; 
+font-family: Times, Times New Roman, cursive; 
 font-size: 50px;
 font-weight: 100; /* Bold weight for prominence */
 text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
