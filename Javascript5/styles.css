@@ -20,12 +20,12 @@ padding: 20px; /* Add padding for better spacing */
 }
 
 h2 {
-font-family: 'Optima', sans-serif;
-font-size: 48px; /* Increased size for visibility */
+font-family: 'Dancing Script', cursive;
+font-size: 36px; /* Increased size for visibility */
 font-weight: 700; /* Bold weight for prominence */
 font-style: italic;
 text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
-color: var(--base); /* Color from CSS variable for consistency */
+color: #4A4A4A;
 }
 
 .container {
