@@ -112,7 +112,7 @@ input[type="range"] {
 -webkit-appearance: none; /* Remove default styling */
 width: 100%; /* Full width */
 height: 6px; /* Height of the track */
-background: #373735; /* Track color */
+background: #777575; /* Track color */
 border-radius: 5px; /* Rounded track */
 outline: none; /* Remove outline */
 }
