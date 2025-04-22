@@ -33,7 +33,7 @@ h2 {
 font-family: 'Your New Font', sans-serif; /* Your desired font */
 font-size: 50px;
 font-weight: 300; /* Lighter weight for better contrast */
-color: #ffffff; /* White text for contrast against the strip */
+color: #0c0c0c; /* White text for contrast against the strip */
 margin: 0; /* Remove default margin from h2 */
 }
 
