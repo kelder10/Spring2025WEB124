@@ -18,6 +18,8 @@ padding: 20px; /* Add padding for better spacing */
 
 h2 {
   font-family: 'Optima', sans-serif;
+  font-size: 40px;
+  font-weight: 500;
   font-style: italic;
 }
 
