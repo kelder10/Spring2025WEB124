@@ -50,7 +50,7 @@ background: #f8f9fa; /* Light background for inputs */
 
 .image-container {
 flex: 2; /* Allow image container to take up more space (2/3) */
-max-width: 800px; /* Set a maximum width for the image container */
+max-width: 700px; /* Set a maximum width for the image container */
 width: 100%; /* Make it responsive */
 border: 1px solid white; /* Border for the image container */
 border-radius: 8px; /* Round the corners of the image container */
