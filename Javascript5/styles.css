@@ -8,19 +8,23 @@ body {
 text-align: center;
 background: #f8f9fa url('./images/watercolor_wave.jpg');
 background-size: cover;
-color: #343a40;
-font-family: 'helvetica neue', sans-serif;
-font-weight: 100;
-font-size: 20px;
+color: #495057; /* Darker shade of gray for better contrast */
+font-family: 'Helvetica Neue', sans-serif;
+font-weight: 300; /* Lighter weight for body text */
+font-size: 22px; /* Slightly larger font for readability */
+line-height: 1.6; /* Improved line height for better readability */
+letter-spacing: 0.5px; /* Adds a bit of spacing between letters */
 margin: 0; /* Remove default margin */
 padding: 20px; /* Add padding for better spacing */
 }
 
 h2 {
-  font-family: 'Optima', sans-serif;
-  font-size: 40px;
-  font-weight: 500;
-  font-style: italic;
+font-family: 'Optima', sans-serif;
+font-size: 48px; /* Increased size for visibility */
+font-weight: 700; /* Bold weight for prominence */
+font-style: italic;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+color: var(--base); /* Color from CSS variable for consistency */
 }
 
 .container {
