@@ -112,7 +112,7 @@ input[type="range"] {
 -webkit-appearance: none; /* Remove default styling */
 width: 100%; /* Full width */
 height: 6px; /* Height of the track */
-background: #ddd; /* Track color */
+background: #373735; /* Track color */
 border-radius: 5px; /* Rounded track */
 outline: none; /* Remove outline */
 }
@@ -123,7 +123,7 @@ appearance: none; /* For modern browsers */
 width: 20px; /* Thumb width */
 height: 20px; /* Thumb height */
 border-radius: 50%; /* Round thumb */
-background: #4a90e2; /* Thumb color */
+background: #e9ec58; /* Thumb color */
 cursor: pointer; /* Pointer cursor on hover */
 }
 
@@ -131,7 +131,7 @@ input[type="range"]::-moz-range-thumb {
 width: 20px; /* Thumb width */
 height: 20px; /* Thumb height */
 border-radius: 50%; /* Round thumb */
-background: #4a90e2; /* Thumb color */
+background: #e9ec58; /* Thumb color */
 cursor: pointer; /* Pointer cursor on hover */
 }
 
