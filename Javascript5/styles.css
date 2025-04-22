@@ -55,7 +55,7 @@ width: 100%; /* Make it responsive */
 background: white;
 border: 1px solid gray; /* Border for the image container */
 border-radius: 8px; /* Round the corners of the image container */
-padding-left: 10px;
+padding-left: 15px;
 padding-right: 17px;
 overflow: hidden; /* Hide overflow */
 display: flex; /* Flex display for centering the image */
