@@ -21,11 +21,11 @@ padding: 20px; /* Add padding for better spacing */
 
 h2 {
 display: inline-block; /* Makes the box fit around the content */
-padding: 20px; /* Space inside the box */
-background-color: rgba(255, 198, 0, 0.8); /* Semi-transparent background color */
-border: 2px solid #0c0c0c; /* Border color */
+padding: 10px 20px; /* Less vertical padding for a thinner appearance */
+background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+border: 2px solid rgba(0, 0, 0, 0.2); /* Light gray border for a softer look */
 border-radius: 10px; /* Rounded corners */
-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
 margin: 20px 0; /* Margin for spacing around the box */
 font-family: Times, Times New Roman, cursive; 
 font-size: 50px;
