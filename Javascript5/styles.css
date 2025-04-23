@@ -107,7 +107,7 @@ font-size: 25px;
 .controls input[type="color"],
 .controls input[type="file"] {
 margin-bottom: 15px; /* Adds space below each slider and color picker */
-font-size: 16px; /* Increased font size for inputs */
+font-size: 5px; /* Increased font size for inputs */
 }
 
 .image-container {
