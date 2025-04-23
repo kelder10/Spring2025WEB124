@@ -51,6 +51,7 @@ flex: 0 0 25%; /* Controls take up 25% of the width */
 padding: 20px;
 background: #ffffff;
 border-radius: 8px;
+height: 100%;
 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 overflow: auto;
 }
