@@ -25,17 +25,16 @@ padding: 20px; /* Add padding for better spacing */
   border-radius: 10px 10px 0 0; /* Rounded corners only at the top */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
   text-align: center; /* Center the text */
-    #logo {
-      float: left;
-      padding: 25px;
-      width: 90px;
-      height: 90px;
-      padding-bottom: 100px;
-      opacity: 0.2;
-    }
 }
 
-
+#logo {
+  float: left;
+  padding: 25px;
+  width: 90px;
+  height: 90px;
+  padding-bottom: 100px;
+  opacity: 0.2;
+}
 
 h2 {
 font-family: cursive, Times, serif; 
