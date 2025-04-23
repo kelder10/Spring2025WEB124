@@ -100,7 +100,7 @@ font-size: 10px;
 .controls label {
 display: block; /* Ensures each label takes a full line */
 margin-bottom: 5px; /* Adds space below each label */
-font-size: 35px;
+font-size: 25px;
 }
 
 .controls input[type="range"],
