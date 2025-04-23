@@ -13,10 +13,8 @@ font-family: 'Dancing Script', cursive; /* Change to Dancing Script */
 font-weight: 300; /* Lighter weight for body text */
 font-size: 22px; /* Slightly larger font for readability */
 font-style: italic;
-line-height: 1.6; /* Improved line height for better readability */
 letter-spacing: 0.5px; /* Adds a bit of spacing between letters */
 margin: 0;
-padding: 20px; /* Add padding for better spacing */
 }
 
 .header-strip {
