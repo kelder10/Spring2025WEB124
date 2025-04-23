@@ -103,7 +103,7 @@ font-size: 14px; /* Adjust font size */
 .controls input[type="color"],
 .controls input[type="file"] {
 margin-bottom: 15px; /* Adds space below each slider and color picker */
-font-size: 10px; /* Increased font size for inputs */
+font-size: 50px; /* Increased font size for inputs */
 width: 100%; /* Set to stretch to full width */
 }
 
