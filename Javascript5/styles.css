@@ -17,6 +17,8 @@ letter-spacing: 0.5px; /* Adds a bit of spacing between letters */
 margin: 0;
 padding: 0;
 display: flex;
+flex-direction: column;
+align-items: center;
 }
 
 h2 {
