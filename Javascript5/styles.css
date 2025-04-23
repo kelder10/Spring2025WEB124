@@ -23,8 +23,6 @@ padding: 0; /* Add padding for better spacing */
 margin: 0;
 padding: 0;
 position: fixed;
-top: 0;
-left: 0;
 width: 100%;
 background: linear-gradient(to right, #4a90e2, #50e3c2); /* Gradient strip */
 height: 80px;
