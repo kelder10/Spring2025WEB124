@@ -71,7 +71,14 @@ font-size: 18px; /* Increased font size */
 }
 
 .controls input[type="range"],
-.controls input[type="color"],
+.controls input[type="color"] {
+width: 100%; /* Make the color input field full width */
+margin-bottom: 15px; /* Space below the color input */
+height: 40px; /* Set a height for better visibility */
+padding: 0; /* Remove padding to avoid overflow */
+border: 1px solid #ced4da; /* Add a border for consistency */
+border-radius: 5px; /* Rounded corners */
+}
 .controls input[type="file"] {
 margin-bottom: 15px; /* Adds space below each slider and color picker */
 font-size: 16px; /* Increased font size for inputs */
