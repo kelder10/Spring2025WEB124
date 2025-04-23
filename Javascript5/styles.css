@@ -28,8 +28,9 @@ text-align: center; /* Center the text */
 }
 
 #logo {
-  float: right;
+  float: left;
 }
+
 h2 {
 font-family: 'Your New Font', sans-serif; /* Your desired font */
 font-size: 50px;
