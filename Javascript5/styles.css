@@ -22,7 +22,7 @@ padding: 0; /* Add padding for better spacing */
 .header-strip {
 margin: 0;
 padding: 0;
-padding-bottom: 20px;
+padding-bottom: 10px;
 position: relative;
 width: 100%;
 background: linear-gradient(to right, #4a90e2, #50e3c2); /* Gradient strip */
