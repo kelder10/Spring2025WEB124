@@ -94,12 +94,13 @@ padding: 15px;
 border: 1px solid #ced4da;
 border-radius: 5px;
 margin-bottom: 20px; /* Space below the upload section */
+font-size: 20px;
 }
 
 .controls label {
 display: block; /* Ensures each label takes a full line */
 margin-bottom: 5px; /* Adds space below each label */
-font-size: 45px;
+font-size: 35px;
 }
 
 .controls input[type="range"],
