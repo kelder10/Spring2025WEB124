@@ -90,7 +90,7 @@ background: #ffffff; /* Background color for each control section */
 border: 1px solid #ced4da; /* Light border around each control */
 border-radius: 5px; /* Rounded corners */
 padding: 10px; /* Padding inside each control */
-margin-bottom: 15px; /* Space below each control item */
+margin-bottom: 10px; /* Space below each control item */
 }
 
 .control-item label {
