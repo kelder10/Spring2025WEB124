@@ -32,7 +32,7 @@ font-family: 'Dancing Script', cursive; /* Change to Dancing Script */
 font-size: 66px; /* Increase font size for more impact */
 font-weight: 600	
 color: #ffffff; /* Change color to ensure contrast against the strip */
--webkit-text-stroke: .5px #021031;
+-webkit-text-stroke: .01px #021031;
 font-stretch: ultra-expanded;
 margin-bottom: 20px; /* Remove default margin */
 padding: 0 20px; /* Add horizontal padding */
