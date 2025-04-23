@@ -30,8 +30,8 @@ text-align: center; /* Center the text */
 #logo {
   float: left;
   padding: 25px;
-  width: 120px;
-  height: 120px;
+  width: 90px;
+  height: 90px;
   padding-bottom: 50px;
   opacity: 0.2;
 }
