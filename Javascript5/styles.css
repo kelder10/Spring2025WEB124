@@ -27,6 +27,9 @@ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
 text-align: center; /* Center the text */
 }
 
+#logo {
+  float: right;
+}
 h2 {
 font-family: 'Your New Font', sans-serif; /* Your desired font */
 font-size: 50px;
