@@ -9,7 +9,7 @@ text-align: center;
 background: #f8f9fa url('./images/watercolor_wave.jpg');
 background-size: cover;
 color: #495057; /* Darker shade of gray for better contrast */
-font-family: 'Brush Script MT', cursive; /* Change to a cursive font */
+font-family: 'Pacifico', cursive; /* Change to a cursive font */
 font-weight: 300; /* Lighter weight for body text */
 font-size: 22px; /* Slightly larger font for readability */
 font-style: italic;
@@ -20,11 +20,22 @@ padding: 20px; /* Add padding for better spacing */
 }
 
 .header-strip {
-  background: linear-gradient(to right, #4a90e2, #50e3c2); /* Gradient strip */
-  height: 80px;  
-  border-radius: 10px 10px 0 0; /* Rounded corners only at the top */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-  text-align: center; /* Center the text */
+background: linear-gradient(to right, #4a90e2, #50e3c2); /* Gradient strip */
+height: 80px;
+border-radius: 10px 10px 0 0; /* Rounded corners only at the top */
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+text-align: center; /* Center the text */
+}
+
+h2 {
+font-family: 'Pacifico', cursive; /* Change to a cursive font */
+font-size: 60px; /* Increase font size for more impact */
+color: #ffffff; /* Change color to ensure contrast against the strip */
+margin-bottom: 20px; /* Remove default margin */
+padding: 0 20px; /* Add horizontal padding */
+text-align: center; /* Center align the text */
+width: 100%; /* Make it take up the full width of the strip */
+text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Optional: Add shadow for depth */
 }
 
 #logo {
@@ -36,18 +47,6 @@ padding: 20px; /* Add padding for better spacing */
   opacity: 0.5;
   transform: rotate(-10deg);
   z-index: 1;
-}
-
-
-h2 {
-font-family: 'Brush Script MT', cursive; /* Change to a cursive font */
-font-size: 60px; /* Increase font size for more impact */
-color: #ffffff; /* Change color to ensure contrast against the strip */
-margin-bottom: 20px; /* Remove default margin */
-padding: 0 20px; /* Add horizontal padding */
-text-align: center; /* Center align the text */
-width: 100%; /* Make it take up the full width of the strip */
-text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Optional: Add shadow for depth */
 }
 
 .container {
