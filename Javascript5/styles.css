@@ -31,6 +31,7 @@ h2 {
 font-family: 'Dancing Script', cursive; /* Change to Dancing Script */
 font-size: 60px; /* Increase font size for more impact */
 color: #ffffff; /* Change color to ensure contrast against the strip */
+-webkit-text-stroke: 3px black;
 margin-bottom: 20px; /* Remove default margin */
 padding: 0 20px; /* Add horizontal padding */
 text-align: center; /* Center align the text */
