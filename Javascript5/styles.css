@@ -57,8 +57,8 @@ overflow: auto;
 .image-container {
 position: relative;
 flex: 0 0 75%; /* Allow image container to take up 3/4 of the container */
-height: 90%; /* Set a max height to prevent squishing */
-width: 50%; /* Make it responsive */
+height: 150%; /* Set a max height to prevent squishing */
+max-width: 50%; /* Make it responsive */
 background: #fffdfd71;
 border: 1px solid gray; /* Border for the image container */
 border-radius: 8px; /* Round the corners of the image container */
