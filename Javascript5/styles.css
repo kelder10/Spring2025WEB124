@@ -30,7 +30,6 @@ text-align: center; /* Center the text */
 h2 {
 font-family: 'Dancing Script'; /* Change to Dancing Script */
 font-size: 66px; /* Increase font size for more impact */
-font-weight: 600	
 color: #ffffff; /* Change color to ensure contrast against the strip */
 font-stretch: ultra-expanded;
 margin-bottom: 20px; /* Remove default margin */
