@@ -53,17 +53,28 @@ background: #ffffff;
 border-radius: 8px;
 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 overflow: auto;
-min-height: 300px; /* Set a minimum height for the controls section */
+min-height: 350px; /* Adjusted minimum height for better spacing */
+}
+
+.upload-section {
+background: #e9ecef; /* Light background for the upload section */
+padding: 15px;
+border: 1px solid #ced4da;
+border-radius: 5px;
+margin-bottom: 20px; /* Space below the upload section */
 }
 
 .controls label {
 display: block; /* Ensures each label takes a full line */
-margin-bottom: 10px; /* Adds space below each label */
+margin-bottom: 5px; /* Adds space below each label */
+font-size: 18px; /* Increased font size */
 }
 
 .controls input[type="range"],
-.controls input[type="color"] {
-margin-bottom: 20px; /* Adds space below each slider and color picker */
+.controls input[type="color"],
+.controls input[type="file"] {
+margin-bottom: 15px; /* Adds space below each slider and color picker */
+font-size: 16px; /* Increased font size for inputs */
 }
 
 .image-container {
@@ -125,4 +136,5 @@ border-radius: 50%;
 background: #c8cd2e;
 cursor: pointer;
 }
+
 
