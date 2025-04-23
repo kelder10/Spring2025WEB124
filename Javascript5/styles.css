@@ -36,7 +36,8 @@ text-align: center; /* Center the text */
 }
 
 h2 {
-font-family: 'Your New Font', sans-serif; /* Your desired font */
+font-family: cursive, Times, serif; 
+font-style: italic;.
 font-size: 50px;
 font-weight: 300; /* Lighter weight for better contrast */
 color: #0c0c0c; /* White text for contrast against the strip */
