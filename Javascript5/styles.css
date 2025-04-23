@@ -99,7 +99,7 @@ margin-bottom: 20px; /* Space below the upload section */
 .controls label {
 display: block; /* Ensures each label takes a full line */
 margin-bottom: 5px; /* Adds space below each label */
-font-size: 66px;
+font-size: 45px;
 }
 
 .controls input[type="range"],
