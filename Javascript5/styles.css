@@ -21,7 +21,7 @@ padding: 20px; /* Add padding for better spacing */
 
 .header-strip {
   background: linear-gradient(to right, #4a90e2, #50e3c2); /* Gradient strip */
-  height: 100px;  
+  height: 80px;  
   border-radius: 10px 10px 0 0; /* Rounded corners only at the top */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
   text-align: center; /* Center the text */
