@@ -9,7 +9,7 @@ text-align: center;
 background: #f8f9fa url('./images/watercolor_wave.jpg');
 background-size: cover;
 color: #495057; /* Darker shade of gray for better contrast */
-font-family: 'Pacifico', cursive; /* Change to a cursive font */
+font-family: 'Dancing Script', cursive; /* Change to Dancing Script */
 font-weight: 300; /* Lighter weight for body text */
 font-size: 22px; /* Slightly larger font for readability */
 font-style: italic;
@@ -28,7 +28,7 @@ text-align: center; /* Center the text */
 }
 
 h2 {
-font-family: 'Dancing Script', cursive; /* Change to Dancing Script */
+font-family: 'Dancing Script'; /* Change to Dancing Script */
 font-size: 66px; /* Increase font size for more impact */
 font-weight: 600	
 color: #ffffff; /* Change color to ensure contrast against the strip */
