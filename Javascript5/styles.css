@@ -39,7 +39,7 @@ padding: 20px; /* Add padding for better spacing */
 }
 
 
-.header-strip h2 {
+h2 {
 font-family: 'Brush Script MT', cursive; /* Change to a cursive font */
 font-size: 60px; /* Increase font size for more impact */
 font-weight: bold; /* Make it bold for better visibility */
