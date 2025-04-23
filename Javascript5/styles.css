@@ -108,7 +108,7 @@ font-size: 25px;
 .controls input[type="color"] {
   margin-bottom: 15px;
   font-size: 10px;
-  width: 100px;
+  width: 800px;
 }
 .controls input[type="file"] {
 margin-bottom: 15px; /* Adds space below each slider and color picker */
