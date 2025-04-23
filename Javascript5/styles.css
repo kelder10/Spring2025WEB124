@@ -24,7 +24,7 @@ position: fixed;
 z-index: 5;
 background: linear-gradient(to right, #4a90e2, #50e3c2); /* Gradient strip */
 width: 100%;
-height: 90px;;
+height: 90px;
 display: block;
 border-radius: 20px 20px 0 0; /* Rounded corners only at the top */
 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
