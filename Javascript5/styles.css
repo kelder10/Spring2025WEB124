@@ -19,7 +19,6 @@ padding: 20px; /* Add padding for better spacing */
 }
 
 .header-strip {
-position: fixed;
 z-index: 5;
 background: linear-gradient(to right, #4a90e2, #50e3c2); /* Gradient strip */
 width: 100%;
