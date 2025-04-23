@@ -33,6 +33,15 @@ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
 text-align: center; /* Center the text */
 }
 
+.pop-out-image {
+position: absolute;
+top: 50px;
+right: 70px;
+width: 100px; /* Set a width for the pop-out image */
+height: 100px; /* Maintain aspect ratio */
+}
+
+
 h2 {
 font-family: 'Dancing Script';
 font-size: 76px;
