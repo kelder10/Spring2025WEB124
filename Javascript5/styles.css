@@ -52,13 +52,14 @@ background: #ffffff; /* White background for controls */
 border-radius: 8px; /* Round the corners of the controls panel */
 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 overflow: auto;
+height: 100%;
 }
 
 .image-container {
 position: relative;
 flex: 0 0 75%; /* Allow image container to take up 3/4 of the container */
-height: 150%; /* Set a max height to prevent squishing */
-max-width: 50%; /* Make it responsive */
+height: 100%; /* Set a max height to prevent squishing */
+max-width: 75%; /* Make it responsive */
 background: #fffdfd71;
 border: 1px solid gray; /* Border for the image container */
 border-radius: 8px; /* Round the corners of the image container */
