@@ -39,10 +39,10 @@ display: flex; /* Use flexbox for layout */
 flex: 1; /* Allow the container to take the remaining space */
 justify-content: space-between; /* Space between columns */
 align-items: flex-start; /* Align items to the top */
-padding: 20px; /* Add some padding around the container */
+padding: 20px; /* Add padding around the container */
+margin: 20px; /* Add margin around the container for spacing */
 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 border-radius: 8px; /* Round the corners */
-gap: 20px; /* Space between columns */
 }
 
 .controls {
