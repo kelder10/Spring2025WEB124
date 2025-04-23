@@ -43,6 +43,7 @@ padding: 20px;
 margin: 20px;
 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 border-radius: 8px;
+box-sizing: border-box; /* Added for box sizing */
 }
 
 .controls {
@@ -67,6 +68,7 @@ overflow: hidden;
 display: flex;
 justify-content: center;
 align-items: center;
+box-sizing: border-box; /* Added for box sizing */
 }
 
 canvas {
