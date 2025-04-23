@@ -58,7 +58,7 @@ overflow: auto;
 .image-container {
 position: relative;
 flex: 0 0 70%; /* Image container takes up 75% of the width */
-max-height: 170vh;
+height: 80%;
 width: 70%;
 background: #fffdfd71;
 border: 1px solid gray;
