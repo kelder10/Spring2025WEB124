@@ -9,7 +9,6 @@ height: 100%;
 margin: 0;
 font-family: 'Dancing Script', cursive;
 font-weight: 300;
-font-size: 60px;
 }
 
 body {
@@ -83,6 +82,7 @@ box-sizing: border-box;
 flex: 0 0 25%; /* Controls take up 25% of the width */
 padding: 20px;
 background: #ffffff;
+font-size: 90px;
 border-radius: 8px;
 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 overflow: auto;
