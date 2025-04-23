@@ -43,7 +43,7 @@ padding: 20px;
 margin: 20px;
 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 border-radius: 8px;
-box-sizing: border-box; /* Added for box sizing */
+box-sizing: border-box;
 }
 
 .controls {
@@ -53,11 +53,22 @@ background: #ffffff;
 border-radius: 8px;
 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 overflow: auto;
+min-height: 300px; /* Set a minimum height for the controls section */
+}
+
+.controls label {
+display: block; /* Ensures each label takes a full line */
+margin-bottom: 10px; /* Adds space below each label */
+}
+
+.controls input[type="range"],
+.controls input[type="color"] {
+margin-bottom: 20px; /* Adds space below each slider and color picker */
 }
 
 .image-container {
 position: relative;
-flex: 0 0 70%; /* Image container takes up 75% of the width */
+flex: 0 0 70%; /* Image container takes up 70% of the width */
 height: 100%;
 width: 70%;
 background: #fffdfd71;
@@ -68,7 +79,7 @@ overflow: hidden;
 display: flex;
 justify-content: center;
 align-items: center;
-box-sizing: border-box; /* Added for box sizing */
+box-sizing: border-box;
 }
 
 canvas {
@@ -83,7 +94,7 @@ flex-direction: column; /* Stack controls and canvas vertically */
 
 .controls {
 max-width: none;
-height: 100%;
+height: auto; /* Allow height to adjust based on content */
 }
 }
 
