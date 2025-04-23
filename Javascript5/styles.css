@@ -28,21 +28,42 @@ padding: 20px; /* Add padding for better spacing */
 }
 
 #logo {
-  float: left;
-  padding: 25px;
+  position: absolute;
+  top: 10px;
+  left: 15px;
   width: 90px;
   height: 90px;
-  padding-bottom: 100px;
-  opacity: 0.2;
+  opacity: 0.5;
+  transform: rotate(-10deg);
+  z-index: 1;
 }
 
+
+.header-strip h2 {
+font-family: 'Brush Script MT', cursive; /* Change to a cursive font */
+font-size: 60px; /* Increase font size for more impact */
+font-weight: bold; /* Make it bold for better visibility */
+color: #ffffff; /* Change color to ensure contrast against the strip */
+margin: 0; /* Remove default margin */
+padding: 0 20px; /* Add horizontal padding */
+text-align: center; /* Center align the text */
+width: 100%; /* Make it take up the full width of the strip */
+text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Optional: Add shadow for depth */
+}
+
+
+
+
 h2 {
-font-family: cursive, Times, serif; 
-font-style: italic;.
-font-size: 50px;
-font-weight: 300; /* Lighter weight for better contrast */
-color: #0c0c0c; /* White text for contrast against the strip */
+font-family: 'Brush Script MT', cursive; /* Change to a cursive font */
+font-size: 60px; /* Increase font size for more impact */
+font-weight: bold; /* Make it bold for better visibility */
+color: #ffffff; /* Change color to ensure contrast against the strip */
 margin: 0; /* Remove default margin from h2 */
+padding: 0 20px; /* Add horizontal padding */
+text-align: center; /* Center align the text */
+width: 100%; /* Make it take up the full width of the strip */
+text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Optional: Add shadow for depth */
 }
 
 .container {
