@@ -18,6 +18,8 @@ margin: 0;
 }
 
 .header-strip {
+margin: 0;
+padding: 0;
 z-index: 5;
 background: linear-gradient(to right, #4a90e2, #50e3c2); /* Gradient strip */
 width: 100%;
