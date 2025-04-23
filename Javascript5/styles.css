@@ -17,20 +17,6 @@ letter-spacing: 0.5px; /* Adds a bit of spacing between letters */
 margin: 0;
 }
 
-.header-strip {
-margin: 0;
-padding: 0;
-z-index: 5;
-background: linear-gradient(to right, #4a90e2, #50e3c2); /* Gradient strip */
-width: 100%;
-height: 120px;
-display: block;
-border-radius: 20px 20px 0 0; /* Rounded corners only at the top */
-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-text-align: center; /* Center the text */
-}
-
-
 h2 {
 font-family: 'Dancing Script';
 font-size: 76px; /* Increase font size for more impact */
