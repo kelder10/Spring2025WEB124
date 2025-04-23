@@ -4,53 +4,45 @@
 --blur: 0px;
 }
 
+html, body {
+height: 100%; /* Make sure the html and body take full height */
+margin: 0; /* Remove default margin */
+}
+
 body {
 text-align: center;
 background: #f8f9fa url('./images/watercolor_wave.jpg');
 background-size: cover;
-color: #495057; /* Darker shade of gray for better contrast */
-font-family: 'Dancing Script', cursive; /* Change to Dancing Script */
-font-weight: 300; /* Lighter weight for body text */
-font-size: 22px; /* Slightly larger font for readability */
+color: #495057;
+font-family: 'Dancing Script', cursive;
+font-weight: 300;
+font-size: 22px;
 font-style: italic;
-letter-spacing: 0.5px; /* Adds a bit of spacing between letters */
-margin: 0;
-padding: 0;
-display: flex;
-flex-direction: column;
-align-items: center;
+letter-spacing: 0.5px;
+display: flex; /* Use flexbox to control layout */
+flex-direction: column; /* Stack items vertically */
 }
 
 h2 {
 font-family: 'Dancing Script';
-font-size: 76px; /* Increase font size for more impact */
-color: #ffffff; /* Change color to ensure contrast against the strip */
+font-size: 76px;
+color: #ffffff;
 margin: 0; /* Remove default margin */
-padding: 0;
-text-align: center; /* Center align the text */
-width: 100%; /* Make it take up the full width of the strip */
-text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Optional: Add shadow for depth */
-}
-
-#logo {
-  position: absolute;
-  left: 15px;
-  width: 95px;
-  height: 95px;
-  opacity: 0.4;
-  transform: rotate(-10deg);
-  z-index: 1;
+padding: 20px 0; /* Add some padding if needed */
+text-align: center;
+width: 100%;
+text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .container {
 display: flex; /* Use flexbox for layout */
-flex-direction: row; /* Arrange items in a row */
+flex: 1; /* Allow the container to take the remaining space */
 justify-content: center; /* Center items horizontally */
-margin: auto; /* Center the container */
+align-items: flex-start; /* Align items to the top */
 padding: 20px; /* Add some padding around the container */
 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 border-radius: 8px; /* Round the corners */
-gap: 20px;
+gap: 20px; /* Space between columns */
 }
 
 .controls {
@@ -61,18 +53,6 @@ background: #ffffff; /* White background for controls */
 border-radius: 8px; /* Round the corners of the controls panel */
 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 overflow: auto;
-}
-
-.controls input {
-height: 40px; /* Set height for input fields */
-}
-
-input {
-width: 100%; /* Make inputs take full width of the controls */
-margin: 10px 0; /* Vertical margin */
-border: 1px solid #ced4da; /* Light gray border */
-border-radius: 4px; /* Round the corners of the inputs */
-background: #f8f9fa; /* Light background for inputs */
 }
 
 .image-container {
@@ -113,7 +93,6 @@ flex-direction: column; /* Stack controls and canvas vertically */
 max-width: none; /* Remove max-width for smaller screens */
 }
 }
-
 
 /* Slider styles */
 input[type="range"] {
