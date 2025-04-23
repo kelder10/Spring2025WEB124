@@ -16,8 +16,6 @@ text-align: center;
 background: #f8f9fa url('./images/watercolor_wave.jpg');
 background-size: cover;
 color: #495057;
-font-family: 'Dancing Script', cursive;
-font-weight: 300;
 font-size: 25px;
 font-style: italic;
 letter-spacing: 0.5px;
@@ -30,7 +28,7 @@ margin: 0;
 padding: 0;
 background: linear-gradient(to right, #4a90e2, #50e3c2); /* Gradient strip */
 width: 100%;
-  border-radius: 20px 20px 0 0; /* Rounded corners only at the top */
+border-radius: 20px 20px 0 0; /* Rounded corners only at the top */
 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
 text-align: center; /* Center the text */
 }
@@ -42,7 +40,6 @@ right: 50px;
 width: 100px; /* Set a width for the pop-out image */
 height: 100px; /* Maintain aspect ratio */
 }
-
 
 h2 {
 font-family: 'Dancing Script';
@@ -56,14 +53,14 @@ text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 #logo {
-  position: absolute;
-  top: 0;
-  left: 15px;
-  width: 150px;
-  height: 150px;
-  opacity: 0.3;
-  transform: rotate(-10deg);
-  z-index: 1;
+position: absolute;
+top: 0;
+left: 15px;
+width: 150px;
+height: 150px;
+opacity: 0.3;
+transform: rotate(-10deg);
+z-index: 1;
 }
 
 .container {
@@ -88,31 +85,26 @@ overflow: auto;
 min-height: 350px; /* Adjusted minimum height for better spacing */
 }
 
-.upload-section {
-background: #e9ecef; /* Light background for the upload section */
-padding: 15px;
-border: 1px solid #ced4da;
-border-radius: 5px;
-margin-bottom: 20px; /* Space below the upload section */
-font-size: 10px;
+.control-item {
+background: #ffffff; /* Background color for each control section */
+border: 1px solid #ced4da; /* Light border around each control */
+border-radius: 5px; /* Rounded corners */
+padding: 10px; /* Padding inside each control */
+margin-bottom: 15px; /* Space below each control item */
 }
 
-.controls label {
-display: block; /* Ensures each label takes a full line */
-margin-bottom: 5px; /* Adds space below each label */
-font-size: 25px;
+.control-item label {
+display: block; /* Ensure label takes a full line */
+margin-bottom: 5px; /* Space below label */
+font-size: 14px; /* Adjust font size */
 }
 
-.controls input[type="range"]
-
-.controls input[type="color"] {
-  margin-bottom: 15px;
-  font-size: 10px;
-  width: 800px;
-}
+.controls input[type="range"],
+.controls input[type="color"],
 .controls input[type="file"] {
 margin-bottom: 15px; /* Adds space below each slider and color picker */
 font-size: 10px; /* Increased font size for inputs */
+width: 100%; /* Set to stretch to full width */
 }
 
 .image-container {
