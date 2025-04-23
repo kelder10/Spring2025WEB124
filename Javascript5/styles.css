@@ -9,7 +9,7 @@ height: 100%;
 margin: 0;
 font-family: 'Dancing Script', cursive;
 font-weight: 300;
-font-size: 40px;
+font-size: 60px;
 }
 
 body {
@@ -19,7 +19,7 @@ background-size: cover;
 color: #495057;
 font-family: 'Dancing Script', cursive;
 font-weight: 300;
-font-size: 40px;
+font-size: 20px;
 font-style: italic;
 letter-spacing: 0.5px;
 display: flex;
