@@ -15,6 +15,8 @@ font-size: 22px; /* Slightly larger font for readability */
 font-style: italic;
 letter-spacing: 0.5px; /* Adds a bit of spacing between letters */
 margin: 0;
+padding: 0;
+display: flex;
 }
 
 h2 {
@@ -107,12 +109,6 @@ flex-direction: column; /* Stack controls and canvas vertically */
 .controls {
 max-width: none; /* Remove max-width for smaller screens */
 }
-}
-
-
-
-* {
-  box-sizing: border-box;
 }
 
 
