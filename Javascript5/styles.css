@@ -96,14 +96,14 @@ margin-bottom: 15px; /* Space below each control item */
 .control-item label {
 display: block; /* Ensure label takes a full line */
 margin-bottom: 5px; /* Space below label */
-font-size: 30px; /* Adjust font size */
+font-size: 25px; /* Adjust font size */
 }
 
 .controls input[type="range"],
 .controls input[type="color"],
 .controls input[type="file"] {
 margin-bottom: 15px; /* Adds space below each slider and color picker */
-font-size: 12px; /* Increased font size for inputs */
+font-size: 10px; /* Increased font size for inputs */
 width: 100%; /* Set to stretch to full width */
 }
 
