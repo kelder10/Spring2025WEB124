@@ -103,8 +103,13 @@ margin-bottom: 5px; /* Adds space below each label */
 font-size: 25px;
 }
 
-.controls input[type="range"],
-.controls input[type="color"],
+.controls input[type="range"]
+
+.controls input[type="color"] {
+  margin-bottom: 15px;
+  font-size: 10px;
+  width: 100px;
+}
 .controls input[type="file"] {
 margin-bottom: 15px; /* Adds space below each slider and color picker */
 font-size: 10px; /* Increased font size for inputs */
