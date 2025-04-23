@@ -30,6 +30,7 @@ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
 text-align: center; /* Center the text */
 }
 
+
 h2 {
 font-family: 'Dancing Script';
 font-size: 76px; /* Increase font size for more impact */
@@ -122,6 +123,13 @@ flex-direction: column; /* Stack controls and canvas vertically */
 max-width: none; /* Remove max-width for smaller screens */
 }
 }
+
+
+
+* {
+  box-sizing: border-box;
+}
+
 
 /* Slider styles */
 input[type="range"] {
