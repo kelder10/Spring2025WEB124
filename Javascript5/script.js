@@ -59,8 +59,6 @@ ctx.filter = `blur(${blur}px) brightness(${brightness}%) contrast(${contrast}%) 
 ctx.drawImage(canvas, 0, 0); // Redraw the image with effects
 }
 
-
-
 // Add event listeners for controls
 document.getElementById('spacing').addEventListener('input', updateCanvas);
 document.getElementById('blur').addEventListener('input', updateCanvas);
@@ -75,25 +73,4 @@ const link = document.createElement('a');
 link.download = 'edited-image.png';
 link.href = canvas.toDataURL();
 link.click();
-});
-
-
-document.getElementById('crop').addEventListener('click', function () {
-const cropX = parseInt(document.getElementById('cropX').value);
-const cropY = parseInt(document.getElementById('cropY').value);
-const cropWidth = parseInt(document.getElementById('cropWidth').value);
-const cropHeight = parseInt(document.getElementById('cropHeight').value);
-
-// Create a temporary canvas to hold the cropped image
-const tempCanvas = document.createElement('canvas');
-const tempCtx = tempCanvas.getContext('2d');
-tempCanvas.width = cropWidth;
-tempCanvas.height = cropHeight;
-
-// Draw the cropped portion on the temporary canvas
-tempCtx.drawImage(canvas, cropX, cropY, cropWidth, cropHeight, 0, 0, cropWidth, cropHeight);
-
-// Update the original image and redraw it
-originalImage = tempCtx.getImageData(0, 0, cropWidth, cropHeight);
-ctx.putImageData(originalImage, 0, 0);
 });
