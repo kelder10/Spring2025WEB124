@@ -46,6 +46,7 @@ const spacing = document.getElementById('spacing').value;
 const blur = document.getElementById('blur').value;
 const brightness = document.getElementById('brightness').value;
 const contrast = document.getElementById('contrast').value;
+const saturation = document.getElementById('saturation').value; // Get saturation value
 const baseColor = document.getElementById('base').value; // Get base color
 
 // Draw a border around the image
@@ -53,10 +54,11 @@ ctx.strokeStyle = baseColor; // Set border color to base color
 ctx.lineWidth = spacing; // Use spacing value for border width
 ctx.strokeRect(spacing / 2, spacing / 2, canvas.width - spacing, canvas.height - spacing); // Draw border
 
-// Apply filters
-ctx.filter = `blur(${blur}px) brightness(${brightness}%) contrast(${contrast}%)`;
+// Apply filters including saturation
+ctx.filter = `blur(${blur}px) brightness(${brightness}%) contrast(${contrast}%) saturate(${saturation}%)`;
 ctx.drawImage(canvas, 0, 0); // Redraw the image with effects
 }
+
 
 // Add event listeners for controls
 document.getElementById('spacing').addEventListener('input', updateCanvas);
@@ -64,6 +66,7 @@ document.getElementById('blur').addEventListener('input', updateCanvas);
 document.getElementById('brightness').addEventListener('input', updateCanvas);
 document.getElementById('contrast').addEventListener('input', updateCanvas);
 document.getElementById('base').addEventListener('input', updateCanvas); // Listen for base color changes
+document.getElementById('saturation').addEventListener('input', updateCanvas);
 
 // Download functionality
 document.getElementById('download').addEventListener('click', function () {
