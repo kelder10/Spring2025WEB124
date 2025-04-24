@@ -21,8 +21,6 @@ font-style: italic;
 letter-spacing: 0.5px;
 display: flex;
 flex-direction: column;
-height: 300vh;
-
 }
 
 .header-strip {
