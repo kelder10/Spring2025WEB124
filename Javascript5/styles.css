@@ -37,8 +37,8 @@ text-align: center; /* Center the text */
 position: absolute;
 top: 51px;
 right: 36px;
-width: 100px; /* Set a width for the pop-out image */
-height: 100px; /* Maintain aspect ratio */
+width: 120px; /* Set a width for the pop-out image */
+height: 120px; /* Maintain aspect ratio */
 }
 
 h2 {
