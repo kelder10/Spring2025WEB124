@@ -93,6 +93,9 @@ padding: 5px; /* Padding inside each control */
 margin-bottom: 3px; /* Space below each control item */
 }
 
+.control-item: last-child {
+border: none;
+}
 .control-item label {
 display: block; /* Ensure label takes a full line */
 margin-bottom: 3px; /* Space below label */
