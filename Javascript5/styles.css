@@ -97,7 +97,7 @@ padding: 8px; /* Padding inside each control */
 margin-bottom: 5px; /* Space below each control item */
 }
 
-.control-item download {
+.download {
 border: 0;
 }
 .control-item label {
