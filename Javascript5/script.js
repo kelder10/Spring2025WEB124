@@ -60,6 +60,7 @@ ctx.drawImage(canvas, 0, 0); // Redraw the image with effects
 }
 
 
+
 // Add event listeners for controls
 document.getElementById('spacing').addEventListener('input', updateCanvas);
 document.getElementById('blur').addEventListener('input', updateCanvas);
