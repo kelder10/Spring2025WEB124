@@ -110,7 +110,7 @@ width: 100%; /* Set to stretch to full width */
 .image-container {
 position: relative;
 flex: 0 0 70%; /* Image container takes up 70% of the width */
-height: 99%;
+height: 99.5%;
 width: 70%;
 background: #fffdfd71;
 border: 1px solid gray;
