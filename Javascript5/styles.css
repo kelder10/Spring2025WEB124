@@ -175,7 +175,7 @@ background-color: #260764; /* Add a background color */
 color: #ffffff; /* Change text color to white */
 font-size: 20px; /* Increase font size */
 border-radius: 5px; /* Add some rounded corners */
-padding: 10px 30px; /* Add padding for a larger button */
+padding: 7px 30px; /* Add padding for a larger button */
 cursor: pointer; /* Change cursor on hover */
 transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
