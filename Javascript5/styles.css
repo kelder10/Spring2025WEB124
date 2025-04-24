@@ -173,13 +173,13 @@ background-color: #4a90e2; /* Add a background color */
 color: #ffffff; /* Change text color to white */
 font-size: 24px; /* Increase font size */
 padding: 10px 20px; /* Add padding for a larger button */
-border-radius: 5px; /* Add some rounded corners */
 cursor: pointer; /* Change cursor on hover */
 transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
 
 .download:hover {
 background-color: #50e3c2; /* Change background color on hover */
+border: none; /* Remove the border */
 }
 
 
