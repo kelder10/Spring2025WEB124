@@ -49,15 +49,10 @@ const contrast = document.getElementById('contrast').value;
 const saturation = document.getElementById('saturation').value; // Get saturation value
 const baseColor = document.getElementById('base').value; // Get base color
 
-// Convert spacing to a number
-const borderThickness = parseInt(spacing, 10);
-
-// Draw a border around the image only if thickness is greater than 0
-if (borderThickness > 0) {
+// Draw a border around the image
 ctx.strokeStyle = baseColor; // Set border color to base color
-ctx.lineWidth = borderThickness; // Use spacing value for border width
-ctx.strokeRect(borderThickness / 2, borderThickness / 2, canvas.width - borderThickness, canvas.height - borderThickness); // Draw border
-}
+ctx.lineWidth = spacing; // Use spacing value for border width
+ctx.strokeRect(spacing / 2, spacing / 2, canvas.width - spacing, canvas.height - spacing); // Draw border
 
 // Apply filters including saturation
 ctx.filter = `blur(${blur}px) brightness(${brightness}%) contrast(${contrast}%) saturate(${saturation}%)`;
