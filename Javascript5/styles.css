@@ -89,24 +89,21 @@ min-height: 350px; /* Adjusted minimum height for better spacing */
 background: #ffffff; /* Background color for each control section */
 border: 1px solid #ced4da; /* Light border around each control */
 border-radius: 5px; /* Rounded corners */
-padding: 8px; /* Padding inside each control */
-margin-bottom: 5px; /* Space below each control item */
+padding: 5px; /* Padding inside each control */
+margin-bottom: 3px; /* Space below each control item */
 }
 
-.download {
-border: 0;
-}
 .control-item label {
 display: block; /* Ensure label takes a full line */
-margin-bottom: 5px; /* Space below label */
-font-size: 25px; /* Adjust font size */
+margin-bottom: 3px; /* Space below label */
+font-size: 22px; /* Adjust font size */
 }
 
 .controls input[type="range"],
 .controls input[type="color"],
 .controls input[type="file"] {
-margin-bottom: 15px; /* Adds space below each slider and color picker */
-font-size: 10px; /* Increased font size for inputs */
+margin-bottom: 10px; /* Adds space below each slider and color picker */
+font-size: 9px; /* Increased font size for inputs */
 width: 100%; /* Set to stretch to full width */
 }
 
