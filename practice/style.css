@@ -30,10 +30,24 @@ button:hover {
 background-color: #218838;
 }
 
+.results-container {
+display: flex;
+justify-content: space-between;
+margin-top: 20px;
+}
+
+.results-column {
+flex: 1;
+margin: 0 10px;
+}
+
+h2 {
+text-align: center;
+}
+
 p {
 margin: 10px 0;
-font-weight: bold;
-white-space: pre-line; /* This allows for new lines in the text */
+white-space: pre-line; /* Allows for new lines in the text */
 }
 
 @media only screen and (max-width: 600px) {
@@ -44,5 +58,9 @@ padding: 10px;
 
 button {
 width: 100%;
+}
+
+.results-container {
+flex-direction: column; /* Stack columns vertically on small screens */
 }
 }
