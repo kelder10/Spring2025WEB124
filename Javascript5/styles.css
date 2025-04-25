@@ -46,10 +46,10 @@ body {
 
 .pop-out-image {
     position: absolute;
-    top: 72px;
-    right: 50px;
-    width: 100px; /* Set a width for the pop-out image */
-    height: 100px; /* Maintain aspect ratio */
+    top: 52px;
+    right: 30px;
+    width: 120px; /* Set a width for the pop-out image */
+    height: 120px; /* Maintain aspect ratio */
 }
 
 h2 {
