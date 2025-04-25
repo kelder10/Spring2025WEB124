@@ -1,184 +1,190 @@
+/*
+Lisa Etiedrichsen 04-25-25
+Adapted from https://javascript30.com/
+Photo Editor Project
+Changes: Modified styles for a cleaner layout, added responsiveness, and improved control aesthetics.
+*/
+
 :root {
---base: #ffc600; /* This can be set dynamically via JS */
---spacing: 10px;
---blur: 0px;
+    --base: #ffc600; /* Base color for border */
+    --spacing: 10px; /* Default spacing */
+    --blur: 0px; /* Default blur effect */
 }
 
 html, body {
-height: 100%;
-margin: 0;
-font-family: 'Dancing Script', cursive;
-font-weight: 300;
+    height: 100%; /* Full height */
+    margin: 0;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 300;
 }
 
 body {
-text-align: center;
-background: #f8f9fa url('./images/watercolor_wave.jpg');
-background-size: cover;
-color: #495057;
-font-size: 25px;
-font-style: italic;
-letter-spacing: 0.5px;
-display: flex;
-flex-direction: column;
+    text-align: center;
+    background: #f8f9fa url('./images/watercolor_wave.jpg'); /* Background with image */
+    background-size: cover; /* Cover background */
+    color: #495057;
+    font-size: 25px;
+    font-style: italic;
+    letter-spacing: 0.5px;
+    display: flex;
+    flex-direction: column; /* Flexbox layout */
 }
 
 .header-strip {
-margin: 0;
-padding: 0;
-background: linear-gradient(to right, #4a90e2, #50e3c2); /* Gradient strip */
-width: 100%;
-border-radius: 20px 20px 0 0; /* Rounded corners only at the top */
-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-text-align: center; /* Center the text */
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #4a90e2, #50e3c2); /* Gradient strip */
+    width: 100%;
+    border-radius: 20px 20px 0 0; /* Rounded corners only at the top */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    text-align: center; /* Center the text */
 }
 
 .pop-out-image {
-position: absolute;
-top: 32px;
-right: 25px;
-width: 120px; /* Set a width for the pop-out image */
-height: 120px; /* Maintain aspect ratio */
+    position: absolute;
+    top: 72px;
+    right: 50px;
+    width: 100px; /* Set a width for the pop-out image */
+    height: 100px; /* Maintain aspect ratio */
 }
 
 h2 {
-font-family: 'Dancing Script';
-font-size: 76px;
-color: #ffffff;
-margin: 0;
-padding: 20px 0;
-text-align: center;
-width: 100%;
-text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-family: 'Dancing Script';
+    font-size: 76px; /* Large heading */
+    color: #ffffff;
+    margin: 0;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Shadow for text */
 }
 
 #logo {
-position: absolute;
-top: 0;
-left: 15px;
-width: 150px;
-height: 150px;
-opacity: 0.3;
-transform: rotate(-10deg);
-z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 15px;
+    width: 150px;
+    height: 150px;
+    opacity: 0.3; /* Logo transparency */
+    transform: rotate(-10deg); /* Tilt logo */
+    z-index: 1;
 }
 
 .container {
-display: flex;
-flex: 1;
-justify-content: space-between;
-align-items: flex-start;
-padding: 30 30px;
-padding-bottom: 10px;
-margin: 20px;
-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-border-radius: 8px;
-box-sizing: border-box;
+    display: flex;
+    flex: 1;
+    justify-content: space-between; /* Space between controls and canvas */
+    align-items: flex-start;
+    padding: 30 30px;
+    padding-bottom: 10px;
+    margin: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow around container */
+    border-radius: 8px;
+    box-sizing: border-box;
 }
 
 .controls {
-flex: 0 0 25%; /* Controls take up 25% of the width */
-padding: 20px;
-background: #ffffff;
-border-radius: 8px;
-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-overflow: auto;
-min-height: 350px; /* Adjusted minimum height for better spacing */
+    flex: 0 0 25%; /* Controls take up 25% of the width */
+    padding: 20px;
+    background: #ffffff; /* Background for controls */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+    overflow: auto;
+    min-height: 350px; /* Minimum height for controls */
 }
 
 .control-item {
-background: #ffffff; /* Background color for each control section */
-border: 1px solid #ced4da; /* Light border around each control */
-border-radius: 5px; /* Rounded corners */
-padding: 5px; /* Padding inside each control */
-margin-bottom: 3px; /* Space below each control item */
+    background: #ffffff; /* Control item background */
+    border: 1px solid #ced4da; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px; /* Padding */
+    margin-bottom: 3px; /* Spacing between controls */
 }
 
-.control-item: last-child {
-border: none;
+.control-item:last-child {
+    border: none; /* No border on last item */
 }
+
 .control-item label {
-display: block; /* Ensure label takes a full line */
-margin-bottom: 3px; /* Space below label */
-font-size: 22px; /* Adjust font size */
+    display: block; /* Label takes full line */
+    margin-bottom: 3px; /* Space below label */
+    font-size: 22px; /* Font size */
 }
 
 .controls input[type="range"],
 .controls input[type="color"],
 .controls input[type="file"] {
-margin-bottom: 10px; /* Adds space below each slider and color picker */
-font-size: 9px; /* Increased font size for inputs */
-width: 100%; /* Set to stretch to full width */
+    margin-bottom: 10px; /* Space below inputs */
+    font-size: 9px; /* Increased font size for inputs */
+    width: 100%; /* Full width */
 }
 
 .image-container {
-position: relative;
-flex: 0 0 70%; /* Image container takes up 70% of the width */
-height: 99.3%;
-width: 70%;
-background: #fffdfd71;
-border: 1px solid gray;
-border-radius: 8px;
-padding: 20px;
-overflow: hidden;
-display: flex;
-justify-content: center;
-align-items: center;
-box-sizing: border-box;
+    position: relative;
+    flex: 0 0 70%; /* Image container takes up 70% of the width */
+    height: 99.3%;
+    width: 70%;
+    background: #fffdfd71;
+    border: 1px solid gray; /* Border for image container */
+    border-radius: 8px;
+    padding: 20px; /* Padding */
+    overflow: hidden; /* Hide overflow */
+    display: flex;
+    justify-content: center; /* Center content */
+    align-items: center; /* Center vertically */
+    box-sizing: border-box;
 }
 
 canvas {
-width: 100%; /* Make canvas responsive */
-height: auto; /* Maintain aspect ratio */
+    width: 100%; /* Make canvas responsive */
+    height: auto; /* Maintain aspect ratio */
 }
 
 @media (max-width: 768px) {
 .container {
-flex-direction: column; /* Stack controls and canvas vertically */
-}
+    flex-direction: column; /* Stack controls and canvas vertically */
+    }
 
-.controls {
-max-width: none;
-height: auto; /* Allow height to adjust based on content */
-}
+    .controls {
+        max-width: none;
+        height: auto; /* Adjust height based on content */
+    }
 }
 
 /* Slider styles */
 input[type="range"] {
--webkit-appearance: none;
-width: 100%;
-height: 6px;
-background: #260764;
-border-radius: 5px;
-outline: none;
+    -webkit-appearance: none; /* Remove default appearance */
+    width: 100%; /* Full width */
+    height: 6px; /* Height of the slider */
+    background: #260764; /* Slider track color */
+    border-radius: 5px; /* Rounded corners */
+    outline: none; /* Remove outline */
 }
 
 input[type="range"]::-webkit-slider-thumb {
--webkit-appearance: none;
-appearance: none;
-width: 20px;
-height: 20px;
-border-radius: 50%;
-background: #c8cd2e;
-cursor: pointer;
+    -webkit-appearance: none; /* Remove default thumb appearance */
+    appearance: none;
+    width: 20px; /* Thumb width */
+    height: 20px; /* Thumb height */
+    border-radius: 50%; /* Circular thumb */
+    background: #c8cd2e; /* Thumb color */
+    cursor: pointer; /* Pointer cursor */
 }
 
 input[type="range"]::-moz-range-thumb {
-width: 20px;
-height: 20px;
-border-radius: 50%;
-background: #c8cd2e;
-cursor: pointer;
+    width: 20px; /* Thumb width */
+    height: 20px; /* Thumb height */
+    border-radius: 50%; /* Circular thumb */
+    background: #c8cd2e; /* Thumb color */
+    cursor: pointer; /* Pointer cursor */
 }
 
 .download {
-background-color: #260764; /* Add a background color */
-color: #ffffff; /* Change text color to white */
-font-size: 18px; /* Increase font size */
-border-radius: 5px; /* Add some rounded corners */
-padding: 7px 30px; /* Add padding for a larger button */
-cursor: pointer; /* Change cursor on hover */
-transition: background-color 0.3s; /* Smooth transition for hover effect */
+    background-color: #260764; /* Background color */
+    color: #ffffff; /* Text color */
+    font-size: 18px; /* Increase font size */
+    border-radius: 5px; /* Rounded corners */
+    padding: 7px 30px; /* Padding for button */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
-
-
