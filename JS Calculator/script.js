@@ -37,3 +37,13 @@ result += `${i} / ${num} = ${(i / num).toFixed(2)}\n`;
 }
 document.getElementById('division').innerText = result.trim();
 }
+
+
+function calculateAll() {
+add();
+subtract();
+multiply();
+divide();
+}
+
+document.getElementById('calculateBtn').addEventListener('click', calculateAll);
