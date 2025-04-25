@@ -35,8 +35,8 @@ text-align: center; /* Center the text */
 
 .pop-out-image {
 position: absolute;
-top: 33px;
-right: 26px;
+top: 32px;
+right: 25px;
 width: 120px; /* Set a width for the pop-out image */
 height: 120px; /* Maintain aspect ratio */
 }
