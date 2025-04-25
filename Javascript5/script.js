@@ -1,7 +1,11 @@
 // Katie Elder 04-25-25
 // Adapted from https://javascript30.com/
 // Photo Editor Project
-// Changes: Added functionality for image upload, filters (brightness, contrast, saturation), and download feature.
+// Changes:
+// - Added functionality for loading and displaying user-uploaded images.
+// - Implemented canvas manipulation for applying filters (blur, brightness, contrast, saturation).
+// - Included event listeners for control inputs to dynamically update the canvas.
+// - Added a download feature to save the edited image from the canvas.
 
 const upload = document.getElementById('upload');
 const canvas = document.getElementById('canvas');
