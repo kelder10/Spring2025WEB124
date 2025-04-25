@@ -1,61 +1,63 @@
-
+<!--
+Katie Elder 04-25-25
+Adapted from https://javascript30.com/
+Photo Editor Project
+Changes: Added new image upload functionality, improved layout and controls, updated styles.
+-->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Photo Editor</title>
-<link href='https://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="styles.css">
-<link rel="icon" href="./images/dice.png" />
+    <head>
+    <meta charset="UTF-8">
+    <title>Photo Editor</title>
+    <link href='https://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="./images/dice.png" />
 </head>
 <body>
-<div class="header-strip">
-<img id="logo" src="./images/logo.png" alt="logo.png"/>
-<h2>Oasis Edit Hub</h2>
-</div>
-<div class="container">
-<img class="pop-out-image" src="./images/cat_camera.png" alt="Pop Out Image">
-<div class="controls">
-<div class="control-item">
-<label for="upload">Upload Image:</label>
-<input id="upload" type="file" accept="image/*">
-</div>
-<div class="control-item">
-<label for="base">Border Color:</label>
-<input id="base" type="color" name="base" value="#ffffff">
-</div>
-<div class="control-item">
-<label for="spacing">Border Thickness:</label>
-<input id="spacing" type="range" name="spacing" min="0" max="200" value="0" data-sizing="px">
-</div>
-<div class="control-item">
-<label for="blur">Blur:</label>
-<input id="blur" type="range" name="blur" min="0" max="25" value="0" data-sizing="px">
-</div>
-
-<div class="control-item">
-<label for="brightness">Brightness:</label>
-<input id="brightness" type="range" min="0" max="200" value="100">
-</div>
-
-<div class="control-item">
-<label for="contrast">Contrast:</label>
-<input id="contrast" type="range" min="0" max="200" value="100">
-</div>
-<div class="control-item">
-<label for="saturation">Saturation:</label>
-<input id="saturation" type="range" min="0" max="200" value="100">
-</div>
-<div class="control-item">
-<button id="download" class="download">Download</button>
-</div>
-</div>
-
-<div class="image-container">
-<img id="default-image" src="./images/imagebg.jpg" alt="Default Image" style="display: none;"> <!-- Default image -->
-<canvas id="canvas"></canvas>
-</div>
-</div>
-<script src="script.js"></script>
+    <div class="header-strip">
+        <img id="logo" src="./images/logo.png" alt="logo.png"/>
+        <h2>Oasis Edit Hub</h2>
+    </div>
+    <div class="container">
+        <img class="pop-out-image" src="./images/cat_camera.png" alt="Pop Out Image">
+        <div class="controls">
+            <div class="control-item">
+                <label for="upload">Upload Image:</label>
+                <input id="upload" type="file" accept="image/*"> <!-- Added file input for image upload -->
+            </div>
+            <div class="control-item">
+                <label for="base">Border Color:</label>
+                <input id="base" type="color" name="base" value="#ffffff">
+            </div>
+            <div class="control-item">
+                <label for="spacing">Border Thickness:</label>
+                <input id="spacing" type="range" name="spacing" min="0" max="200" value="0" data-sizing="px">
+            </div>
+            <div class="control-item">
+                <label for="blur">Blur:</label>
+                <input id="blur" type="range" name="blur" min="0" max="25" value="0" data-sizing="px">
+            </div>
+            <div class="control-item">
+                <label for="brightness">Brightness:</label>
+                <input id="brightness" type="range" min="0" max="200" value="100">
+            </div>
+            <div class="control-item">
+                <label for="contrast">Contrast:</label>
+                <input id="contrast" type="range" min="0" max="200" value="100">
+            </div>
+            <div class="control-item">
+                <label for="saturation">Saturation:</label>
+                <input id="saturation" type="range" min="0" max="200" value="100"> <!-- Added saturation control -->
+            </div>
+            <div class="control-item">
+                <button id="download" class="download">Download</button> <!-- Added download button -->
+            </div>
+        </div>
+        <div class="image-container">
+            <img id="default-image" src="./images/imagebg.jpg" alt="Default Image" style="display: none;"> <!-- Default image -->
+            <canvas id="canvas"></canvas> <!-- Canvas for image manipulation -->
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
