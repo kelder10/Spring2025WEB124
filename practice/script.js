@@ -1,101 +1,48 @@
-const movieListDiv = document.getElementById('movie-list');
-const reviewForm = document.getElementById('review-form');
-const searchInput = document.getElementById('search-bar');
-
-// Sample movie data
-const movies = [
-{
-title: 'Inception',
-year: 2010,
-reviews: [
-{ text: 'Amazing movie!', rating: 5, id: 1 },
-{ text: 'Mind-bending and thrilling.', rating: 4, id: 2 }
-]
-},
-{
-title: 'The Matrix',
-year: 1999,
-reviews: [
-{ text: 'A groundbreaking film.', rating: 5, id: 3 }
-]
+function add() {
+const num = parseFloat(document.getElementById('num').value);
+let result = '';
+for (let i = 1; i <= 10; i++) {
+result += `${i} + ${num} = ${i + num}\n`;
 }
-];
-
-// Function to create review elements
-function createReviewElement(review) {
-const reviewDiv = document.createElement('p');
-reviewDiv.textContent = `${review.text} (Rating: ${review.rating})`;
-
-// Create action buttons
-const actionsDiv = document.createElement('div');
-actionsDiv.classList.add('review-actions');
-
-const editButton = document.createElement('button');
-editButton.textContent = 'Edit';
-editButton.onclick = () => editReview(review);
-
-const deleteButton = document.createElement('button');
-deleteButton.textContent = 'Delete';
-deleteButton.onclick = () => deleteReview(review);
-
-actionsDiv.append(editButton, deleteButton);
-reviewDiv.appendChild(actionsDiv);
-return reviewDiv;
+document.getElementById('addition').innerText = result.trim();
 }
 
-// Function to render movies and their reviews
-function displayMovies(moviesToDisplay = movies) {
-movieListDiv.innerHTML = ''; // Clear previous content
-moviesToDisplay.forEach(movie => {
-const movieDiv = document.createElement('div');
-movieDiv.classList.add('movie');
-movieDiv.innerHTML = `<h3>${movie.title} (${movie.year})</h3>`;
-movie.reviews.forEach(review => movieDiv.appendChild(createReviewElement(review)));
-movieListDiv.appendChild(movieDiv);
-});
+function subtract() {
+const num = parseFloat(document.getElementById('num').value);
+let result = '';
+let i = 1;
+while (i <= 10) {
+result += `${i} - ${num} = ${i - num}\n`;
+i++;
+}
+document.getElementById('subtraction').innerText = result.trim();
 }
 
-// Helper functions for editing and deleting reviews
-function editReview(review) {
-const newText = prompt('Edit your review:', review.text);
-const newRating = prompt('Edit your rating (1-5):', review.rating);
-if (newText && newRating) {
-review.text = newText;
-review.rating = Number(newRating);
-displayMovies(); // Refresh the displayed movies
-}
-}
-
-function deleteReview(review) {
-const movie = movies.find(m => m.reviews.includes(review));
-movie.reviews.splice(movie.reviews.indexOf(review), 1); // Remove review
-displayMovies(); // Refresh the displayed movies
+function multiply() {
+const num = parseFloat(document.getElementById('num').value);
+let result = '';
+let i = 1;
+do {
+result += `${i} * ${num} = ${i * num}\n`;
+i++;
+} while (i <= 10);
+document.getElementById('multiplication').innerText = result.trim();
 }
 
-// Event listener for the review form
-reviewForm.addEventListener('submit', function(event) {
-event.preventDefault();
-const title = document.getElementById('movie-title').value;
-const reviewText = document.getElementById('review-text').value;
-const reviewRating = Number(document.getElementById('review-rating').value);
-
-const movie = movies.find(m => m.title.toLowerCase() === title.toLowerCase());
-if (movie) {
-movie.reviews.push({ text: reviewText, rating: reviewRating, id: movie.reviews.length + 1 });
-displayMovies();
-} else {
-alert('Movie not found!');
+function divide() {
+const num = parseFloat(document.getElementById('num').value);
+let result = '';
+for (let i = 1; i <= 10; i++) {
+result += `${i} / ${num} = ${(i / num).toFixed(2)}\n`;
+}
+document.getElementById('division').innerText = result.trim();
 }
 
-reviewForm.reset(); // Clear the form fields
-});
+function calculateAll() {
+add();
+subtract();
+multiply();
+divide();
+}
 
-// Search functionality
-searchInput.addEventListener('input', function() {
-const searchTerm = searchInput.value.toLowerCase();
-const filteredMovies = movies.filter(movie => movie.title.toLowerCase().includes(searchTerm));
-displayMovies(filteredMovies);
-});
-
-// Initial display of movies
-displayMovies();
+document.getElementById('calculateBtn').addEventListener('click', calculateAll);
