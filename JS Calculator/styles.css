@@ -34,12 +34,11 @@ background-color: #218838;
 display: flex;
 justify-content: space-between;
 margin-top: 20px;
-flex-wrap: wrap; /* Allows wrapping to the next line if not enough space */
 }
 
 .results-column {
-flex: 1; /* Makes each column take equal space */
-margin: 0 10px; /* Adds spacing between columns */
+flex: 1;
+margin: 0 10px;
 }
 
 h2 {
