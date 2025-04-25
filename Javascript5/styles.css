@@ -1,18 +1,19 @@
 /*
 Katie Elder 04-25-25
-Adapted from https://javascript30.com/
 Photo Editor Project
 Changes:
 - Modified styles for a cleaner layout and enhanced aesthetics.
-- Utilized flexbox for responsive design to adapt the layout based on screen size.
-- Included a media query to stack controls and canvas vertically on smaller screens.
-- Adjusted styles for controls, buttons, and canvas to improve user experience.
+- Implemented a gradient background for the header for visual appeal.
+- Adjusted styles for controls and buttons to improve user experience.
+- Included shadow effects to give depth to elements.
+- Set a specific width for the canvas to enhance layout consistency.
+- Ensured all control elements have distinct styles for better usability.
 */
 
 :root {
-    --base: #ffc600; /* Base color for border */
-    --spacing: 10px; /* Default spacing */
-    --blur: 0px; /* Default blur effect */
+--base: #ffc600; /* Base color for border */
+--spacing: 10px; /* Default spacing */
+--blur: 0px; /* Default blur effect */
 }
 
 html, body {
