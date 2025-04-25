@@ -144,17 +144,6 @@ canvas {
     height: auto; /* Maintain aspect ratio */
 }
 
-@media (max-width: 768px) {
-.container {
-    flex-direction: column; /* Stack controls and canvas vertically */
-    }
-
-    .controls {
-        max-width: none;
-        height: auto; /* Adjust height based on content */
-    }
-}
-
 /* Slider styles */
 input[type="range"] {
     -webkit-appearance: none; /* Remove default appearance */
@@ -191,4 +180,29 @@ input[type="range"]::-moz-range-thumb {
     padding: 7px 30px; /* Padding for button */
     cursor: pointer; /* Pointer cursor */
     transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+@media (max-width: 768px) {
+.container {
+    flex-direction: column; /* Stack controls and canvas vertically */
+    padding: 10px;
+    }
+
+    .controls {
+        width: 100%;;
+        height: auto; /* Adjust height based on content */
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .image-container {
+        width: 100%
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    canvas {
+        width: 100%;
+        height: auto;
+    }
 }
