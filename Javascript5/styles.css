@@ -46,7 +46,7 @@ body {
 
 .pop-out-image {
     position: absolute;
-    top: 34px;
+    top: 32px;
     right: 22px;
     width: 120px; /* Set a width for the pop-out image */
     height: 120px; /* Maintain aspect ratio */
