@@ -1,1 +1,67 @@
+body {
+font-family: Arial, sans-serif;
+margin: 20px;
+padding: 20px;
+background-color: #f4f4f4;
+}
 
+h1 {
+color: #333;
+}
+
+label {
+margin-right: 10px;
+}
+
+input {
+padding: 5px;
+margin-bottom: 10px;
+}
+
+button {
+padding: 10px 15px;
+background-color: #28a745;
+color: white;
+border: none;
+cursor: pointer;
+}
+
+button:hover {
+background-color: #218838;
+}
+
+.results-container {
+display: flex;
+justify-content: space-between;
+margin-top: 20px;
+flex-wrap: wrap; /* Allows wrapping to the next line if not enough space */
+}
+
+.results-column {
+flex: 1; /* Makes each column take equal space */
+margin: 0 10px; /* Adds spacing between columns */
+}
+
+h2 {
+text-align: center;
+}
+
+p {
+margin: 10px 0;
+white-space: pre-line; /* Allows for new lines in the text */
+}
+
+@media only screen and (max-width: 600px) {
+body {
+margin: 10px;
+padding: 10px;
+}
+
+button {
+width: 100%;
+}
+
+.results-container {
+flex-direction: column; /* Stack columns vertically on small screens */
+}
+}
