@@ -12,13 +12,13 @@ Changes:
 */
 
 :root {
---base: #ffc600; /* Base color for border */
---spacing: 10px; /* Default spacing */
---blur: 0px; /* Default blur effect */
+--base: #ffc600; 
+--spacing: 10px; 
+--blur: 0px; 
 }
 
 html, body {
-    height: 100%; /* Full height */
+    height: 100%; 
     margin: 0;
     font-family: 'Dancing Script', cursive;
     font-weight: 300;
