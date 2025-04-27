@@ -4,7 +4,7 @@
 // Changes:
 // - Added the ability to load and display user-uploaded images.
 // - Implemented canvas tools for applying filters like blur, brightness, contrast, and saturation.
-// - Included event listeners to update the canvas in real-time based on user input.
+// - Included event listeners to update the canvas based on user input.
 // - Added a feature to download the edited image from the canvas.
 
 const upload = document.getElementById('upload');
