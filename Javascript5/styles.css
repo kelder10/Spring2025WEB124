@@ -1,5 +1,6 @@
 /*
-Katie Elder 04-25-25
+Katie Elder 04-27-25
+Adapted from https://javascript30.com/CSS Variables
 Photo Editor Project
 Changes:
 - Modified styles for a cleaner layout and enhanced aesthetics.
@@ -111,17 +112,17 @@ h2 {
 }
 
 .control-item label {
-    display: block; /* Label takes full line */
-    margin-bottom: 3px; /* Space below label */
-    font-size: 22px; /* Font size */
+    display: block; 
+    margin-bottom: 3px; 
+    font-size: 22px; 
 }
 
 .controls input[type="range"],
 .controls input[type="color"],
 .controls input[type="file"] {
-    margin-bottom: 10px; /* Space below inputs */
-    font-size: 9px; /* Increased font size for inputs */
-    width: 100%; /* Full width */
+    margin-bottom: 10px; 
+    font-size: 9px; 
+    width: 100%; 
 }
 
 .image-container {
@@ -132,55 +133,54 @@ h2 {
     background: #fffdfd71;
     border: 1px solid gray; /* Border for image container */
     border-radius: 8px;
-    padding: 20px; /* Padding */
-    overflow: hidden; /* Hide overflow */
+    padding: 20px; 
+    overflow: hidden;
     display: flex;
     justify-content: center; /* Center content */
-    align-items: center; /* Center vertically */
+    align-items: center;
     box-sizing: border-box;
 }
 
 canvas {
-    width: 100%; /* Make canvas responsive */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%; /* Maintain aspect ratio */
 }
 
 /* Slider styles */
 input[type="range"] {
     -webkit-appearance: none; /* Remove default appearance */
-    width: 100%; /* Full width */
+    width: 100%; 
     height: 6px; /* Height of the slider */
     background: #260764; /* Slider track color */
-    border-radius: 5px; /* Rounded corners */
-    outline: none; /* Remove outline */
+    border-radius: 5px; 
+    outline: none; 
 }
 
 input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Remove default thumb appearance */
+    -webkit-appearance: none; 
     appearance: none;
-    width: 20px; /* Thumb width */
-    height: 20px; /* Thumb height */
-    border-radius: 50%; /* Circular thumb */
+    width: 20px; 
+    height: 20px; 
+    border-radius: 50%; 
     background: #c8cd2e; /* Thumb color */
-    cursor: pointer; /* Pointer cursor */
+    cursor: pointer; 
 }
 
 input[type="range"]::-moz-range-thumb {
-    width: 20px; /* Thumb width */
-    height: 20px; /* Thumb height */
-    border-radius: 50%; /* Circular thumb */
+    width: 20px; 
+    height: 20px;
+    border-radius: 50%; 
     background: #c8cd2e; /* Thumb color */
-    cursor: pointer; /* Pointer cursor */
+    cursor: pointer;
 }
 
 .download {
-    background-color: #260764; /* Background color */
-    color: #ffffff; /* Text color */
-    font-size: 18px; /* Increase font size */
-    border-radius: 5px; /* Rounded corners */
+    background-color: #260764;
+    color: #ffffff; 
+    font-size: 18px; 
+    border-radius: 5px; 
     padding: 7px 30px; /* Padding for button */
-    cursor: pointer; /* Pointer cursor */
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    cursor: pointer; 
+    transition: background-color 0.3s;
 }
 
 @media (max-width: 768px) {
