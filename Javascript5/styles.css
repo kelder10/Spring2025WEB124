@@ -9,6 +9,13 @@ Changes:
 - Included shadow effects to give depth to elements.
 - Set a specific width for the canvas to enhance layout consistency.
 - Ensured all control elements have distinct styles for better usability.
+
+- Updated styles for a cleaner layout and better look.
+- Added a gradient background to the header for visual appeal.
+- Improved styles for controls and buttons for a smoother user experience.
+- Added shadows to create depth in elements.
+- Defined a specific width for the canvas for consistency.
+- Made sure all control elements have unique styles for easier use.
 */
 
 :root {
