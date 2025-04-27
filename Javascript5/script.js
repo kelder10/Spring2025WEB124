@@ -1,5 +1,5 @@
 // Katie Elder 04-25-25
-// Adapted from https://javascript30.com/
+// Adapted from https://javascript30.com/CSS Variables
 // Photo Editor Project
 // Changes:
 // - Added the ability to load and display user-uploaded images.
