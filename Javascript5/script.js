@@ -1,6 +1,6 @@
 // Katie Elder 04-27-25
 // Adapted from https://javascript30.com/CSS Variables
-// Photo Editor
+// Photo Editor Project
 // New JS features:
 // - Added the ability to load and display user-uploaded images.
 // - Implemented canvas tools for applying filters like blur, brightness, contrast, and saturation.
