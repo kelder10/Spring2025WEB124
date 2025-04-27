@@ -25,8 +25,8 @@ html, body {
 
 body {
     text-align: center;
-    background: #f8f9fa url('./images/watercolor_wave.jpg'); /* Background with image */
-    background-size: cover; /* Cover background */
+    background: #f8f9fa url('./images/watercolor_wave.jpg'); 
+    background-size: cover; 
     color: #495057;
     font-size: 25px;
     font-style: italic;
@@ -40,28 +40,28 @@ body {
     padding: 0;
     background: linear-gradient(to right, #4a90e2, #50e3c2); /* Gradient strip */
     width: 100%;
-    border-radius: 20px 20px 0 0; /* Rounded corners only at the top */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-    text-align: center; /* Center the text */
+    border-radius: 20px 20px 0 0; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    text-align: center;
 }
 
 .pop-out-image {
     position: absolute;
     top: 32px;
     right: 22px;
-    width: 120px; /* Set a width for the pop-out image */
-    height: 120px; /* Maintain aspect ratio */
+    width: 120px; 
+    height: 120px; 
 }
 
 h2 {
     font-family: 'Dancing Script';
-    font-size: 76px; /* Large heading */
+    font-size: 76px; 
     color: #ffffff;
     margin: 0;
     padding: 20px 0;
     text-align: center;
     width: 100%;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Shadow for text */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
 }
 
 #logo {
@@ -78,31 +78,31 @@ h2 {
 .container {
     display: flex;
     flex: 1;
-    justify-content: space-between; /* Space between controls and canvas */
+    justify-content: space-between; 
     align-items: flex-start;
     padding: 30 30px;
     padding-bottom: 10px;
     margin: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow around container */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
     border-radius: 8px;
     box-sizing: border-box;
 }
 
 .controls {
-    flex: 0 0 25%; /* Controls take up 25% of the width */
+    flex: 0 0 25%; 
     padding: 20px;
-    background: #ffffff; /* Background for controls */
+    background: #ffffff; 
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
     overflow: auto;
-    min-height: 350px; /* Minimum height for controls */
+    min-height: 350px; 
 }
 
 .control-item {
-    background: #ffffff; /* Control item background */
-    border: 1px solid #ced4da; /* Light border */
-    border-radius: 5px; /* Rounded corners */
-    padding: 5px; /* Padding */
+    background: #ffffff; 
+    border: 1px solid #ced4da; 
+    border-radius: 5px; 
+    padding: 5px;
     margin-bottom: 3px; /* Spacing between controls */
 }
 
@@ -126,22 +126,22 @@ h2 {
 
 .image-container {
     position: relative;
-    flex: 0 0 70%; /* Image container takes up 70% of the width */
+    flex: 0 0 70%; 
     height: 99.3%;
     width: 70%;
     background: #fffdfd71;
-    border: 1px solid gray; /* Border for image container */
+    border: 1px solid gray; 
     border-radius: 8px;
     padding: 20px; 
     overflow: hidden;
     display: flex;
-    justify-content: center; /* Center content */
+    justify-content: center; 
     align-items: center;
     box-sizing: border-box;
 }
 
 canvas {
-    width: 100%; /* Maintain aspect ratio */
+    width: 100%; 
 }
 
 /* Slider styles */
@@ -177,7 +177,7 @@ input[type="range"]::-moz-range-thumb {
     color: #ffffff; 
     font-size: 18px; 
     border-radius: 5px; 
-    padding: 7px 30px; /* Padding for button */
+    padding: 7px 30px; 
     cursor: pointer; 
     transition: background-color 0.3s;
 }
