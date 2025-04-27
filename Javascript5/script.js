@@ -2,18 +2,10 @@
 // Adapted from https://javascript30.com/
 // Photo Editor Project
 // Changes:
-// - Added functionality for loading and displaying user-uploaded images.
-// - Implemented canvas manipulation for applying filters (blur, brightness, contrast, saturation).
-// - Included event listeners for control inputs to dynamically update the canvas.
-// - Added a download feature to save the edited image from the canvas.
-
-// Katie Elder 04-25-25
-// Photo Editor Project
-// Changes:
-// - Added functionality for loading and displaying user-uploaded images on the canvas.
-// - Implemented canvas manipulation for applying filters such as blur, brightness, contrast, and saturation.
-// - Included event listeners for control inputs to dynamically update the canvas.
-// - Developed a download feature to save the edited image from the canvas.
+// - Added the ability to load and display user-uploaded images.
+// - Implemented canvas tools for applying filters like blur, brightness, contrast, and saturation.
+// - Included event listeners to update the canvas in real-time based on user input.
+// - Added a feature to download the edited image from the canvas.
 
 const upload = document.getElementById('upload');
 const canvas = document.getElementById('canvas');
