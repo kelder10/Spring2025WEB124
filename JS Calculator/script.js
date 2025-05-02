@@ -2,6 +2,7 @@
 // JavaScript Calculator
 // This JS script performs basic arithmetic operations (addition, subtraction, multiplication, and division)
 // based on a user-provided number and displays the results.
+
 function add() {
     // Get the user input number
     const num = parseFloat(document.getElementById('num').value);
