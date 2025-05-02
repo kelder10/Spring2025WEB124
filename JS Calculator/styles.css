@@ -1,3 +1,9 @@
+/*
+Katie Elder 5-2-25
+CSS Styles for JavaScript Calculator
+This stylesheet provides the styling for the JavaScript Calculator,
+including layout design and button styles.
+*/
 body {
 font-family: Times, Times New Roman, serif;
 margin: 20px;
@@ -52,19 +58,4 @@ font-size: 15px;
 p {
 margin: 10px 0;
 white-space: pre-line; /* Allows for new lines in the text */
-}
-
-@media only screen and (max-width: 600px) {
-body {
-margin: 10px;
-padding: 10px;
-}
-
-button {
-width: 100%;
-}
-
-.results-container {
-flex-direction: column; /* Stack columns vertically on small screens */
-}
 }
