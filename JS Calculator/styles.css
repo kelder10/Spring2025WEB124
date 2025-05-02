@@ -32,8 +32,12 @@ padding: 3px;
 background-color: #eae8e8;
 border: 0.5px solid black;
 cursor: pointer;
-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
+
+.button::hover {
+  background: #ccc;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
 
 .results-container {
 display: flex;
