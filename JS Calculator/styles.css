@@ -2,7 +2,7 @@ body {
 font-family: Arial, sans-serif;
 margin: 20px;
 padding: 20px;
-background-color: #f4f4f4;
+background-color: #b3acac;
 }
 
 h1 {
@@ -21,6 +21,7 @@ margin-bottom: 10px;
 button {
 padding: 10px 15px;
 color: black;
+background-color: #b3acac;
 border: none;
 cursor: pointer;
 }
