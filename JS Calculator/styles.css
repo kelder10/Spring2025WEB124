@@ -13,6 +13,9 @@ label {
 margin-right: 10px;
 }
 
+num {
+  width: 20px;
+}
 input {
 padding: 3px;
 margin-bottom: 10px;
