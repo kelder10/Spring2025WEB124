@@ -32,6 +32,7 @@ padding: 3px;
 background-color: #eae8e8;
 border: 0.5px solid black;
 cursor: pointer;
+box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .results-container {
