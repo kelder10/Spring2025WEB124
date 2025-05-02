@@ -26,10 +26,6 @@ border: none;
 cursor: pointer;
 }
 
-button:hover {
-background-color: #218838;
-}
-
 .results-container {
 display: flex;
 justify-content: space-between;
