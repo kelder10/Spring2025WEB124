@@ -19,10 +19,9 @@ margin-bottom: 10px;
 }
 
 button {
-padding: 10px 15px;
 color: black;
 background-color: #e4dddd;
-border: solid;
+border: o.3em solid;
 cursor: pointer;
 }
 
