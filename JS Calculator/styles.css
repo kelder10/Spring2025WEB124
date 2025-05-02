@@ -18,6 +18,10 @@ padding: 3px;
 margin-bottom: 10px;
 }
 
+.number {
+  width: 3px;
+}
+
 button {
 color: black;
 padding: 3px;
