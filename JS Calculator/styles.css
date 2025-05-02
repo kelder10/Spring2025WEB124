@@ -20,8 +20,9 @@ margin-bottom: 10px;
 
 button {
 color: black;
+padding: 5px;
 background-color: #e4dddd;
-border: o.3em solid;
+border: o.1em solid;
 cursor: pointer;
 }
 
