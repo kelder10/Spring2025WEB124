@@ -13,11 +13,8 @@ label {
 margin-right: 10px;
 }
 
-.num {
-  width: 20px;
-}
-
 input {
+max-width: 2px;
 padding: 3px;
 margin-bottom: 10px;
 }
