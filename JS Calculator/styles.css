@@ -5,50 +5,50 @@ This stylesheet provides the styling for the JavaScript Calculator,
 including layout design and button styles.
 */
 body {
-font-family: Times, Times New Roman, serif;
-margin: 20px;
-padding: 20px;
-background-color: #eae8e8;
+    font-family: Times, Times New Roman, serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #eae8e8;
 }
 
 h1 {
-color: #333;
+    color: #333;
 }
 
 h3 {
-font-size: 15px;
-font-weight: 300;
+    font-size: 15px;
+    font-weight: 300;
 }
 
 label {
-margin-right: 10px;
+    margin-right: 10px;
 }
 
 input {
-max-width: 80px;
-min-height: 8px;
-font-size: 10px;
-padding: 3px;
-margin-bottom: 10px;
+    max-width: 80px;
+    min-height: 8px;
+    font-size: 10px;
+    padding: 3px;
+    margin-bottom: 10px;
 }
 
 button {
-color: black;
-padding: 3px;
-background-color: #eae8e8;
-border: 0.5px solid black;
-cursor: pointer;
+    color: black;
+    padding: 3px;
+    background-color: #eae8e8;
+    border: 0.5px solid black;
+    cursor: pointer;
 }
 
 .results-container {
-display: flex;
-justify-content: space-between;
-margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
 }
 
 .results-column {
-flex: 1;
-margin: 0 10px;
+    flex: 1;
+    margin: 0 10px;
 }
 
 h2 {
@@ -56,6 +56,6 @@ font-size: 15px;
 }
 
 p {
-margin: 10px 0;
-white-space: pre-line; /* Allows for new lines in the text */
+    margin: 10px 0;
+    white-space: pre-line; 
 }
