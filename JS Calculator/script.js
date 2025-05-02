@@ -1,6 +1,6 @@
 // Katie Elder 5-2-25
 // JavaScript Calculator
-// This script performs basic arithmetic operations (addition, subtraction, multiplication, and division)
+// This JS script performs basic arithmetic operations (addition, subtraction, multiplication, and division)
 // based on a user-provided number and displays the results.
 function add() {
     // Get the user input number
