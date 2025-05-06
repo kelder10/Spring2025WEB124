@@ -1,4 +1,4 @@
-// Katie Elder 5-2-25
+// Katie Elder 5-6-25
 // JavaScript Calculator
 // This JS script performs basic arithmetic operations (addition, subtraction, multiplication, and division)
 // based on a user-provided number and displays the results.
