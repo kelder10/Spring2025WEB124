@@ -1,8 +1,7 @@
-/*
-Katie Elder 5-2-25
-CSS Styles for JavaScript Calculator
-This stylesheet provides the styling for the JavaScript Calculator,
-including layout design and button styles.
+/*Katie Elder 5-6-25 
+CSS for JavaScript Calculator*/
+/* This stylesheet handles the layout and
+button styles for the calculator.*/
 */
 body {
     font-family: Times, Times New Roman, serif;
