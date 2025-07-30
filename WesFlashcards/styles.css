@@ -1,1 +1,39 @@
+body {
+background-color: black;
+color: white;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+margin: 0;
+}
 
+.flashcard {
+border: 2px solid white;
+padding: 20px;
+text-align: center;
+cursor: pointer;
+}
+
+.flashcard-image {
+    width: 350px;
+    height: 350px;
+}
+
+.flashcard-text {
+    border: 1px solid white;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.previousFlashcard {
+    width: 250px;
+    height: 50px;
+    margin-right: 400px;
+}
+
+.nextFlashcard {
+    width: 250px;
+    height: 50px;
+}
