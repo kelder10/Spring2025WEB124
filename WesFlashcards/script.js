@@ -1,7 +1,9 @@
+
+
 const flashcards = [
     { image: 'images/boy.png', text: 'Boy' },
-    { image: 'images/dada.png', text: 'Dada' },
-    { image: 'images/luca.png', text: 'Luca' },
+    { image: 'image2.jpg', text: 'Description for image 2' },
+    { image: 'image3.jpg', text: 'Description for image 3' },
     { image: 'image4.jpg', text: 'Description for image 4' },
     { image: 'image5.jpg', text: 'Description for image 5' },
     { image: 'image6.jpg', text: 'Description for image 6' },
@@ -53,4 +55,3 @@ document.getElementById('previousButton').addEventListener('click', previousFlas
 
 // Initialize the first flashcard
 updateFlashcard();
-
