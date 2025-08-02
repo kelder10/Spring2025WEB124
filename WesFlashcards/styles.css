@@ -2,6 +2,7 @@ body {
 background-color: black;
 color: white;
 display: flex;
+flex-direction: column; /* Change to column for vertical layout */
 justify-content: center;
 align-items: center;
 height: 100vh;
@@ -13,30 +14,32 @@ border: 2px solid white;
 padding: 20px;
 text-align: center;
 cursor: pointer;
+margin-bottom: 20px; /* Add margin below flashcards */
 }
 
 .flashcard-image {
-    width: 350px;
-    height: 350px;
+width: 350px;
+height: 350px;
 }
 
 .flashcard-text {
-    border: 1px solid white;
-    padding: 10px;
-    margin-top: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
+border: 1px solid white;
+padding: 10px;
+margin-top: 10px;
+background-color: rgba(255, 255, 255, 0.1);
 }
 
-.previousFlashcard {
-    width: 250px;
-    height: 50px;
-    margin-right: 400px;
+button {
+width: 250px;
+height: 50px;
+margin: 5px; /* Space between buttons */
+border: 2px solid white; /* Add border */
+background-color: transparent; /* Make the background transparent */
+color: white; /* Text color */
+cursor: pointer; /* Change cursor on hover */
+font-size: 16px; /* Increase font size */
 }
 
-.nextFlashcard {
-    width: 250px;
-    height: 50px;
+button:hover {
+background-color: rgba(255, 255, 255, 0.2); /* Change background on hover */
 }
-
-
-
