@@ -1,5 +1,3 @@
-
-
 const flashcards = [
     { image: 'images/boy.png', text: 'Boy' },
     { image: 'image2.jpg', text: 'Description for image 2' },
