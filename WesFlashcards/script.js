@@ -16,6 +16,8 @@ const flashcards = [
     { image: 'images/iceCream2.png', text: 'Ice Cream' },
     { image: 'images/dog.png', text: 'Dog' },
     { image: 'images/cat.png', text: 'Cat' },
+    { image: 'images/cow.png', text: 'Cow' },
+    { image: 'images/horse.png', text: 'Horse' },
     { image: 'images/car.png', text: 'Car' },
     { image: 'images/bike.png', text: 'Bike' },
     { image: 'images/orange.png', text: 'Orange' },
