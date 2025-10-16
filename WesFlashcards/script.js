@@ -18,8 +18,8 @@ const flashcards = [
     { image: 'images/car.png', text: 'Car' },
     { image: 'images/bike.png', text: 'Bike' },
     { image: 'images/orangeDot.png', text: 'Orange' },
-    { image: 'image19.jpg', text: 'Description for image 19' },
-    { image: 'image20.jpg', text: 'Description for image 20' },
+    { image: 'images/yellow', text: 'Yellow' },
+    { image: 'images/purple', text: 'Purple' },
 ];
 
 let currentIndex = 0;
