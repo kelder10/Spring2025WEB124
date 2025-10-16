@@ -5,7 +5,7 @@ const flashcards = [
     { image: 'images/mama.png', text: 'Mama' },
     { image: 'images/boy.png', text: 'Boy' },
     { image: 'images/girl.png', text: 'Girl' },
-    { image: 'images/bossBaby.png', text: 'Baby' },
+    { image: 'images/baby.png', text: 'Baby' },
     { image: 'images/goSign.png', text: 'Go' },
     { image: 'images/yesSign.png', text: 'Yes' },
     { image: 'images/noSign.png', text: 'No' },
