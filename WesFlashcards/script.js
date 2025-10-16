@@ -20,6 +20,8 @@ const flashcards = [
     { image: 'images/orange.png', text: 'Orange' },
     { image: 'images/yellow.png', text: 'Yellow' },
     { image: 'images/purple.svg', text: 'Purple' },
+    { image: 'images/red.svg', text: 'Red' },
+    
 ];
 
 let currentIndex = 0;
