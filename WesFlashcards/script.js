@@ -17,7 +17,7 @@ const flashcards = [
     { image: 'images/cat.png', text: 'Cat' },
     { image: 'images/car.png', text: 'Car' },
     { image: 'images/bike.png', text: 'Bike' },
-    { image: 'image18.jpg', text: 'Description for image 18' },
+    { image: 'images/orangeDot', text: 'Orange' },
     { image: 'image19.jpg', text: 'Description for image 19' },
     { image: 'image20.jpg', text: 'Description for image 20' },
 ];
