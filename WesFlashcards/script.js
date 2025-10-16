@@ -9,7 +9,7 @@ const flashcards = [
     { image: 'images/goSign.png', text: 'Go' },
     { image: 'images/yesSign.png', text: 'Yes' },
     { image: 'images/noSign.png', text: 'No' },
-    { image: 'images/more.jpg', text: 'More' },
+    { image: 'images/more.png', text: 'More' },
     { image: 'images/help.png', text: 'Help' },
     { image: 'images/eat.png', text: 'Eat' },
     { image: 'images/oatmeal.png', text: 'Oatmeal' },
