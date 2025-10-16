@@ -13,7 +13,7 @@ const flashcards = [
     { image: 'images/oatmeal.png', text: 'Oatmeal' },
     { image: 'images/cookie.png', text: 'Cookie' },
     { image: 'images/popsicle.png', text: 'Popsicle' },
-    { image: 'images/iceCream.png', text: 'Ice Cream' },
+    { image: 'images/iceCream2.png', text: 'Ice Cream' },
     { image: 'images/dog.png', text: 'Dog' },
     { image: 'images/cat.png', text: 'Cat' },
     { image: 'images/car.png', text: 'Car' },
