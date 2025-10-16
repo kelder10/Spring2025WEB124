@@ -17,9 +17,9 @@ const flashcards = [
     { image: 'images/cat.png', text: 'Cat' },
     { image: 'images/car.png', text: 'Car' },
     { image: 'images/bike.png', text: 'Bike' },
-    { image: 'images/orangeDot.png', text: 'Orange' },
-    { image: 'images/yellow', text: 'Yellow' },
-    { image: 'images/purple', text: 'Purple' },
+    { image: 'images/orange.png', text: 'Orange' },
+    { image: 'images/yellow.png', text: 'Yellow' },
+    { image: 'images/purple.svg', text: 'Purple' },
 ];
 
 let currentIndex = 0;
