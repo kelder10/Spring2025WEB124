@@ -32,7 +32,9 @@ const flashcards = [
     { image: 'images/purple.svg', text: 'Purple' },
     { image: 'images/red.png', text: 'Red' },
     { image: 'images/blue.png', text: 'Blue' },
-];
+    { image: 'images/allDone.png', text: 'All Done' },
+    { image: 'images/gotToGo.png', text: 'Got To Go' },
+]
 
 let currentIndex = 0;
 
