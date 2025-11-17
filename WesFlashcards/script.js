@@ -1,6 +1,6 @@
 const flashcards = [
     { image: 'images/picWes.png', text: 'Wesley' },
-    { image: 'images/luca.png', text: 'Luca' },
+    { image: 'images/luca2.png', text: 'Luca' },
     { image: 'images/dada2.png', text: 'Dada' },
     { image: 'images/mama.png', text: 'Mama' },
     { image: 'images/boy.png', text: 'Boy' },
